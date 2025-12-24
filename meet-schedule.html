@@ -14,6 +14,7 @@
 		let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script><link href='//hb.wpmucdn.com' rel='preconnect' />
 <link rel="stylesheet" id="divi-style-css" href="css/style.min.css" type="text/css" media="all" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/footer.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="description" content="View the typical USAG Xcel season meet schedule for our gymnastics team, including prep meets, regular season meets, states, regionals, and nationals." />
 <style>
@@ -194,118 +195,6 @@
 	/* Add padding to body to prevent content overlap with fixed navbar */
 	body {
 		padding-top: 70px;
-	}
-
-	/* ========== FOOTER STYLES ========== */
-	.site-footer {
-		background: #1d3557;
-		color: #fff;
-		padding: 60px 0 0;
-	}
-
-	.footer-main {
-		padding-bottom: 40px;
-	}
-
-	.footer-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 40px;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 20px;
-	}
-
-	.footer-column h3 {
-		color: #fff;
-		font-size: 1.3rem;
-		margin-bottom: 20px;
-		font-family: 'Abril Fatface', serif;
-	}
-
-	.footer-column p {
-		color: #a8dadc;
-		margin-bottom: 1rem;
-		line-height: 1.6;
-	}
-
-	.footer-column ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.footer-column ul li {
-		margin-bottom: 10px;
-	}
-
-	.footer-column ul li a {
-		color: #a8dadc;
-		transition: color 0.3s ease;
-		text-decoration: none;
-	}
-
-	.footer-column ul li a:hover {
-		color: #fff;
-		padding-left: 5px;
-	}
-
-	.social-links {
-		display: flex;
-		gap: 15px;
-		margin-top: 20px;
-	}
-
-	.social-links a {
-		width: 45px;
-		height: 45px;
-		background: #457b9d;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #fff;
-		font-size: 1.2rem;
-		transition: all 0.3s ease;
-		text-decoration: none;
-	}
-
-	.social-links a:hover {
-		background: #2ea3f2;
-		transform: translateY(-3px);
-	}
-
-	/* Greyed-out styling for placeholder social media links */
-	.social-links a.placeholder {
-		background: #6c757d;
-		opacity: 0.5;
-		cursor: not-allowed;
-	}
-
-	.social-links a.placeholder:hover {
-		background: #6c757d;
-		transform: none;
-	}
-
-	.footer-bottom {
-		background: #14213d;
-		padding: 25px 0;
-		text-align: center;
-	}
-
-	.footer-bottom p {
-		color: #a8dadc;
-		margin: 5px 0;
-		font-size: 0.95rem;
-	}
-
-	.footer-bottom a {
-		color: #2ea3f2;
-		text-decoration: none;
-	}
-
-	.footer-bottom a:hover {
-		color: #fff;
 	}
 
 	/* ========== RESPONSIVE ========== */

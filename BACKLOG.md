@@ -7,11 +7,13 @@ This document tracks manual data inputs and configuration updates needed for the
 ## Social Media Links - High Priority
 
 **Status:** Pending Configuration  
-**Locations:** All pages with social media links:
-- `index.html` (footer section, lines ~1634-1642)
-- `meet-schedule.html` (footer section, lines ~714-722)
-- `privacy.html` (footer section, lines ~324-332)
-- `terms.html` (footer section, lines ~338-346)
+**Locations:** All pages with footer social media links:
+- `index.html` - Footer section in "Connect With Us" column
+- `meet-schedule.html` - Footer section in "Connect With Us" column
+- `privacy.html` - Footer section in "Connect With Us" column
+- `terms.html` - Footer section in "Connect With Us" column
+
+**How to find:** Search for `class="social-links"` or `Connect With Us` in each file to locate the footer section containing social media links.
 
 **Current State:** Placeholder links are greyed out and non-functional across all pages
 
@@ -40,12 +42,14 @@ This document tracks manual data inputs and configuration updates needed for the
 When social media accounts are established:
 
 1. **Update ALL 4 pages** (index.html, meet-schedule.html, privacy.html, terms.html)
-2. Replace `href="#"` with the actual social media URL
-3. Add `target="_blank"` attribute to open in new tab
-4. Remove the `class="placeholder"` attribute
-5. Remove the `role="button"`, `tabindex="-1"`, and `aria-disabled="true"` attributes
-6. Update the `title` attribute to remove "placeholder" text
-7. Update `aria-label` to remove "(placeholder)" suffix
+2. In each file, search for `class="social-links"` to find the social media section
+3. For each placeholder link (with `class="placeholder"`):
+   - Replace `href="#"` with the actual social media URL
+   - Add `target="_blank"` attribute to open in new tab
+   - Remove the `class="placeholder"` attribute
+   - Remove the `role="button"`, `tabindex="-1"`, and `aria-disabled="true"` attributes
+   - Update the `title` attribute to remove "placeholder" text
+   - Update `aria-label` to remove "(placeholder)" suffix
 
 **Example of completed link:**
 ```html
@@ -63,6 +67,7 @@ When social media accounts are established:
 - Visual indicator (opacity: 0.5, grey background) helps distinguish placeholders from active links
 - The cursor changes to "not-allowed" when hovering over placeholder icons
 - **Always apply updates to all pages** to ensure consistent user experience site-wide
+- Footer styles are now centralized in `css/footer.css` for easier maintenance
 
 ---
 
