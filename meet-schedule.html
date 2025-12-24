@@ -13,7 +13,7 @@
 <script type="text/javascript">
 		let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script><link href='//hb.wpmucdn.com' rel='preconnect' />
 <link rel="stylesheet" id="divi-style-css" href="css/style.min.css" type="text/css" media="all" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="description" content="View the typical USAG Xcel season meet schedule for our gymnastics team, including prep meets, regular season meets, states, regionals, and nationals." />
 <style>
@@ -191,6 +191,11 @@
 		color: #1d3557;
 	}
 
+	/* Add padding to body to prevent content overlap with fixed navbar */
+	body {
+		padding-top: 70px;
+	}
+
 	/* ========== FOOTER STYLES ========== */
 	.site-footer {
 		background: #1d3557;
@@ -270,6 +275,18 @@
 		transform: translateY(-3px);
 	}
 
+	/* Greyed-out styling for placeholder social media links */
+	.social-links a.placeholder {
+		background: #6c757d;
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	.social-links a.placeholder:hover {
+		background: #6c757d;
+		transform: none;
+	}
+
 	.footer-bottom {
 		background: #14213d;
 		padding: 25px 0;
@@ -328,7 +345,7 @@
 		<nav class="navbar">
 			<div class="container">
 				<a href="index.html#home" class="navbar-brand">PAG Booster</a>
-				<div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+				<div class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
 					<i class="fas fa-bars"></i>
 				</div>
 				<ul class="nav-menu" id="navMenu">
@@ -693,13 +710,13 @@
 						<div class="footer-column">
 							<h3>Connect With Us</h3>
 							<div class="social-links">
-								<a href="https://facebook.com/pagbooster" target="_blank" aria-label="Facebook">
+								<a href="#" class="placeholder" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
 									<i class="fab fa-facebook-f"></i>
 								</a>
-								<a href="https://instagram.com/pagbooster" target="_blank" aria-label="Instagram">
+								<a href="#" class="placeholder" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
 									<i class="fab fa-instagram"></i>
 								</a>
-								<a href="https://twitter.com/pagbooster" target="_blank" aria-label="Twitter">
+								<a href="#" class="placeholder" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
 									<i class="fab fa-twitter"></i>
 								</a>
 								<a href="mailto:contact@pagbooster.org" aria-label="Email">
@@ -713,8 +730,6 @@
 				<div class="footer-bottom">
 					<div class="container">
 						<p>&copy; 2024 PAG Booster. All rights reserved.</p>
-						<p><a href="privacy.html">Privacy Policy</a> | 
-						   <a href="terms.html">Terms of Use</a></p>
 					</div>
 				</div>
 			</footer>
@@ -727,6 +742,12 @@
 	
 	<!-- Mobile Menu Toggle Script -->
 	<script>
+		// Mobile menu toggle with event listener
+		const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+		if (mobileMenuToggle) {
+			mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+		}
+
 		function toggleMobileMenu() {
 			const navMenu = document.getElementById('navMenu');
 			navMenu.classList.toggle('active');
