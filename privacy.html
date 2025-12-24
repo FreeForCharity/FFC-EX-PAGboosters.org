@@ -82,21 +82,102 @@
             margin-bottom: 2rem;
         }
 
-        .simple-footer {
+        /* Footer Styles */
+        .site-footer {
             background: #1d3557;
             color: #fff;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 40px;
+            padding: 60px 0 0;
         }
 
-        .simple-footer a {
+        .footer-main {
+            padding-bottom: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-column p {
+            color: #a8dadc;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #a8dadc;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
+            color: #fff;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: #457b9d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: #2ea3f2;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            background: #14213d;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #a8dadc;
+            margin: 5px 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-bottom a {
             color: #2ea3f2;
             text-decoration: none;
         }
 
-        .simple-footer a:hover {
-            text-decoration: underline;
+        .footer-bottom a:hover {
+            color: #fff;
         }
     </style>
 </head>
@@ -202,10 +283,68 @@
         </div>
     </div>
 
-    <div class="simple-footer">
-        <p>&copy; 2024 PAG Booster. All rights reserved. | 
-           <a href="https://github.com/FreeForCharity/FFC-EX-PAGboosters.org" target="_blank" rel="noopener">GitHub Repository</a>
-        </p>
-    </div>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h3>PAG Booster</h3>
+                    <p>Supporting the Phoenix Academy of Performing Arts competitive gymnastics team through community engagement, fundraising, and dedication to our athletes' success.</p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#team">Our Team</a></li>
+                        <li><a href="index.html#fundraising">Fundraising</a></li>
+                        <li><a href="index.html#membership">Membership</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="index.html#fundraising">Donate</a></li>
+                        <li><a href="index.html#fundraising">Volunteer</a></li>
+                        <li><a href="https://github.com/FreeForCharity/FFC-EX-PAGboosters.org" target="_blank" rel="noopener">GitHub Repository</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect Column -->
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com/pagbooster" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/pagbooster" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/pagbooster" target="_blank" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="mailto:contact@pagbooster.org" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 PAG Booster. All rights reserved.</p>
+                <p><a href="privacy.html">Privacy Policy</a> | 
+                   <a href="terms.html">Terms of Use</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
