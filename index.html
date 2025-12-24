@@ -610,6 +610,54 @@
             border-left: 6px solid #14213d;
         }
 
+        .funding-program-card .program-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .funding-program-card .program-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .funding-program-card h3 {
+            color: #1d3557;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .funding-program-card .program-description {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .funding-program-card .primary-focus {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .thermometer-container {
+            margin: 30px 0;
+        }
+
+        .thermometer-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 120px;
+        }
+
+        .btn-center {
+            text-align: center;
+        }
+
+        .btn-large {
+            font-size: 1.1rem;
+            padding: 16px 40px;
+        }
+
         /* ========== CONTACT SECTION ========== */
         .contact-container {
             display: grid;
@@ -943,18 +991,19 @@
             </div>
             
             <!-- Program 1: Core Program (Primary Focus) -->
+            <!-- NOTE: This program is primarily funded by memberships (see Membership section) -->
             <div class="funding-program-card border-blue">
-                <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <i class="fas fa-star" style="font-size: 2rem; color: #2ea3f2; margin-right: 15px;"></i>
-                    <h3 style="color: #1d3557; margin: 0; font-size: 1.8rem;">Program 1: Phoenix Academy USAG Xcel Team Regular Season (Core Program)</h3>
+                <div class="program-header">
+                    <i class="fas fa-star program-icon" style="color: #2ea3f2;" aria-label="Core program icon"></i>
+                    <h3>Program 1: Phoenix Academy USAG Xcel Team Regular Season (Core Program)</h3>
                 </div>
-                <p style="color: #666; font-size: 1.1rem; margin-bottom: 10px;"><strong>PRIMARY FOCUS</strong></p>
-                <p style="color: #666; margin-bottom: 25px;">Focused on providing direct support to the active pipeline of girls from pre-team through Sapphire. Helps ensure there are sufficient gymnasts in the program to field a team. This includes paying meet fees and support for all regular season USAG xcel meets including annual and monthly team fees.</p>
+                <p class="primary-focus"><strong>PRIMARY FOCUS</strong></p>
+                <p class="program-description">Focused on providing direct support to the active pipeline of girls from pre-team through Sapphire. Helps ensure there are sufficient gymnasts in the program to field a team. This includes paying meet fees and support for all regular season USAG xcel meets including annual and monthly team fees.</p>
                 
                 <!-- Thermometer for Program 1 -->
                 <!-- TODO: Update with Program 1 specific Zeffy campaign ID for annual/monthly team fees -->
-                <div style="margin: 30px 0;">
-                    <div style="position:relative;overflow:hidden;width:100%;padding-top:120px;">
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
                         <iframe title="Program 1 funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
@@ -962,23 +1011,23 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
-                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn" style="font-size: 1.1rem; padding: 16px 40px;">Support Core Program</a>
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn btn-large">Support Core Program</a>
                 </div>
             </div>
             
-            <!-- Program 2: Fly-Away Meet -->
+            <!-- Program 2: Fly-away Meet -->
             <div class="funding-program-card border-teal">
-                <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <i class="fas fa-plane-departure" style="font-size: 2rem; color: #457b9d; margin-right: 15px;"></i>
-                    <h3 style="color: #1d3557; margin: 0; font-size: 1.8rem;">Program 2: Phoenix Academy USAG Xcel Team Fly-Away Optional Team Meet</h3>
+                <div class="program-header">
+                    <i class="fas fa-plane-departure program-icon" style="color: #457b9d;" aria-label="Fly-away meet icon"></i>
+                    <h3>Program 2: Phoenix Academy USAG Xcel Team Fly-away Optional Team Meet</h3>
                 </div>
-                <p style="color: #666; margin-bottom: 25px;">Focused on funding team members attending a special fly-away meet outside of region 7. This opportunity allows our gymnasts to compete at a higher level and gain valuable experience.</p>
+                <p class="program-description">Focused on funding team members attending a special fly-away meet outside of region 7. This opportunity allows our gymnasts to compete at a higher level and gain valuable experience.</p>
                 
                 <!-- Thermometer for Program 2 -->
                 <!-- TODO: Update with Program 2 specific Zeffy campaign ID for fly-away meet -->
-                <div style="margin: 30px 0;">
-                    <div style="position:relative;overflow:hidden;width:100%;padding-top:120px;">
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
                         <iframe title="Program 2 funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
@@ -986,23 +1035,23 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
-                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn" style="font-size: 1.1rem; padding: 16px 40px;">Support Fly-Away Meet</a>
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn btn-large">Support Fly-away Meet</a>
                 </div>
             </div>
             
             <!-- Program 3: PA State Competition -->
             <div class="funding-program-card border-dark-blue">
-                <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <i class="fas fa-flag-usa" style="font-size: 2rem; color: #1d87c9; margin-right: 15px;"></i>
-                    <h3 style="color: #1d3557; margin: 0; font-size: 1.8rem;">Program 3: Phoenix Academy USAG Xcel PA State Competition</h3>
+                <div class="program-header">
+                    <i class="fas fa-flag-usa program-icon" style="color: #1d87c9;" aria-label="State competition icon"></i>
+                    <h3>Program 3: Phoenix Academy USAG Xcel PA State Competition</h3>
                 </div>
-                <p style="color: #666; margin-bottom: 25px;">Focused on funding the meet fees and gymnast support for those gymnasts that qualified for the Pennsylvania USAG state competition. Help our talented gymnasts compete at the state level and make their dreams possible.</p>
+                <p class="program-description">Focused on funding the meet fees and gymnast support for those gymnasts that qualified for the Pennsylvania USAG state competition. Help our talented gymnasts compete at the state level and make their dreams possible.</p>
                 
                 <!-- Thermometer for Program 3 -->
                 <!-- NOTE: This uses the existing "Send PAG to States" Zeffy campaign as specified in the issue -->
-                <div style="margin: 30px 0;">
-                    <div style="position:relative;overflow:hidden;width:100%;padding-top:120px;">
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
                         <iframe title="Program 3 funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
@@ -1010,23 +1059,23 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
-                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn" style="font-size: 1.1rem; padding: 16px 40px;">Send PAG to States</a>
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn btn-large">Send PAG to States</a>
                 </div>
             </div>
             
             <!-- Program 4: Regional Competition -->
             <div class="funding-program-card border-navy">
-                <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <i class="fas fa-trophy" style="font-size: 2rem; color: #14213d; margin-right: 15px;"></i>
-                    <h3 style="color: #1d3557; margin: 0; font-size: 1.8rem;">Program 4: Phoenix Academy USAG Xcel PA Region 7 Regional Competition</h3>
+                <div class="program-header">
+                    <i class="fas fa-trophy program-icon" style="color: #14213d;" aria-label="Regional competition icon"></i>
+                    <h3>Program 4: Phoenix Academy USAG Xcel PA Region 7 Regional Competition</h3>
                 </div>
-                <p style="color: #666; margin-bottom: 25px;">Focused on supporting those gymnasts that have qualified for regionals. This prestigious competition represents the highest level of achievement in our region.</p>
+                <p class="program-description">Focused on supporting those gymnasts that have qualified for regionals. This prestigious competition represents the highest level of achievement in our region.</p>
                 
                 <!-- Thermometer for Program 4 -->
                 <!-- TODO: Update with Program 4 specific Zeffy campaign ID for regionals -->
-                <div style="margin: 30px 0;">
-                    <div style="position:relative;overflow:hidden;width:100%;padding-top:120px;">
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
                         <iframe title="Program 4 funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
@@ -1034,8 +1083,8 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center;">
-                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn" style="font-size: 1.1rem; padding: 16px 40px;">Support Regionals</a>
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn btn-large">Support Regionals</a>
                 </div>
             </div>
         </div>
@@ -1105,37 +1154,37 @@
             </div>
             <div class="fundraising-grid">
                 <div class="fundraising-card">
-                    <i class="fas fa-tshirt"></i>
+                    <i class="fas fa-tshirt" aria-label="Clothing sales icon"></i>
                     <h3>Clothing Sales</h3>
                     <p>Purchase PAG Booster apparel and merchandise to show your support while helping fund our gymnasts' needs.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
                 <div class="fundraising-card">
-                    <i class="fas fa-laugh"></i>
+                    <i class="fas fa-laugh" aria-label="Comedy night icon"></i>
                     <h3>Comedy Night</h3>
                     <p>Enjoy an evening of laughter at our annual comedy night fundraiser. Ticket sales directly support our team.</p>
                     <a href="#contact" class="btn">Get Tickets</a>
                 </div>
                 <div class="fundraising-card">
-                    <i class="fas fa-ticket-alt"></i>
+                    <i class="fas fa-ticket-alt" aria-label="Raffle tickets icon"></i>
                     <h3>50/50 Raffles</h3>
                     <p>Try your luck with our 50/50 raffles at various events throughout the season. Half the proceeds support our gymnasts!</p>
                     <a href="#contact" class="btn">View Events</a>
                 </div>
                 <div class="fundraising-card">
-                    <i class="fas fa-concierge-bell"></i>
+                    <i class="fas fa-concierge-bell" aria-label="Concessions icon"></i>
                     <h3>Bryce Jordan Center Concessions</h3>
                     <p>Support our team by volunteering or attending events where we staff concession stands at the Bryce Jordan Center.</p>
                     <a href="#contact" class="btn">Volunteer</a>
                 </div>
                 <div class="fundraising-card">
-                    <i class="fas fa-football-ball"></i>
+                    <i class="fas fa-football-ball" aria-label="Super Bowl icon"></i>
                     <h3>Super Bowl Squares</h3>
                     <p>Join our annual Super Bowl squares fundraiser for a chance to win while supporting our gymnasts.</p>
                     <a href="#contact" class="btn">Join In</a>
                 </div>
                 <div class="fundraising-card">
-                    <i class="fas fa-hand-holding-heart"></i>
+                    <i class="fas fa-hand-holding-heart" aria-label="Donations icon"></i>
                     <h3>Direct Donations</h3>
                     <p>Make a direct contribution to support our programs. Every donation helps our gymnasts achieve their dreams.</p>
                     <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn">Donate Now</a>
