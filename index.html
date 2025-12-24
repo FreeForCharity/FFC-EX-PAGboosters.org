@@ -286,9 +286,28 @@
         /* ========== TEAM SECTION ========== */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 30px;
             margin-top: 40px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* First row: 3 items spanning 2 columns each */
+        .team-member:nth-child(1),
+        .team-member:nth-child(2),
+        .team-member:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        /* Second row: 2 items centered, spanning 2 columns each with 1 column gap on each side */
+        .team-member:nth-child(4) {
+            grid-column: 2 / 4;
+        }
+
+        .team-member:nth-child(5) {
+            grid-column: 4 / 6;
         }
 
         .team-member {
@@ -302,13 +321,6 @@
         .team-member:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .team-member-photo {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
         }
 
         .team-member-info {
@@ -732,6 +744,79 @@
             color: #666;
         }
 
+        /* Funding Goal Program Cards */
+        .funding-program-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .funding-program-card.border-blue {
+            border-left: 6px solid #2ea3f2;
+        }
+
+        .funding-program-card.border-teal {
+            border-left: 6px solid #457b9d;
+        }
+
+        .funding-program-card.border-dark-blue {
+            border-left: 6px solid #1d87c9;
+        }
+
+        .funding-program-card.border-navy {
+            border-left: 6px solid #14213d;
+        }
+
+        .funding-program-card .program-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .funding-program-card .program-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .funding-program-card h3 {
+            color: #1d3557;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .funding-program-card .program-description {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .funding-program-card .primary-focus {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .thermometer-container {
+            margin: 30px 0;
+        }
+
+        .thermometer-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 120px;
+        }
+
+        .btn-center {
+            text-align: center;
+        }
+
+        .btn-large {
+            font-size: 1.1rem;
+            padding: 16px 40px;
+        }
+
         /* ========== CONTACT SECTION ========== */
         .contact-container {
             display: grid;
@@ -939,6 +1024,36 @@
         }
 
         /* ========== RESPONSIVE ========== */
+        /* Large screens (4K and above) */
+        @media (min-width: 2560px) {
+            .team-grid {
+                max-width: 2000px;
+                gap: 50px;
+            }
+        }
+
+        /* Tablet breakpoint */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 900px;
+            }
+
+            /* Reset desktop grid positioning */
+            .team-member:nth-child(1),
+            .team-member:nth-child(2),
+            .team-member:nth-child(3),
+            .team-member:nth-child(4),
+            .team-member:nth-child(5) {
+                grid-column: span 2;
+            }
+
+            /* Center the last item in the third row */
+            .team-member:nth-child(5) {
+                grid-column: 2 / 4;
+            }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
@@ -981,6 +1096,20 @@
             .about-content,
             .contact-container {
                 grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            /* Reset all grid positioning for mobile */
+            .team-member:nth-child(1),
+            .team-member:nth-child(2),
+            .team-member:nth-child(3),
+            .team-member:nth-child(4),
+            .team-member:nth-child(5) {
+                grid-column: auto;
             }
 
             .footer-grid {
@@ -1056,43 +1185,109 @@
         </div>
     </section>
 
-    <!-- Programs Section -->
+    <!-- Programs Section - Our Programs with Major Funding Goals -->
     <section id="programs" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="section-header">
                 <h2>Our Programs</h2>
-                <p>Key initiatives supporting our gymnasts and community</p>
+                <p>Supporting our gymnasts through targeted program funding</p>
             </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Fundraising Events</h3>
-                    <p>We organize various events throughout the year to raise funds for our gymnasts, ensuring they have the resources they need to compete at the highest levels.</p>
+            
+            <!-- Program 1: Core Program (Primary Focus) -->
+            <!-- NOTE: This program is primarily funded by memberships (see Membership section) -->
+            <div class="funding-program-card border-blue">
+                <div class="program-header">
+                    <i class="fas fa-star program-icon" style="color: #2ea3f2;" aria-hidden="true"></i>
+                    <h3>Program 1: Phoenix Academy USAG Xcel Team Regular Season (Core Program)</h3>
                 </div>
-                <div class="program-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Corporate Sponsorships</h3>
-                    <p>Our partnerships with local businesses help provide financial support and resources for our team, fostering a strong community bond.</p>
+                <p class="primary-focus"><strong>PRIMARY FOCUS</strong></p>
+                <p class="program-description">Focused on providing direct support to the active pipeline of girls from pre-team through Sapphire. Helps ensure there are sufficient gymnasts in the program to field a team. This includes paying meet fees and support for all regular season USAG Xcel meets including annual and monthly team fees.</p>
+                
+                <!-- Thermometer for Program 1 -->
+                <!-- NOTE: Program 1 uses the Membership section's Zeffy campaign for annual/monthly team fees -->
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
+                        <iframe title="Program 1 funding thermometer powered by Zeffy" 
+                                style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
+                                src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
+                                allowTransparency="true"></iframe>
+                    </div>
                 </div>
-                <div class="program-card">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Training Camps</h3>
-                    <p>We sponsor specialized training camps to help our gymnasts hone their skills and prepare for competitions.</p>
+                
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn btn-large">Support Core Program</a>
                 </div>
-                <div class="program-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Scholarship Programs</h3>
-                    <p>Our scholarship programs support talented gymnasts in pursuing their athletic and academic goals.</p>
+            </div>
+            
+            <!-- Program 2: Fly-away Meet -->
+            <div class="funding-program-card border-teal">
+                <div class="program-header">
+                    <i class="fas fa-plane-departure program-icon" style="color: #457b9d;" aria-hidden="true"></i>
+                    <h3>Program 2: Phoenix Academy USAG Xcel Team Fly-away Optional Team Meet</h3>
                 </div>
-                <div class="program-card">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>Community Outreach</h3>
-                    <p>We engage with the community through various outreach programs, promoting the benefits of gymnastics and encouraging participation in the sport.</p>
+                <p class="program-description">Focused on funding team members attending a special fly-away meet outside of Region 7. This opportunity allows our gymnasts to compete at a higher level and gain valuable experience.</p>
+                
+                <!-- Thermometer for Program 2 -->
+                <!-- TODO: Update with Program 2 specific Zeffy campaign ID for fly-away meet -->
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
+                        <iframe title="Fly-away Meet funding thermometer powered by Zeffy" 
+                                style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
+                                src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
+                                allowTransparency="true"></iframe>
+                    </div>
                 </div>
-                <div class="program-card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Competition Support</h3>
-                    <p>We provide logistical and financial support for our gymnasts to compete in national and international events, ensuring they have the best possible experience.</p>
+                
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn btn-large">Support Fly-away Meet</a>
+                </div>
+            </div>
+            
+            <!-- Program 3: PA State Competition -->
+            <div class="funding-program-card border-dark-blue">
+                <div class="program-header">
+                    <i class="fas fa-flag-usa program-icon" style="color: #1d87c9;" aria-hidden="true"></i>
+                    <h3>Program 3: Phoenix Academy USAG Xcel PA State Competition</h3>
+                </div>
+                <p class="program-description">Focused on funding the meet fees and gymnast support for those gymnasts that qualified for the Pennsylvania USAG state competition. Help our talented gymnasts compete at the state level and make their dreams possible.</p>
+                
+                <!-- Thermometer for Program 3 -->
+                <!-- NOTE: This uses the existing "Send PAG to States" Zeffy campaign as specified in the issue -->
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
+                        <iframe title="PA State Competition funding thermometer powered by Zeffy" 
+                                style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
+                                src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
+                                allowTransparency="true"></iframe>
+                    </div>
+                </div>
+                
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn btn-large">Send PAG to States</a>
+                </div>
+            </div>
+            
+            <!-- Program 4: Regional Competition -->
+            <div class="funding-program-card border-navy">
+                <div class="program-header">
+                    <i class="fas fa-trophy program-icon" style="color: #14213d;" aria-hidden="true"></i>
+                    <h3>Program 4: Phoenix Academy USAG Xcel PA Region 7 Regional Competition</h3>
+                </div>
+                <p class="program-description">Focused on supporting those gymnasts that have qualified for regionals. This prestigious competition represents the highest level of achievement in our region.</p>
+                
+                <!-- Thermometer for Program 4 -->
+                <!-- TODO: Update with Program 4 specific Zeffy campaign ID for regionals -->
+                <div class="thermometer-container">
+                    <div class="thermometer-wrapper">
+                        <iframe title="Region 7 Regional Competition funding thermometer powered by Zeffy" 
+                                style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
+                                src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
+                                allowTransparency="true"></iframe>
+                    </div>
+                </div>
+                
+                <div class="btn-center">
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn btn-large">Support Regionals</a>
                 </div>
             </div>
         </div>
@@ -1103,50 +1298,37 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Leadership Team</h2>
-                <p>Meet the dedicated parents and volunteers who make it all possible</p>
+                <p>Dedicated leadership supporting our gymnasts, families, and coaching staff through collaborative excellence</p>
             </div>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Dana+Haines" alt="Dana Haines" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Dana Haines</h4>
                         <p class="role">President</p>
-                        <p>Leading our organization with dedication and vision for our gymnasts' success.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Julie+Martin" alt="Julie Martin" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Julie Martin</h4>
                         <p class="role">Vice President</p>
-                        <p>Supporting our mission and coordinating team activities.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Kevin+Rudy" alt="Kevin Rudy" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Kevin Rudy</h4>
                         <p class="role">Treasurer</p>
-                        <p>Managing our finances to ensure maximum support for our athletes.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Clarke+Moyer" alt="Clarke Moyer" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Clarke Moyer</h4>
                         <p class="role">Secretary</p>
-                        <p>Keeping our organization organized and our communications clear.</p>
-                        <div class="social-links" style="margin-top: 10px;">
-                            <a href="https://www.linkedin.com/in/clarkemoyer" target="_blank" title="LinkedIn" aria-label="Clarke Moyer on LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        </div>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Amanda+Clouser" alt="Amanda Clouser" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Amanda Clouser</h4>
                         <p class="role">Fundraising</p>
-                        <p>Coordinating fundraising initiatives to support our gymnasts.</p>
                     </div>
                 </div>
             </div>
@@ -1158,7 +1340,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Fundraising & Events</h2>
-                <p>Support our team through various fundraising opportunities and events</p>
+                <p>Join us in our fundraising initiatives throughout the year</p>
             </div>
             
             <!-- Fundraising Submenu -->
@@ -1169,20 +1351,43 @@
                 <a href="#usag-states">USAG States Campaign</a>
             </div>
             
-            <div class="fundraising-grid">
-                <div class="fundraising-card" id="direct-donations">
-                    <i class="fas fa-hand-holding-heart"></i>
-                    <h3>Direct Donations</h3>
-                    <p>Make a direct contribution to support our gymnasts' training, competition fees, and equipment needs.</p>
-                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">Donate Now</a>
+            <div class="fundraising-grid" id="fundraising-events">
+                <div class="fundraising-card">
+                    <i class="fas fa-tshirt" aria-hidden="true"></i>
+                    <h3>Clothing Sales</h3>
+                    <p>Purchase PAG Booster apparel and merchandise to show your support while helping fund our gymnasts' needs.</p>
+                    <a href="#contact" class="btn">Learn More</a>
                 </div>
-                <div class="fundraising-card" id="fundraising-events">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>Fundraising Events</h3>
-                    <p>Join us for our annual fundraising events, including competitions, galas, and community gatherings.</p>
+                <div class="fundraising-card">
+                    <i class="fas fa-laugh" aria-hidden="true"></i>
+                    <h3>Comedy Night</h3>
+                    <p>Enjoy an evening of laughter at our annual comedy night fundraiser. Ticket sales directly support our team.</p>
+                    <a href="#contact" class="btn">Get Tickets</a>
+                </div>
+                <div class="fundraising-card">
+                    <i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                    <h3>50/50 Raffles</h3>
+                    <p>Try your luck with our 50/50 raffles at various events throughout the season. Half the proceeds support our gymnasts!</p>
                     <a href="#contact" class="btn">View Events</a>
                 </div>
-
+                <div class="fundraising-card">
+                    <i class="fas fa-concierge-bell" aria-hidden="true"></i>
+                    <h3>Bryce Jordan Center Concessions</h3>
+                    <p>Support our team by volunteering or attending events where we staff concession stands at the Bryce Jordan Center.</p>
+                    <a href="#contact" class="btn">Volunteer</a>
+                </div>
+                <div class="fundraising-card">
+                    <i class="fas fa-football-ball" aria-hidden="true"></i>
+                    <h3>Super Bowl Squares</h3>
+                    <p>Join our annual Super Bowl squares fundraiser for a chance to win while supporting our gymnasts.</p>
+                    <a href="#contact" class="btn">Join In</a>
+                </div>
+                <div class="fundraising-card" id="direct-donations">
+                    <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                    <h3>Direct Donations</h3>
+                    <p>Make a direct contribution to support our programs. Every donation helps our gymnasts achieve their dreams.</p>
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">Donate Now</a>
+                </div>
             </div>
             
             <!-- Team Apparel Clothing Fundraiser Banner -->
