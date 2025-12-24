@@ -1663,11 +1663,19 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2024 PAG Booster. All rights reserved. | 
+                <p>&copy; <span id="copyright-year">2024</span> PAG Booster. All rights reserved. | 
                    Supported by <a href="https://freeforcharity.org" target="_blank" rel="noopener">Free For Charity</a></p>
             </div>
         </div>
     </footer>
+    <script>
+        (function() {
+            var yearElement = document.getElementById('copyright-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        })();
+    </script>
 
     <!-- JavaScript -->
     <script>

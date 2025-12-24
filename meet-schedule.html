@@ -220,10 +220,15 @@
 		.mobile-menu-toggle {
 			display: block;
 		}
+	}
 
-		.footer-grid {
-			grid-template-columns: 1fr;
-		}
+	/* Additional styling for button element */
+	.mobile-menu-toggle {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		color: inherit;
 	}
 </style>
 </head>
@@ -234,9 +239,9 @@
 		<nav class="navbar">
 			<div class="container">
 				<a href="index.html#home" class="navbar-brand">PAG Booster</a>
-				<div class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu">
+				<button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
 					<i class="fas fa-bars"></i>
-				</div>
+				</button>
 				<ul class="nav-menu" id="navMenu">
 					<li><a href="index.html#home" class="nav-link">Home</a></li>
 					<li><a href="index.html#about" class="nav-link">About</a></li>
@@ -600,15 +605,15 @@
 						<div class="footer-column">
 							<h3>Connect With Us</h3>
 							<div class="social-links">
-								<a href="#" class="placeholder" role="button" tabindex="-1" aria-disabled="true" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
+								<span class="placeholder" role="link" tabindex="-1" aria-disabled="true" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
 									<i class="fab fa-facebook-f"></i>
-								</a>
-								<a href="#" class="placeholder" role="button" tabindex="-1" aria-disabled="true" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
+								</span>
+								<span class="placeholder" role="link" tabindex="-1" aria-disabled="true" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
 									<i class="fab fa-instagram"></i>
-								</a>
-								<a href="#" class="placeholder" role="button" tabindex="-1" aria-disabled="true" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
+								</span>
+								<span class="placeholder" role="link" tabindex="-1" aria-disabled="true" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
 									<i class="fab fa-twitter"></i>
-								</a>
+								</span>
 								<a href="mailto:contact@pagbooster.org" aria-label="Email">
 									<i class="fas fa-envelope"></i>
 								</a>
@@ -619,7 +624,7 @@
 
 				<div class="footer-bottom">
 					<div class="container">
-						<p>&copy; 2024 PAG Booster. All rights reserved. | 
+						<p>&copy; <span id="copyright-year">2024</span> PAG Booster. All rights reserved. | 
 						   Supported by <a href="https://freeforcharity.org" target="_blank" rel="noopener">Free For Charity</a></p>
 					</div>
 				</div>
@@ -637,22 +642,34 @@
 		document.addEventListener('DOMContentLoaded', function() {
 			// Mobile menu toggle with event listener
 			const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-			if (mobileMenuToggle) {
+			const navMenu = document.getElementById('navMenu');
+			
+			if (mobileMenuToggle && navMenu) {
 				mobileMenuToggle.addEventListener('click', toggleMobileMenu);
 			}
 
 			function toggleMobileMenu() {
-				const navMenu = document.getElementById('navMenu');
-				navMenu.classList.toggle('active');
+				if (navMenu && mobileMenuToggle) {
+					const isExpanded = navMenu.classList.toggle('active');
+					mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+				}
 			}
 
 			// Close mobile menu when clicking on a link
 			document.querySelectorAll('.nav-menu a').forEach(link => {
 				link.addEventListener('click', function() {
-					const navMenu = document.getElementById('navMenu');
-					navMenu.classList.remove('active');
+					if (navMenu && mobileMenuToggle) {
+						navMenu.classList.remove('active');
+						mobileMenuToggle.setAttribute('aria-expanded', 'false');
+					}
 				});
 			});
+			
+			// Update copyright year
+			const copyrightYear = document.getElementById('copyright-year');
+			if (copyrightYear) {
+				copyrightYear.textContent = new Date().getFullYear();
+			}
 		});
 	</script>
 </body>

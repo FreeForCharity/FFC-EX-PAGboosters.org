@@ -41,13 +41,13 @@
 
 .footer-column ul li a {
     color: #a8dadc;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
 }
 
 .footer-column ul li a:hover {
     color: #fff;
-    padding-left: 5px;
+    transform: translateX(5px);
 }
 
 .social-links {
@@ -106,4 +106,31 @@
 
 .footer-bottom a:hover {
     color: #fff;
+}
+
+/* Span elements styled as links for placeholders */
+.social-links span.placeholder {
+    background: #6c757d;
+    opacity: 0.5;
+    cursor: not-allowed;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.social-links span.placeholder:hover {
+    background: #6c757d;
+    transform: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
 }
