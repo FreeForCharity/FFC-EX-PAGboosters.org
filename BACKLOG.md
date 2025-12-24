@@ -83,7 +83,8 @@ When social media accounts are established:
 - **Always apply updates to all pages** to ensure consistent user experience site-wide
 - Footer styles are now centralized in `css/footer.css` for easier maintenance
 - All pages now use consistent `<span>` placeholders for semantic correctness
-- Copyright year is dynamically generated on all pages except index.html (can be updated separately if needed)
+- Copyright year is dynamically generated on all pages, ensuring it stays current automatically
+- Font Awesome 6.5.2 is used consistently across all pages
 
 ---
 

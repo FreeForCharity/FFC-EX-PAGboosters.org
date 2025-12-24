@@ -75,18 +75,6 @@
     transform: translateY(-3px);
 }
 
-/* Greyed-out styling for placeholder social media links */
-.social-links a.placeholder {
-    background: #6c757d;
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.social-links a.placeholder:hover {
-    background: #6c757d;
-    transform: none;
-}
-
 .footer-bottom {
     background: #14213d;
     padding: 25px 0;
