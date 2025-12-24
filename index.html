@@ -409,6 +409,191 @@
             font-size: 1.1rem;
         }
 
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .pricing-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(46, 163, 242, 0.2);
+            border-color: #2ea3f2;
+        }
+
+        .pricing-card h3 {
+            color: #1d3557;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: #2ea3f2;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .pricing-note {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #2ea3f2;
+        }
+
+        .pricing-note p {
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ========== FAQ SECTION ========== */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+            background: #fff;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1d3557;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #2ea3f2;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+            padding: 0 20px 20px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ========== EVENTS SECTION ========== */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #2ea3f2;
+        }
+
+        .event-card h4 {
+            color: #1d3557;
+            margin-bottom: 10px;
+        }
+
+        .event-date {
+            color: #2ea3f2;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .event-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ========== PROGRAMS SECTION ========== */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .program-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-card i {
+            font-size: 2.5rem;
+            color: #2ea3f2;
+            margin-bottom: 1rem;
+        }
+
+        .program-card h3 {
+            color: #1d3557;
+            margin-bottom: 1rem;
+        }
+
+        .program-card p {
+            color: #666;
+        }
+
         /* ========== CONTACT SECTION ========== */
         .contact-container {
             display: grid;
@@ -732,6 +917,48 @@
         </div>
     </section>
 
+    <!-- Programs Section -->
+    <section id="programs" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Programs</h2>
+                <p>Key initiatives supporting our gymnasts and community</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Fundraising Events</h3>
+                    <p>We organize various events throughout the year to raise funds for our gymnasts, ensuring they have the resources they need to compete at the highest levels.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Corporate Sponsorships</h3>
+                    <p>Our partnerships with local businesses help provide financial support and resources for our team, fostering a strong community bond.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Training Camps</h3>
+                    <p>We sponsor specialized training camps to help our gymnasts hone their skills and prepare for competitions.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Scholarship Programs</h3>
+                    <p>Our scholarship programs support talented gymnasts in pursuing their athletic and academic goals.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Community Outreach</h3>
+                    <p>We engage with the community through various outreach programs, promoting the benefits of gymnastics and encouraging participation in the sport.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Competition Support</h3>
+                    <p>We provide logistical and financial support for our gymnasts to compete in national and international events, ensuring they have the best possible experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Team Section -->
     <section id="team">
         <div class="container">
@@ -741,35 +968,46 @@
             </div>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="images/team/president.jpg" alt="President" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=President'">
+                    <img src="images/team/president.jpg" alt="Dana Haines" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Dana+Haines'">
                     <div class="team-member-info">
-                        <h4>Board President</h4>
+                        <h4>Dana Haines</h4>
                         <p class="role">President</p>
                         <p>Leading our organization with dedication and vision for our gymnasts' success.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="images/team/vp.jpg" alt="Vice President" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Vice+President'">
+                    <img src="images/team/vp.jpg" alt="Julie Martin" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Julie+Martin'">
                     <div class="team-member-info">
-                        <h4>Board Vice President</h4>
+                        <h4>Julie Martin</h4>
                         <p class="role">Vice President</p>
                         <p>Supporting our mission and coordinating team activities.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="images/team/treasurer.jpg" alt="Treasurer" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Treasurer'">
+                    <img src="images/team/treasurer.jpg" alt="Kevin Rudy" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Kevin+Rudy'">
                     <div class="team-member-info">
-                        <h4>Board Treasurer</h4>
+                        <h4>Kevin Rudy</h4>
                         <p class="role">Treasurer</p>
                         <p>Managing our finances to ensure maximum support for our athletes.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="images/team/secretary.jpg" alt="Secretary" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Secretary'">
+                    <img src="images/team/secretary.jpg" alt="Clarke Moyer" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Clarke+Moyer'">
                     <div class="team-member-info">
-                        <h4>Board Secretary</h4>
+                        <h4>Clarke Moyer</h4>
                         <p class="role">Secretary</p>
                         <p>Keeping our organization organized and our communications clear.</p>
+                        <div class="social-links" style="margin-top: 10px;">
+                            <a href="https://www.linkedin.com/in/clarkemoyer" target="_blank" title="LinkedIn" aria-label="Clarke Moyer on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/team/fundraising.jpg" alt="Amanda Clouser" class="team-member-photo" onerror="this.src='https://via.placeholder.com/250x250?text=Amanda+Clouser'">
+                    <div class="team-member-info">
+                        <h4>Amanda Clouser</h4>
+                        <p class="role">Fundraising</p>
+                        <p>Coordinating fundraising initiatives to support our gymnasts.</p>
                     </div>
                 </div>
             </div>
@@ -803,6 +1041,40 @@
                     <a href="#contact" class="btn">Get Involved</a>
                 </div>
             </div>
+            
+            <!-- Specific Campaign Callout -->
+            <div style="background: linear-gradient(135deg, #2ea3f2, #1d87c9); color: #fff; padding: 40px; border-radius: 15px; text-align: center; margin-top: 50px; box-shadow: 0 5px 20px rgba(46, 163, 242, 0.3);">
+                <h3 style="color: #fff; font-size: 2rem; margin-bottom: 15px;">Send Our Girls to USAG States!</h3>
+                <p style="color: #fff; font-size: 1.1rem; margin-bottom: 20px;">Help our talented gymnasts compete at the state level. Your support makes their dreams possible.</p>
+                <a href="#contact" class="btn" style="background: #fff; color: #2ea3f2;">Support This Campaign</a>
+            </div>
+
+            <!-- Upcoming Events -->
+            <div style="margin-top: 60px;">
+                <h3 style="text-align: center; margin-bottom: 30px; color: #1d3557;">Upcoming Events</h3>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <h4>Spring Invitational</h4>
+                        <span class="event-date">March 2024</span>
+                        <p>Join us for the annual Spring Invitational where our gymnasts showcase their skills.</p>
+                    </div>
+                    <div class="event-card">
+                        <h4>Summer Championship</h4>
+                        <span class="event-date">July 2024</span>
+                        <p>Witness the best of gymnastics at the Summer Championship competition.</p>
+                    </div>
+                    <div class="event-card">
+                        <h4>Autumn Classic</h4>
+                        <span class="event-date">October 2024</span>
+                        <p>Cheer on our team at the Autumn Classic competition event.</p>
+                    </div>
+                    <div class="event-card">
+                        <h4>Winter Gala</h4>
+                        <span class="event-date">December 2024</span>
+                        <p>Celebrate the end of the year with our Winter Gala fundraising event.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -833,6 +1105,34 @@
                         <i class="fas fa-heart"></i>
                         <h4>Community Impact</h4>
                     </div>
+                </div>
+                
+                <h3 style="margin-top: 50px; margin-bottom: 30px; text-align: center;">Membership Pricing</h3>
+                
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Bronze Tier</h3>
+                        <p>For Bronze level gymnasts</p>
+                        <div class="price">$1,015 <span class="price-period">/ year</span></div>
+                        <p style="margin-bottom: 10px;">or</p>
+                        <div class="price" style="font-size: 1.8rem;">$253.91 <span class="price-period">/ month</span></div>
+                        <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">4 monthly payments for the season</p>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Silver / Gold / Platinum / Diamond</h3>
+                        <p>For advanced level gymnasts</p>
+                        <div class="price">$1,210 <span class="price-period">/ year</span></div>
+                        <p style="margin-bottom: 10px;">or</p>
+                        <div class="price" style="font-size: 1.8rem;">$302.72 <span class="price-period">/ month</span></div>
+                        <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">4 monthly payments for the season</p>
+                    </div>
+                </div>
+                
+                <div class="pricing-note">
+                    <p><strong>💰 Save with Advance Payment!</strong></p>
+                    <p style="margin-top: 10px;">It helps us a great deal if you pay your dues in advance! We have more funds up front for meet registration and other fees that we pay in bulk, and we know your gymnast is covered for the season.</p>
+                    <p style="margin-top: 10px;"><strong>Note:</strong> Bronze tier pricing is less as it includes one fewer meet per year to attend.</p>
                 </div>
                 
                 <p style="margin: 2rem 0;"><strong>Annual Membership:</strong> Support our mission and become part of our PAG Booster family.</p>
@@ -877,14 +1177,22 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email Us</h4>
-                            <p><a href="mailto:info@pagbooster.org">info@pagbooster.org</a></p>
+                            <p><a href="mailto:contact@pagbooster.org">contact@pagbooster.org</a></p>
+                            <p><a href="mailto:PAGParents@gmail.com">PAGParents@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:814-470-5911">814-470-5911</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Location</h4>
-                            <p>State College, PA<br>Supporting Phoenix Academy of Performing Arts</p>
+                            <h4>Address</h4>
+                            <p>118 Hawbaker Industrial Dr<br>State College, PA 16803</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -892,6 +1200,52 @@
                         <div>
                             <h4>Gymnastics Academy</h4>
                             <p><a href="https://pagymnastics.com" target="_blank">pagymnastics.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQs Section -->
+            <div style="margin-top: 80px;">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about PAG Booster</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">How can I become a member of PAG Booster?</button>
+                        <div class="faq-answer">
+                            <p>You are a member when your gymnast is accepted to the team. Reach out to the booster club to get involved and stay connected with our community.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What are the benefits of sponsoring PAG Booster?</button>
+                        <div class="faq-answer">
+                            <p>Sponsoring PAG Booster offers numerous benefits, including brand exposure at our events, recognition on our website, and the satisfaction of supporting young athletes in their gymnastics journey.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How can I make a donation?</button>
+                        <div class="faq-answer">
+                            <p>You can make a donation through our website by contacting us directly using the form above or calling 814-470-5911. All contributions are greatly appreciated and go towards supporting our gymnasts and their activities.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What events does PAG Booster organize?</button>
+                        <div class="faq-answer">
+                            <p>We organize a variety of events throughout the year, including fundraisers, competitions, and community outreach programs. Check our Fundraising & Events section above for upcoming activities.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How are the funds managed?</button>
+                        <div class="faq-answer">
+                            <p>All funds are managed transparently and in accordance with the highest standards of amateur gymnastics. We ensure that funds are used to benefit the gymnasts and support the mission of PAG Booster.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Who can I contact for more information?</button>
+                        <div class="faq-answer">
+                            <p>For more information, please contact our support team at contact@pagbooster.org or call us at 814-470-5911. You can also reach us at PAGParents@gmail.com. We are here to help!</p>
                         </div>
                     </div>
                 </div>
@@ -952,7 +1306,7 @@
                             <a href="https://twitter.com/pagbooster" target="_blank" aria-label="Twitter">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="mailto:info@pagbooster.org" aria-label="Email">
+                            <a href="mailto:contact@pagbooster.org" aria-label="Email">
                                 <i class="fas fa-envelope"></i>
                             </a>
                         </div>
@@ -1021,6 +1375,27 @@
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
                     link.classList.add('active');
+                }
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const isActive = this.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-question').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelectorAll('.faq-answer').forEach(answer => {
+                    answer.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    this.classList.add('active');
+                    this.nextElementSibling.classList.add('active');
                 }
             });
         });
