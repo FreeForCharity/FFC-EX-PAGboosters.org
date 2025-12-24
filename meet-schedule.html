@@ -345,7 +345,7 @@
 		<nav class="navbar">
 			<div class="container">
 				<a href="index.html#home" class="navbar-brand">PAG Booster</a>
-				<div class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+				<div class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation menu">
 					<i class="fas fa-bars"></i>
 				</div>
 				<ul class="nav-menu" id="navMenu">
@@ -710,13 +710,13 @@
 						<div class="footer-column">
 							<h3>Connect With Us</h3>
 							<div class="social-links">
-								<a href="#" class="placeholder" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
+								<a href="#" class="placeholder" role="button" tabindex="-1" aria-disabled="true" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
 									<i class="fab fa-facebook-f"></i>
 								</a>
-								<a href="#" class="placeholder" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
+								<a href="#" class="placeholder" role="button" tabindex="-1" aria-disabled="true" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
 									<i class="fab fa-instagram"></i>
 								</a>
-								<a href="#" class="placeholder" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
+								<a href="#" class="placeholder" role="button" tabindex="-1" aria-disabled="true" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
 									<i class="fab fa-twitter"></i>
 								</a>
 								<a href="mailto:contact@pagbooster.org" aria-label="Email">
@@ -742,22 +742,25 @@
 	
 	<!-- Mobile Menu Toggle Script -->
 	<script>
-		// Mobile menu toggle with event listener
-		const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-		if (mobileMenuToggle) {
-			mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-		}
+		// Wait for DOM to be fully loaded
+		document.addEventListener('DOMContentLoaded', function() {
+			// Mobile menu toggle with event listener
+			const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+			if (mobileMenuToggle) {
+				mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+			}
 
-		function toggleMobileMenu() {
-			const navMenu = document.getElementById('navMenu');
-			navMenu.classList.toggle('active');
-		}
-
-		// Close mobile menu when clicking on a link
-		document.querySelectorAll('.nav-menu a').forEach(link => {
-			link.addEventListener('click', function() {
+			function toggleMobileMenu() {
 				const navMenu = document.getElementById('navMenu');
-				navMenu.classList.remove('active');
+				navMenu.classList.toggle('active');
+			}
+
+			// Close mobile menu when clicking on a link
+			document.querySelectorAll('.nav-menu a').forEach(link => {
+				link.addEventListener('click', function() {
+					const navMenu = document.getElementById('navMenu');
+					navMenu.classList.remove('active');
+				});
 			});
 		});
 	</script>
