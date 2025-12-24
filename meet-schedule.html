@@ -185,16 +185,20 @@
 		background-color: #2ea3f2;
 	}
 
+	/* Add padding to body to prevent content overlap with fixed navbar */
+	body {
+		padding-top: 70px;
+	}
+
+	/* Mobile menu toggle button styling */
 	.mobile-menu-toggle {
 		display: none;
 		font-size: 1.5rem;
 		cursor: pointer;
 		color: #1d3557;
-	}
-
-	/* Add padding to body to prevent content overlap with fixed navbar */
-	body {
-		padding-top: 70px;
+		background: none;
+		border: none;
+		padding: 0;
 	}
 
 	/* ========== RESPONSIVE ========== */
@@ -220,15 +224,6 @@
 		.mobile-menu-toggle {
 			display: block;
 		}
-	}
-
-	/* Additional styling for button element */
-	.mobile-menu-toggle {
-		background: none;
-		border: none;
-		padding: 0;
-		cursor: pointer;
-		color: inherit;
 	}
 </style>
 </head>
