@@ -16,6 +16,82 @@
 <link rel="stylesheet" id="divi-style-css" href="css/style.min.css" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="description" content="View the typical USAG Xcel season meet schedule for our gymnastics team, including prep meets, regular season meets, states, regionals, and nationals." />
+<style>
+	.meet-card {
+		background: #ffffff;
+		border-left: 5px solid #2ea3f2;
+		padding: 25px;
+		margin-bottom: 30px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	.meet-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+	}
+	.meet-card.prep { border-left-color: #f39c12; background: linear-gradient(135deg, #fff 0%, #fff9f0 100%); }
+	.meet-card.regular { border-left-color: #3498db; background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%); }
+	.meet-card.flyaway { border-left-color: #9b59b6; background: linear-gradient(135deg, #fff 0%, #f9f0ff 100%); }
+	.meet-card.states { border-left-color: #e74c3c; background: linear-gradient(135deg, #fff 0%, #fff0f0 100%); }
+	.meet-card.regionals { border-left-color: #27ae60; background: linear-gradient(135deg, #fff 0%, #f0fff4 100%); }
+	.meet-card.nationals { border-left-color: #95a5a6; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); }
+	.meet-icon {
+		font-size: 48px;
+		margin-bottom: 15px;
+		display: inline-block;
+	}
+	.highlight-box {
+		background: #fff3cd;
+		border: 2px solid #ffc107;
+		border-radius: 8px;
+		padding: 15px;
+		margin: 15px 0;
+	}
+	.highlight-box.success {
+		background: #d4edda;
+		border-color: #28a745;
+	}
+	.highlight-box.info {
+		background: #d1ecf1;
+		border-color: #17a2b8;
+	}
+	.score-table {
+		background: #f8f9fa;
+		border-radius: 8px;
+		padding: 15px;
+		margin: 15px 0;
+	}
+	.score-row {
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 15px;
+		margin: 5px 0;
+		background: white;
+		border-radius: 5px;
+		border-left: 4px solid #2ea3f2;
+	}
+	.score-row:nth-child(1) { border-left-color: #cd7f32; }
+	.score-row:nth-child(2) { border-left-color: #c0c0c0; }
+	.score-row:nth-child(3) { border-left-color: #ffd700; }
+	.score-row:nth-child(4) { border-left-color: #e5e4e2; }
+	.score-row:nth-child(5) { border-left-color: #b9f2ff; }
+	.score-row:nth-child(6) { border-left-color: #0f52ba; }
+	.level-badge {
+		font-weight: bold;
+		padding: 5px 12px;
+		border-radius: 20px;
+		background: #e9ecef;
+		display: inline-block;
+		min-width: 100px;
+		text-align: center;
+	}
+	.timeline-connector {
+		text-align: center;
+		font-size: 36px;
+		color: #2ea3f2;
+		margin: 20px 0;
+	}
+</style>
 </head>
 
 <body class="page-template-default page et_pb_pagebuilder_layout et_pb_show_title et_pb_button_helper_class et_fullwidth_nav et_fullwidth_secondary_nav et_fixed_nav et_show_nav et_cover_background et_pb_gutter windows et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns4 et_header_style_left et_pb_pagebuilder_layout et_right_sidebar et_divi_theme">
@@ -86,19 +162,27 @@
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_1 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h2>Judges Critique / Prep Meet</h2>
-													<h4>First Meet of the Season</h4>
-													<p>This is the season opener where gymnasts perform their routines in front of judges who provide constructive feedback. It's a low-pressure environment designed to help athletes refine their skills before official competition begins.</p>
-													<ul>
-														<li><strong>Purpose:</strong> Receive feedback from judges to improve routines</li>
-														<li><strong>Timing:</strong> Early in the season (typically late fall/early winter)</li>
-														<li><strong>Format:</strong> Informal scoring with detailed critiques</li>
-													</ul>
+													<div class="meet-card prep">
+														<div class="meet-icon">🎯</div>
+														<h2 style="color: #f39c12; margin-top: 0;">Judges Critique / Prep Meet</h2>
+														<h4>First Meet of the Season</h4>
+														<p>This is the season opener where gymnasts perform their routines in front of judges who provide constructive feedback. It's a low-pressure environment designed to help athletes refine their skills before official competition begins.</p>
+														<div class="highlight-box info">
+															<strong>💡 Key Purpose:</strong> Receive detailed feedback from judges to improve routines before competitive scoring begins
+														</div>
+														<ul style="list-style-type: none; padding-left: 0;">
+															<li>⏱️ <strong>Timing:</strong> Early in the season (typically late fall/early winter)</li>
+															<li>📋 <strong>Format:</strong> Informal scoring with detailed critiques</li>
+															<li>🎪 <strong>Atmosphere:</strong> Low-pressure, learning-focused environment</li>
+														</ul>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<div class="timeline-connector">⬇️</div>
 
 								<!-- Regular Season Meets -->
 								<div class="et_pb_section et_pb_section_2 et_section_regular">
@@ -106,20 +190,25 @@
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h2>Regular Season Meets</h2>
-													<h4>4 Competitive Meets</h4>
-													<p>Throughout the season, gymnasts compete in approximately four regular meets. These competitions allow athletes to showcase their skills, earn scores, and gain valuable competitive experience.</p>
-													<ul>
-														<li><strong>Location:</strong> Typically within a 2-3 hour drive of State College, PA</li>
-														<li><strong>Format:</strong> Official USAG Xcel competition with scoring</li>
-														<li><strong>Purpose:</strong> Build skills, gain experience, and qualify for championship meets</li>
-														<li><strong>Timing:</strong> Spread throughout the winter season (December - February)</li>
-													</ul>
+													<div class="meet-card regular">
+														<div class="meet-icon">🏆</div>
+														<h2 style="color: #3498db; margin-top: 0;">Regular Season Meets</h2>
+														<h4>4 Competitive Meets</h4>
+														<p>Throughout the season, gymnasts compete in approximately four regular meets. These competitions allow athletes to showcase their skills, earn scores, and gain valuable competitive experience.</p>
+														<ul style="list-style-type: none; padding-left: 0;">
+															<li>📍 <strong>Location:</strong> Typically within a 2-3 hour drive of State College, PA</li>
+															<li>🎯 <strong>Format:</strong> Official USAG Xcel competition with scoring</li>
+															<li>💪 <strong>Purpose:</strong> Build skills, gain experience, and qualify for championship meets</li>
+															<li>📅 <strong>Timing:</strong> Spread throughout the winter season (December - February)</li>
+														</ul>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<div class="timeline-connector">⬇️</div>
 
 								<!-- Fly Away Meet -->
 								<div class="et_pb_section et_pb_section_3 et_section_regular">
@@ -127,20 +216,27 @@
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h2>Fly Away Meet</h2>
-													<h4>Optional Destination Competition</h4>
-													<p>The Fly Away Meet is an optional competition held at a more distant location, offering gymnasts the opportunity to compete in a different environment and make it a fun team trip.</p>
-													<ul>
-														<li><strong>Optional:</strong> Participation is not required</li>
-														<li><strong>Location Examples:</strong> Phoenix, Arizona • Tampa, Florida • Other destination cities</li>
-														<li><strong>Benefits:</strong> Team bonding, new competition experience, and travel opportunity</li>
-														<li><strong>Timing:</strong> Typically mid-season</li>
-													</ul>
+													<div class="meet-card flyaway">
+														<div class="meet-icon">✈️</div>
+														<h2 style="color: #9b59b6; margin-top: 0;">Fly Away Meet</h2>
+														<h4>Optional Destination Competition</h4>
+														<div class="highlight-box">
+															<strong>⚠️ Optional:</strong> Participation is NOT required - this is an exciting opportunity for those who want to travel!
+														</div>
+														<p>The Fly Away Meet is an optional competition held at a more distant location, offering gymnasts the opportunity to compete in a different environment and make it a fun team trip.</p>
+														<ul style="list-style-type: none; padding-left: 0;">
+															<li>🌴 <strong>Location Examples:</strong> Phoenix, Arizona • Tampa, Florida • Other destination cities</li>
+															<li>🤝 <strong>Benefits:</strong> Team bonding, new competition experience, and travel opportunity</li>
+															<li>📅 <strong>Timing:</strong> Typically mid-season</li>
+														</ul>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<div class="timeline-connector">⬇️</div>
 
 								<!-- State Championship -->
 								<div class="et_pb_section et_pb_section_4 et_section_regular">
@@ -148,31 +244,66 @@
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_4 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h2>State Championship</h2>
-													<h4>Pennsylvania State Competition</h4>
-													<p>The State Championship brings together Pennsylvania gymnasts from all Xcel levels. All levels compete at States, making it an inclusive championship event.</p>
-													<ul>
-														<li><strong>Location:</strong> Always held in Pennsylvania</li>
-														<li><strong>All Levels Compete:</strong> Bronze, Silver, Gold, Platinum, Diamond, and Sapphire all participate</li>
-														<li><strong>Qualification Scores</strong> (current season - verify with PA USAG for updates):
-															<ul>
-																<li><strong>Bronze:</strong> 32.00 All-Around</li>
-																<li><strong>Silver:</strong> 35.00 All-Around</li>
-																<li><strong>Gold:</strong> 35.00 All-Around</li>
-																<li><strong>Platinum:</strong> 35.00 All-Around</li>
-																<li><strong>Diamond:</strong> 34.00 All-Around</li>
-																<li><strong>Sapphire:</strong> 32.00 All-Around</li>
-																<li><strong>Note:</strong> All Senior gymnasts automatically qualify regardless of score</li>
-															</ul>
-														</li>
-														<li><strong>Important:</strong> Qualifying scores may change each season - always verify current requirements with <a href="https://pagymnastics.com/information/qualifying-scores/" target="_blank" rel="noopener">PA Women's Gymnastics</a></li>
-														<li><strong>Timing:</strong> Late winter/early spring (typically March/April)</li>
-													</ul>
+													<div class="meet-card states">
+														<div class="meet-icon">🥇</div>
+														<h2 style="color: #e74c3c; margin-top: 0;">State Championship</h2>
+														<h4>Pennsylvania State Competition</h4>
+														<p>The State Championship brings together Pennsylvania gymnasts from all Xcel levels. All levels compete at States, making it an inclusive championship event.</p>
+														
+														<div class="highlight-box success">
+															<strong>✅ All Levels Compete:</strong> Bronze, Silver, Gold, Platinum, Diamond, and Sapphire all participate in States!
+														</div>
+
+														<ul style="list-style-type: none; padding-left: 0;">
+															<li>📍 <strong>Location:</strong> Always held in Pennsylvania</li>
+														</ul>
+
+														<h4 style="margin-top: 20px;">Qualification Scores</h4>
+														<p style="font-size: 14px; color: #666; margin-bottom: 10px;">(Current season - verify with PA USAG for updates)</p>
+														
+														<div class="score-table">
+															<div class="score-row">
+																<span class="level-badge" style="background: #cd7f32; color: white;">Bronze</span>
+																<strong>32.00 All-Around*</strong>
+															</div>
+															<div class="score-row">
+																<span class="level-badge" style="background: #c0c0c0;">Silver</span>
+																<strong>35.00 All-Around</strong>
+															</div>
+															<div class="score-row">
+																<span class="level-badge" style="background: #ffd700;">Gold</span>
+																<strong>35.00 All-Around</strong>
+															</div>
+															<div class="score-row">
+																<span class="level-badge" style="background: #e5e4e2;">Platinum</span>
+																<strong>35.00 All-Around</strong>
+															</div>
+															<div class="score-row">
+																<span class="level-badge" style="background: #b9f2ff;">Diamond</span>
+																<strong>34.00 All-Around</strong>
+															</div>
+															<div class="score-row">
+																<span class="level-badge" style="background: #0f52ba; color: white;">Sapphire</span>
+																<strong>32.00 All-Around</strong>
+															</div>
+														</div>
+
+														<div class="highlight-box info">
+															<strong>*Important Note about Bronze:</strong> Bronze gymnasts must achieve a 32.00 AA score to qualify for States. However, <strong>all Senior gymnasts (in any level including Bronze) automatically qualify regardless of score.</strong>
+														</div>
+
+														<ul style="list-style-type: none; padding-left: 0; margin-top: 20px;">
+															<li>⚠️ <strong>Important:</strong> Qualifying scores may change each season - always verify current requirements with <a href="https://pagymnastics.com/information/qualifying-scores/" target="_blank" rel="noopener" style="color: #e74c3c; text-decoration: underline;">PA Women's Gymnastics</a></li>
+															<li>📅 <strong>Timing:</strong> Late winter/early spring (typically March/April)</li>
+														</ul>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<div class="timeline-connector">⬇️</div>
 
 								<!-- Regional Championship -->
 								<div class="et_pb_section et_pb_section_5 et_section_regular">
@@ -180,33 +311,57 @@
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_5 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_5 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h2>Regional Championship</h2>
-													<h4>Multi-State Competition</h4>
-													<p>Gymnasts in Gold, Platinum, Diamond, and Sapphire levels who qualify at the State Championship advance to compete against athletes from other states in their region.</p>
-													<ul>
-														<li><strong>Region:</strong> Pennsylvania is in Region 7
-															<ul>
-																<li>Region 7 includes: Pennsylvania, Delaware, Maryland, New Jersey, Virginia, West Virginia, and District of Columbia</li>
-															</ul>
-														</li>
-														<li><strong>Location:</strong> Rotates among Region 7 states</li>
-														<li><strong>Eligible Levels:</strong>
-															<ul>
-																<li><strong>Gold:</strong> Must achieve qualifying All-Around score at State Championship</li>
-																<li><strong>Platinum:</strong> Must achieve qualifying All-Around score at State Championship</li>
-																<li><strong>Diamond:</strong> Must achieve qualifying All-Around score at State Championship</li>
-																<li><strong>Sapphire:</strong> Must achieve qualifying All-Around score at State Championship</li>
-															</ul>
-														</li>
-														<li><strong>Bronze and Silver:</strong> Do NOT advance to Regionals - their season culminates at the State Championship</li>
-														<li><strong>Qualification:</strong> Specific qualifying scores from States are set by each region and may vary by year</li>
-														<li><strong>Timing:</strong> Spring (typically April/May)</li>
-													</ul>
+													<div class="meet-card regionals">
+														<div class="meet-icon">🌟</div>
+														<h2 style="color: #27ae60; margin-top: 0;">Regional Championship</h2>
+														<h4>Multi-State Competition</h4>
+														<p>Gymnasts in Gold, Platinum, Diamond, and Sapphire levels who qualify at the State Championship advance to compete against athletes from other states in their region.</p>
+														
+														<div class="highlight-box info">
+															<strong>📍 Our Region:</strong> Pennsylvania is in <strong>Region 7</strong><br>
+															<em style="font-size: 14px;">States included: Pennsylvania, Delaware, Maryland, New Jersey, Virginia, West Virginia, and District of Columbia</em>
+														</div>
+
+														<ul style="list-style-type: none; padding-left: 0;">
+															<li>🗺️ <strong>Location:</strong> Rotates among Region 7 states</li>
+														</ul>
+
+														<h4 style="margin-top: 20px;">Eligible Levels</h4>
+														<div class="score-table">
+															<div class="score-row" style="border-left-color: #ffd700;">
+																<span class="level-badge" style="background: #ffd700;">Gold</span>
+																<span>✅ Must achieve qualifying AA score at States</span>
+															</div>
+															<div class="score-row" style="border-left-color: #e5e4e2;">
+																<span class="level-badge" style="background: #e5e4e2;">Platinum</span>
+																<span>✅ Must achieve qualifying AA score at States</span>
+															</div>
+															<div class="score-row" style="border-left-color: #b9f2ff;">
+																<span class="level-badge" style="background: #b9f2ff;">Diamond</span>
+																<span>✅ Must achieve qualifying AA score at States</span>
+															</div>
+															<div class="score-row" style="border-left-color: #0f52ba;">
+																<span class="level-badge" style="background: #0f52ba; color: white;">Sapphire</span>
+																<span>✅ Must achieve qualifying AA score at States</span>
+															</div>
+														</div>
+
+														<div class="highlight-box" style="background: #fff3cd; border-color: #e74c3c;">
+															<strong>❌ Bronze and Silver:</strong> Do NOT advance to Regionals - their season culminates at the State Championship
+														</div>
+
+														<ul style="list-style-type: none; padding-left: 0; margin-top: 20px;">
+															<li>📊 <strong>Qualification:</strong> Specific qualifying scores from States are set by each region and may vary by year</li>
+															<li>📅 <strong>Timing:</strong> Spring (typically April/May)</li>
+														</ul>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
+
+								<div class="timeline-connector">⬇️</div>
 
 								<!-- About National Championships -->
 								<div class="et_pb_section et_pb_section_6 et_section_regular">
@@ -214,21 +369,55 @@
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_6 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h2>About National Championships</h2>
-													<h4>Understanding Xcel Competition Structure</h4>
-													<p><strong>Important Note:</strong> There is currently no USAG Xcel National Championship. For Xcel gymnasts, the Regional Championship is the culminating competition of the season.</p>
-													<ul>
-														<li><strong>Xcel Program:</strong> The competitive season ends at Regionals for all Xcel levels (Gold, Platinum, Diamond, and Sapphire)</li>
-														<li><strong>National Championships:</strong> Only available for USAG Development Program (DP) Levels 9 and 10, which is a different competitive track than Xcel</li>
-														<li><strong>Highest Level for Xcel:</strong> Regional Championship represents the highest level of competition for Xcel gymnasts</li>
-														<li><strong>Season Culmination:</strong>
-															<ul>
-																<li><strong>Bronze & Silver:</strong> State Championship</li>
-																<li><strong>Gold, Platinum, Diamond & Sapphire:</strong> Regional Championship</li>
+													<div class="meet-card nationals">
+														<div class="meet-icon">ℹ️</div>
+														<h2 style="color: #95a5a6; margin-top: 0;">About National Championships</h2>
+														<h4>Understanding Xcel Competition Structure</h4>
+														
+														<div class="highlight-box" style="background: #f8d7da; border-color: #721c24;">
+															<strong>⚠️ Important Note:</strong> There is currently <strong>NO USAG Xcel National Championship</strong>. For Xcel gymnasts, the Regional Championship is the culminating competition of the season.
+														</div>
+
+														<h4 style="margin-top: 20px;">Season Culmination by Level</h4>
+														<div class="score-table">
+															<div class="score-row" style="border-left-color: #cd7f32;">
+																<span class="level-badge" style="background: #cd7f32; color: white;">Bronze</span>
+																<span><strong>Ends at:</strong> State Championship</span>
+															</div>
+															<div class="score-row" style="border-left-color: #c0c0c0;">
+																<span class="level-badge" style="background: #c0c0c0;">Silver</span>
+																<span><strong>Ends at:</strong> State Championship</span>
+															</div>
+															<div class="score-row" style="border-left-color: #ffd700;">
+																<span class="level-badge" style="background: #ffd700;">Gold</span>
+																<span><strong>Ends at:</strong> Regional Championship</span>
+															</div>
+															<div class="score-row" style="border-left-color: #e5e4e2;">
+																<span class="level-badge" style="background: #e5e4e2;">Platinum</span>
+																<span><strong>Ends at:</strong> Regional Championship</span>
+															</div>
+															<div class="score-row" style="border-left-color: #b9f2ff;">
+																<span class="level-badge" style="background: #b9f2ff;">Diamond</span>
+																<span><strong>Ends at:</strong> Regional Championship</span>
+															</div>
+															<div class="score-row" style="border-left-color: #0f52ba;">
+																<span class="level-badge" style="background: #0f52ba; color: white;">Sapphire</span>
+																<span><strong>Ends at:</strong> Regional Championship</span>
+															</div>
+														</div>
+
+														<div class="highlight-box info">
+															<strong>📚 About Xcel vs. Development Program:</strong><br>
+															<ul style="margin: 10px 0 0 20px;">
+																<li><strong>Xcel Program:</strong> Competitive season ends at Regionals (no Nationals)</li>
+																<li><strong>Development Program (DP):</strong> Levels 9 and 10 compete at National Championships</li>
 															</ul>
-														</li>
-													</ul>
-													<p style="margin-top: 20px;"><em>The Xcel program is designed to provide gymnasts with a competitive experience while offering more flexibility than the Development Program. Regional Championships showcase the highest level of Xcel competition in each region.</em></p>
+														</div>
+
+														<p style="margin-top: 20px; font-style: italic; color: #666;">
+															The Xcel program is designed to provide gymnasts with a competitive experience while offering more flexibility than the Development Program. Regional Championships showcase the highest level of Xcel competition in each region.
+														</p>
+													</div>
 												</div>
 											</div>
 										</div>
