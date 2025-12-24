@@ -444,7 +444,7 @@
             margin: 10px 0 0 0;
         }
 
-        /* ========== FUNDRAISER BANNER STYLES (Shared) ========== */
+        /* ========== FUNDRAISER BANNER STYLES ========== */
         .fundraiser-banner {
             background: linear-gradient(135deg, #2ea3f2, #1d87c9);
             color: #fff;
@@ -501,6 +501,15 @@
             
             .clothing-info h3 {
                 font-size: 2rem;
+            }
+            
+            .fundraising-submenu a {
+                padding: 14px 24px;
+                min-height: 44px;
+                min-width: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
             }
         }
 
@@ -1151,19 +1160,13 @@
             
             <!-- Fundraising Submenu -->
             <div class="fundraising-submenu">
-                <a href="#clothing-fundraiser" class="active" aria-current="page">Team Apparel</a>
+                <a href="#clothing-fundraiser">Team Apparel</a>
                 <a href="#direct-donations">Direct Donations</a>
                 <a href="#fundraising-events">Events</a>
                 <a href="#usag-states">USAG States Campaign</a>
             </div>
             
             <div class="fundraising-grid">
-                <div class="fundraising-card">
-                    <i class="fas fa-tshirt"></i>
-                    <h3>Team Apparel Store</h3>
-                    <p>Show your support with official PAG team apparel! Browse our online store for t-shirts, hoodies, and more. Every purchase supports our gymnasts.</p>
-                    <a href="https://teamlocker.squadlocker.com/#/lockers/phoenix-academy-gymnastics-team-2752060" target="_blank" rel="noopener noreferrer" class="btn">Shop Team Apparel</a>
-                </div>
                 <div class="fundraising-card" id="direct-donations">
                     <i class="fas fa-hand-holding-heart"></i>
                     <h3>Direct Donations</h3>
@@ -1183,7 +1186,7 @@
             <div class="clothing-fundraiser-banner" id="clothing-fundraiser">
                 <div class="clothing-content">
                     <div class="clothing-info">
-                        <h3>🎽 Team Apparel Store</h3>
+                        <h3><i class="fas fa-tshirt" aria-hidden="true"></i> Team Apparel Store</h3>
                         <p><strong>Show your PAG pride!</strong> Visit our official TeamLocker store to browse and purchase high-quality team apparel including t-shirts, hoodies, jackets, and accessories.</p>
                         <p>Every purchase directly supports our gymnasts and helps fund training, competition fees, and team equipment.</p>
                         <p><strong>How it works:</strong></p>
