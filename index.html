@@ -444,7 +444,7 @@
             margin: 10px 0 0 0;
         }
 
-        /* ========== FUNDRAISER BANNER STYLES ========== */
+        /* ========== FUNDRAISER BANNER STYLES (Shared) ========== */
         .fundraiser-banner {
             background: linear-gradient(135deg, #2ea3f2, #1d87c9);
             color: #fff;
@@ -1151,14 +1151,14 @@
             
             <!-- Fundraising Submenu -->
             <div class="fundraising-submenu">
-                <a href="#clothing-fundraiser" class="active">Team Apparel</a>
+                <a href="#clothing-fundraiser" class="active" aria-current="page">Team Apparel</a>
                 <a href="#direct-donations">Direct Donations</a>
                 <a href="#fundraising-events">Events</a>
                 <a href="#usag-states">USAG States Campaign</a>
             </div>
             
             <div class="fundraising-grid">
-                <div class="fundraising-card" id="clothing-fundraiser-card">
+                <div class="fundraising-card">
                     <i class="fas fa-tshirt"></i>
                     <h3>Team Apparel Store</h3>
                     <p>Show your support with official PAG team apparel! Browse our online store for t-shirts, hoodies, and more. Every purchase supports our gymnasts.</p>
@@ -1168,7 +1168,7 @@
                     <i class="fas fa-hand-holding-heart"></i>
                     <h3>Direct Donations</h3>
                     <p>Make a direct contribution to support our gymnasts' training, competition fees, and equipment needs.</p>
-                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn">Donate Now</a>
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">Donate Now</a>
                 </div>
                 <div class="fundraising-card" id="fundraising-events">
                     <i class="fas fa-calendar-alt"></i>
@@ -1196,7 +1196,7 @@
                         <a href="https://teamlocker.squadlocker.com/#/lockers/phoenix-academy-gymnastics-team-2752060" target="_blank" rel="noopener noreferrer" class="btn btn-white">Shop Now at TeamLocker</a>
                     </div>
                     <div class="clothing-qr">
-                        <img src="images/teamlocker-qr.png" alt="Scan to visit our TeamLocker store">
+                        <img src="images/teamlocker-qr.png" alt="QR code linking to Phoenix Academy Gymnastics TeamLocker store">
                         <p>Scan with your phone to shop!</p>
                     </div>
                 </div>
@@ -1227,7 +1227,7 @@
             <div id="usag-states" class="fundraiser-banner">
                 <h3>Send Our Girls to USAG States!</h3>
                 <p>Help our talented gymnasts compete at the state level. Your support makes their dreams possible.</p>
-                <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn">Support This Campaign</a>
+                <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">Support This Campaign</a>
             </div>
 
             <!-- Typical Season Section -->
@@ -1519,10 +1519,14 @@
             
             submenuLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
-                    // Remove active class from all links
-                    submenuLinks.forEach(l => l.classList.remove('active'));
-                    // Add active class to clicked link
+                    // Remove active class and aria-current from all links
+                    submenuLinks.forEach(l => {
+                        l.classList.remove('active');
+                        l.removeAttribute('aria-current');
+                    });
+                    // Add active class and aria-current to clicked link
                     this.classList.add('active');
+                    this.setAttribute('aria-current', 'page');
                 });
             });
         });
