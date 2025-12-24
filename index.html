@@ -333,6 +333,31 @@
         }
 
         /* ========== FUNDRAISING SECTION ========== */
+        .fundraising-submenu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0 40px;
+            flex-wrap: wrap;
+        }
+
+        .fundraising-submenu a {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            color: #1d3557;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .fundraising-submenu a:hover,
+        .fundraising-submenu a.active {
+            background: #2ea3f2;
+            color: #fff;
+            border-color: #2ea3f2;
+        }
+
         .fundraising-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -366,6 +391,128 @@
         .fundraising-card p {
             color: #666;
             margin-bottom: 1.5rem;
+        }
+
+        /* ========== CLOTHING FUNDRAISER ========== */
+        .clothing-fundraiser-banner {
+            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+            color: #fff;
+            padding: 50px 40px;
+            border-radius: 15px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .clothing-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .clothing-info h3 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .clothing-info p {
+            color: #a8dadc;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .clothing-qr {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .clothing-qr img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .clothing-qr p {
+            color: #1d3557;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 10px 0 0 0;
+        }
+
+        /* ========== FUNDRAISER BANNER STYLES ========== */
+        .fundraiser-banner {
+            background: linear-gradient(135deg, #2ea3f2, #1d87c9);
+            color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 5px 20px rgba(46, 163, 242, 0.3);
+        }
+
+        .fundraiser-banner h3 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .fundraiser-banner p {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .fundraiser-banner .btn {
+            background: #fff;
+            color: #2ea3f2;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #1d3557;
+            font-size: 1.1rem;
+            padding: 16px 32px;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+            color: #1d3557;
+        }
+
+        .list-light {
+            color: #a8dadc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: disc;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .clothing-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .clothing-fundraiser-banner {
+                padding: 30px 20px;
+            }
+            
+            .clothing-info h3 {
+                font-size: 2rem;
+            }
+            
+            .fundraising-submenu a {
+                padding: 14px 24px;
+                min-height: 44px;
+                min-width: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
 
         /* ========== MEMBERSHIP SECTION ========== */
@@ -1013,20 +1160,52 @@
                 <h2>Fundraising & Events</h2>
                 <p>Support our team through various fundraising opportunities and events</p>
             </div>
+            
+            <!-- Fundraising Submenu -->
+            <div class="fundraising-submenu">
+                <a href="#clothing-fundraiser">Team Apparel</a>
+                <a href="#direct-donations">Direct Donations</a>
+                <a href="#fundraising-events">Events</a>
+                <a href="#usag-states">USAG States Campaign</a>
+            </div>
+            
             <div class="fundraising-grid">
-                <div class="fundraising-card">
+                <div class="fundraising-card" id="direct-donations">
                     <i class="fas fa-hand-holding-heart"></i>
                     <h3>Direct Donations</h3>
                     <p>Make a direct contribution to support our gymnasts' training, competition fees, and equipment needs.</p>
-                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn">Donate Now</a>
+                    <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">Donate Now</a>
                 </div>
-                <div class="fundraising-card">
+                <div class="fundraising-card" id="fundraising-events">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>Fundraising Events</h3>
                     <p>Join us for our annual fundraising events, including competitions, galas, and community gatherings.</p>
                     <a href="#contact" class="btn">View Events</a>
                 </div>
 
+            </div>
+            
+            <!-- Team Apparel Clothing Fundraiser Banner -->
+            <div class="clothing-fundraiser-banner" id="clothing-fundraiser">
+                <div class="clothing-content">
+                    <div class="clothing-info">
+                        <h3><i class="fas fa-tshirt" aria-hidden="true"></i> Team Apparel Store</h3>
+                        <p><strong>Show your PAG pride!</strong> Visit our official TeamLocker store to browse and purchase high-quality team apparel including t-shirts, hoodies, jackets, and accessories.</p>
+                        <p>Every purchase directly supports our gymnasts and helps fund training, competition fees, and team equipment.</p>
+                        <p><strong>How it works:</strong></p>
+                        <ul class="list-light">
+                            <li>Browse our collection of official PAG team gear</li>
+                            <li>Choose your sizes and customize your order</li>
+                            <li>Orders are delivered directly to your home</li>
+                            <li>A portion of every sale supports our team</li>
+                        </ul>
+                        <a href="https://teamlocker.squadlocker.com/#/lockers/phoenix-academy-gymnastics-team-2752060" target="_blank" rel="noopener noreferrer" class="btn btn-white">Shop Now at TeamLocker</a>
+                    </div>
+                    <div class="clothing-qr">
+                        <img src="images/teamlocker-qr.png" alt="QR code linking to Phoenix Academy Gymnastics TeamLocker store">
+                        <p>Scan with your phone to shop!</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Zeffy Thermometer -->
@@ -1051,10 +1230,10 @@
             </div>
             
             <!-- Specific Campaign Callout -->
-            <div style="background: linear-gradient(135deg, #2ea3f2, #1d87c9); color: #fff; padding: 40px; border-radius: 15px; text-align: center; margin-top: 50px; box-shadow: 0 5px 20px rgba(46, 163, 242, 0.3);">
-                <h3 style="color: #fff; font-size: 2rem; margin-bottom: 15px;">Send Our Girls to USAG States!</h3>
-                <p style="color: #fff; font-size: 1.1rem; margin-bottom: 20px;">Help our talented gymnasts compete at the state level. Your support makes their dreams possible.</p>
-                <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn" style="background: #fff; color: #2ea3f2;">Support This Campaign</a>
+            <div id="usag-states" class="fundraiser-banner">
+                <h3>Send Our Girls to USAG States!</h3>
+                <p>Help our talented gymnasts compete at the state level. Your support makes their dreams possible.</p>
+                <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">Support This Campaign</a>
             </div>
 
             <!-- Typical Season Section -->
@@ -1293,6 +1472,17 @@
                     });
                     // Close mobile menu if open
                     document.getElementById('navMenu').classList.remove('active');
+                    
+                    // Update fundraising submenu active state if this is a submenu link
+                    if (this.closest('.fundraising-submenu')) {
+                        const submenuLinks = document.querySelectorAll('.fundraising-submenu a');
+                        submenuLinks.forEach(l => {
+                            l.classList.remove('active');
+                            l.removeAttribute('aria-current');
+                        });
+                        this.classList.add('active');
+                        this.setAttribute('aria-current', 'location');
+                    }
                 }
             });
         });
