@@ -286,9 +286,28 @@
         /* ========== TEAM SECTION ========== */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(6, 1fr);
             gap: 30px;
             margin-top: 40px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* First row: 3 items spanning 2 columns each */
+        .team-member:nth-child(1),
+        .team-member:nth-child(2),
+        .team-member:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        /* Second row: 2 items centered, spanning 2 columns each with 1 column gap on each side */
+        .team-member:nth-child(4) {
+            grid-column: 2 / 4;
+        }
+
+        .team-member:nth-child(5) {
+            grid-column: 4 / 6;
         }
 
         .team-member {
@@ -302,13 +321,6 @@
         .team-member:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .team-member-photo {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
         }
 
         .team-member-info {
@@ -939,6 +951,36 @@
         }
 
         /* ========== RESPONSIVE ========== */
+        /* Large screens (4K and above) */
+        @media (min-width: 2560px) {
+            .team-grid {
+                max-width: 2000px;
+                gap: 50px;
+            }
+        }
+
+        /* Tablet breakpoint */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .team-grid {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 900px;
+            }
+
+            /* Reset desktop grid positioning */
+            .team-member:nth-child(1),
+            .team-member:nth-child(2),
+            .team-member:nth-child(3),
+            .team-member:nth-child(4),
+            .team-member:nth-child(5) {
+                grid-column: span 2;
+            }
+
+            /* Center the last item in the third row */
+            .team-member:nth-child(5) {
+                grid-column: 2 / 4;
+            }
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
@@ -981,6 +1023,20 @@
             .about-content,
             .contact-container {
                 grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+
+            /* Reset all grid positioning for mobile */
+            .team-member:nth-child(1),
+            .team-member:nth-child(2),
+            .team-member:nth-child(3),
+            .team-member:nth-child(4),
+            .team-member:nth-child(5) {
+                grid-column: auto;
             }
 
             .footer-grid {
@@ -1103,50 +1159,37 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Leadership Team</h2>
-                <p>Meet the dedicated parents and volunteers who make it all possible</p>
+                <p>Dedicated leadership supporting our gymnasts, families, and coaching staff through collaborative excellence</p>
             </div>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Dana+Haines" alt="Dana Haines" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Dana Haines</h4>
                         <p class="role">President</p>
-                        <p>Leading our organization with dedication and vision for our gymnasts' success.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Julie+Martin" alt="Julie Martin" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Julie Martin</h4>
                         <p class="role">Vice President</p>
-                        <p>Supporting our mission and coordinating team activities.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Kevin+Rudy" alt="Kevin Rudy" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Kevin Rudy</h4>
                         <p class="role">Treasurer</p>
-                        <p>Managing our finances to ensure maximum support for our athletes.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Clarke+Moyer" alt="Clarke Moyer" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Clarke Moyer</h4>
                         <p class="role">Secretary</p>
-                        <p>Keeping our organization organized and our communications clear.</p>
-                        <div class="social-links" style="margin-top: 10px;">
-                            <a href="https://www.linkedin.com/in/clarkemoyer" target="_blank" title="LinkedIn" aria-label="Clarke Moyer on LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        </div>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/250x250?text=Amanda+Clouser" alt="Amanda Clouser" class="team-member-photo" loading="lazy">
                     <div class="team-member-info">
                         <h4>Amanda Clouser</h4>
                         <p class="role">Fundraising</p>
-                        <p>Coordinating fundraising initiatives to support our gymnasts.</p>
                     </div>
                 </div>
             </div>
