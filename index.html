@@ -444,6 +444,52 @@
             margin: 10px 0 0 0;
         }
 
+        /* ========== FUNDRAISER BANNER STYLES ========== */
+        .fundraiser-banner {
+            background: linear-gradient(135deg, #2ea3f2, #1d87c9);
+            color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 5px 20px rgba(46, 163, 242, 0.3);
+        }
+
+        .fundraiser-banner h3 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .fundraiser-banner p {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .fundraiser-banner .btn {
+            background: #fff;
+            color: #2ea3f2;
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #1d3557;
+            font-size: 1.1rem;
+            padding: 16px 32px;
+        }
+
+        .btn-white:hover {
+            background: #f0f0f0;
+            color: #1d3557;
+        }
+
+        .list-light {
+            color: #a8dadc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
         @media (max-width: 768px) {
             .clothing-content {
                 grid-template-columns: 1fr;
@@ -1141,13 +1187,13 @@
                         <p><strong>Show your PAG pride!</strong> Visit our official TeamLocker store to browse and purchase high-quality team apparel including t-shirts, hoodies, jackets, and accessories.</p>
                         <p>Every purchase directly supports our gymnasts and helps fund training, competition fees, and team equipment.</p>
                         <p><strong>How it works:</strong></p>
-                        <ul style="color: #a8dadc; margin-left: 20px; margin-bottom: 20px;">
+                        <ul class="list-light">
                             <li>Browse our collection of official PAG team gear</li>
                             <li>Choose your sizes and customize your order</li>
                             <li>Orders are delivered directly to your home</li>
                             <li>A portion of every sale supports our team</li>
                         </ul>
-                        <a href="https://teamlocker.squadlocker.com/#/lockers/phoenix-academy-gymnastics-team-2752060" target="_blank" rel="noopener noreferrer" class="btn" style="background: #fff; color: #1d3557; font-size: 1.1rem; padding: 16px 32px;">Shop Now at TeamLocker</a>
+                        <a href="https://teamlocker.squadlocker.com/#/lockers/phoenix-academy-gymnastics-team-2752060" target="_blank" rel="noopener noreferrer" class="btn btn-white">Shop Now at TeamLocker</a>
                     </div>
                     <div class="clothing-qr">
                         <img src="images/teamlocker-qr.png" alt="Scan to visit our TeamLocker store">
@@ -1178,10 +1224,10 @@
             </div>
             
             <!-- Specific Campaign Callout -->
-            <div style="background: linear-gradient(135deg, #2ea3f2, #1d87c9); color: #fff; padding: 40px; border-radius: 15px; text-align: center; margin-top: 50px; box-shadow: 0 5px 20px rgba(46, 163, 242, 0.3);">
-                <h3 style="color: #fff; font-size: 2rem; margin-bottom: 15px;">Send Our Girls to USAG States!</h3>
-                <p style="color: #fff; font-size: 1.1rem; margin-bottom: 20px;">Help our talented gymnasts compete at the state level. Your support makes their dreams possible.</p>
-                <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn" style="background: #fff; color: #2ea3f2;">Support This Campaign</a>
+            <div id="usag-states" class="fundraiser-banner">
+                <h3>Send Our Girls to USAG States!</h3>
+                <p>Help our talented gymnasts compete at the state level. Your support makes their dreams possible.</p>
+                <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn">Support This Campaign</a>
             </div>
 
             <!-- Typical Season Section -->
