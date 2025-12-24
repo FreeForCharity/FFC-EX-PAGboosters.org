@@ -333,6 +333,31 @@
         }
 
         /* ========== FUNDRAISING SECTION ========== */
+        .fundraising-submenu {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0 40px;
+            flex-wrap: wrap;
+        }
+
+        .fundraising-submenu a {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            color: #1d3557;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .fundraising-submenu a:hover,
+        .fundraising-submenu a.active {
+            background: #2ea3f2;
+            color: #fff;
+            border-color: #2ea3f2;
+        }
+
         .fundraising-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -366,6 +391,71 @@
         .fundraising-card p {
             color: #666;
             margin-bottom: 1.5rem;
+        }
+
+        /* ========== CLOTHING FUNDRAISER ========== */
+        .clothing-fundraiser-banner {
+            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+            color: #fff;
+            padding: 50px 40px;
+            border-radius: 15px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .clothing-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .clothing-info h3 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .clothing-info p {
+            color: #a8dadc;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .clothing-qr {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .clothing-qr img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .clothing-qr p {
+            color: #1d3557;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 10px 0 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .clothing-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .clothing-fundraiser-banner {
+                padding: 30px 20px;
+            }
+            
+            .clothing-info h3 {
+                font-size: 2rem;
+            }
         }
 
         /* ========== MEMBERSHIP SECTION ========== */
@@ -1012,20 +1102,58 @@
                 <h2>Fundraising & Events</h2>
                 <p>Support our team through various fundraising opportunities and events</p>
             </div>
+            
+            <!-- Fundraising Submenu -->
+            <div class="fundraising-submenu">
+                <a href="#clothing-fundraiser" class="active">Team Apparel</a>
+                <a href="#direct-donations">Direct Donations</a>
+                <a href="#fundraising-events">Events</a>
+                <a href="#usag-states">USAG States Campaign</a>
+            </div>
+            
             <div class="fundraising-grid">
-                <div class="fundraising-card">
+                <div class="fundraising-card" id="clothing-fundraiser-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h3>Team Apparel Store</h3>
+                    <p>Show your support with official PAG team apparel! Browse our online store for t-shirts, hoodies, and more. Every purchase supports our gymnasts.</p>
+                    <a href="https://teamlocker.squadlocker.com/#/lockers/phoenix-academy-gymnastics-team-2752060" target="_blank" rel="noopener noreferrer" class="btn">Shop Team Apparel</a>
+                </div>
+                <div class="fundraising-card" id="direct-donations">
                     <i class="fas fa-hand-holding-heart"></i>
                     <h3>Direct Donations</h3>
                     <p>Make a direct contribution to support our gymnasts' training, competition fees, and equipment needs.</p>
                     <a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" class="btn">Donate Now</a>
                 </div>
-                <div class="fundraising-card">
+                <div class="fundraising-card" id="fundraising-events">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>Fundraising Events</h3>
                     <p>Join us for our annual fundraising events, including competitions, galas, and community gatherings.</p>
                     <a href="#contact" class="btn">View Events</a>
                 </div>
 
+            </div>
+            
+            <!-- Team Apparel Clothing Fundraiser Banner -->
+            <div class="clothing-fundraiser-banner" id="clothing-fundraiser">
+                <div class="clothing-content">
+                    <div class="clothing-info">
+                        <h3>🎽 Team Apparel Store</h3>
+                        <p><strong>Show your PAG pride!</strong> Visit our official TeamLocker store to browse and purchase high-quality team apparel including t-shirts, hoodies, jackets, and accessories.</p>
+                        <p>Every purchase directly supports our gymnasts and helps fund training, competition fees, and team equipment.</p>
+                        <p><strong>How it works:</strong></p>
+                        <ul style="color: #a8dadc; margin-left: 20px; margin-bottom: 20px;">
+                            <li>Browse our collection of official PAG team gear</li>
+                            <li>Choose your sizes and customize your order</li>
+                            <li>Orders are delivered directly to your home</li>
+                            <li>A portion of every sale supports our team</li>
+                        </ul>
+                        <a href="https://teamlocker.squadlocker.com/#/lockers/phoenix-academy-gymnastics-team-2752060" target="_blank" rel="noopener noreferrer" class="btn" style="background: #fff; color: #1d3557; font-size: 1.1rem; padding: 16px 32px;">Shop Now at TeamLocker</a>
+                    </div>
+                    <div class="clothing-qr">
+                        <img src="images/teamlocker-qr.png" alt="Scan to visit our TeamLocker store">
+                        <p>Scan with your phone to shop!</p>
+                    </div>
+                </div>
             </div>
             
             <!-- Zeffy Thermometer -->
@@ -1336,6 +1464,20 @@
                     this.classList.add('active');
                     this.nextElementSibling.classList.add('active');
                 }
+            });
+        });
+
+        // Fundraising Submenu Active State
+        document.addEventListener('DOMContentLoaded', function() {
+            const submenuLinks = document.querySelectorAll('.fundraising-submenu a');
+            
+            submenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Remove active class from all links
+                    submenuLinks.forEach(l => l.classList.remove('active'));
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                });
             });
         });
 
