@@ -488,6 +488,8 @@
             color: #a8dadc;
             margin-left: 20px;
             margin-bottom: 20px;
+            list-style-type: disc;
+            text-align: left;
         }
 
         @media (max-width: 768px) {
@@ -1469,6 +1471,17 @@
                     });
                     // Close mobile menu if open
                     document.getElementById('navMenu').classList.remove('active');
+                    
+                    // Update fundraising submenu active state if this is a submenu link
+                    if (this.closest('.fundraising-submenu')) {
+                        const submenuLinks = document.querySelectorAll('.fundraising-submenu a');
+                        submenuLinks.forEach(l => {
+                            l.classList.remove('active');
+                            l.removeAttribute('aria-current');
+                        });
+                        this.classList.add('active');
+                        this.setAttribute('aria-current', 'location');
+                    }
                 }
             });
         });
@@ -1513,24 +1526,6 @@
                     this.classList.add('active');
                     this.nextElementSibling.classList.add('active');
                 }
-            });
-        });
-
-        // Fundraising Submenu Active State
-        document.addEventListener('DOMContentLoaded', function() {
-            const submenuLinks = document.querySelectorAll('.fundraising-submenu a');
-            
-            submenuLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Remove active class and aria-current from all links
-                    submenuLinks.forEach(l => {
-                        l.classList.remove('active');
-                        l.removeAttribute('aria-current');
-                    });
-                    // Add active class and aria-current to clicked link
-                    this.classList.add('active');
-                    this.setAttribute('aria-current', 'page');
-                });
             });
         });
 
