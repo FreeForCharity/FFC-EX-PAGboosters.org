@@ -1,6 +1,6 @@
 /* Footer Styles - Centralized for all pages */
 .site-footer {
-    background: #1d3557;
+    background: #8B2E16;
     color: #fff;
     padding: 60px 0 0;
 }
@@ -59,7 +59,7 @@
 .social-links a {
     width: 45px;
     height: 45px;
-    background: #457b9d;
+    background: #A0442C;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -71,12 +71,12 @@
 }
 
 .social-links a:hover {
-    background: #2ea3f2;
+    background: #E8652D;
     transform: translateY(-3px);
 }
 
 .footer-bottom {
-    background: #14213d;
+    background: #6B1F0F;
     padding: 25px 0;
     text-align: center;
 }
@@ -88,7 +88,7 @@
 }
 
 .footer-bottom a {
-    color: #2ea3f2;
+    color: #E8652D;
     text-decoration: none;
 }
 

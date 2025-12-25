@@ -81,9 +81,10 @@ This document tracks manual data inputs, configuration updates, and known incons
 <meta name="theme-color" content="#E8652D">
 ```
 
-**Files Updated:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html)
-- ✅ Replaced all instances of old blue palette (#2ea3f2, #1d3557, #457b9d, #3498db) with new burnt orange/red palette
-- ✅ Updated gradients, backgrounds, borders, and text colors
+**Files Updated:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html) and CSS file (css/footer.css)
+- ✅ Replaced all instances of old blue palette (#2ea3f2, #1d3557, #457b9d, #3498db, #14213d) with new burnt orange/red palette
+- ✅ Updated gradients, backgrounds, borders, and text colors in all HTML pages
+- ✅ Updated centralized footer.css with new color scheme for consistent footer appearance across all pages
 - ✅ Added meta theme-color tag to all pages
 
 **Benefit:** 

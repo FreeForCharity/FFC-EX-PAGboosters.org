@@ -1841,11 +1841,13 @@
             function handleScroll() {
                 const scrollY = window.scrollY;
                 
-                // Back to top button visibility
-                if (scrollY > 300) {
-                    backToTopBtn.classList.add('visible');
-                } else {
-                    backToTopBtn.classList.remove('visible');
+                // Back to top button visibility (with null check)
+                if (backToTopBtn) {
+                    if (scrollY > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
                 }
                 
                 // Navbar background
@@ -1881,14 +1883,16 @@
             // Initialize scroll-dependent UI state on page load
             handleScroll();
             
-            // Scroll to top when button is clicked
-            backToTopBtn.addEventListener('click', function() {
-                var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                window.scrollTo({
-                    top: 0,
-                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            // Scroll to top when button is clicked (with null check)
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', function() {
+                    var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    window.scrollTo({
+                        top: 0,
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                    });
                 });
-            });
+            }
         })();
     </script>
 </body>
