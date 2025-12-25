@@ -18,7 +18,7 @@ This document tracks manual data inputs, configuration updates, and known incons
 - Accessible with proper ARIA label
 - Hover effects for visual feedback
 - Fixed position in bottom-right corner
-- Mobile-optimized sizing and positioning (40px button, 20px margins on mobile)
+- Mobile-optimized sizing and positioning (44x44px button with 20px margins on mobile)
 
 ### 2. Mobile Touch Target Optimization
 **Status:** Pending  

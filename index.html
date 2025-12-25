@@ -1071,6 +1071,12 @@
             transform: translateY(-2px);
         }
 
+        .back-to-top:focus,
+        .back-to-top:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
+        }
+
         /* ========== ACCESSIBILITY ========== */
         /* Respect user's motion preferences */
         @media (prefers-reduced-motion: reduce) {
@@ -1802,8 +1808,9 @@
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
             let scrollTimeout;
+            let trailingTimeout;
             
-            // Throttle scroll event for better performance
+            // Throttle scroll event for better performance with trailing edge
             function throttle(func, wait) {
                 return function() {
                     if (!scrollTimeout) {
@@ -1812,6 +1819,14 @@
                             scrollTimeout = null;
                         }, wait);
                     }
+                    
+                    // Clear any existing trailing timeout
+                    clearTimeout(trailingTimeout);
+                    
+                    // Set a trailing timeout to ensure final state is captured
+                    trailingTimeout = setTimeout(function() {
+                        func();
+                    }, wait + 50);
                 };
             }
             
@@ -1856,11 +1871,15 @@
             // Attach single throttled scroll listener
             window.addEventListener('scroll', throttle(handleScroll, 100));
             
+            // Initialize scroll-dependent UI state on page load
+            handleScroll();
+            
             // Scroll to top when button is clicked
             backToTopBtn.addEventListener('click', function() {
+                var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                 window.scrollTo({
                     top: 0,
-                    behavior: 'smooth'
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
                 });
             });
         })();
