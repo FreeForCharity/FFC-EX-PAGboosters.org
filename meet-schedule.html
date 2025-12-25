@@ -13,6 +13,8 @@
 <script type="text/javascript">
 		let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script><link href='//hb.wpmucdn.com' rel='preconnect' />
 <link rel="stylesheet" id="divi-style-css" href="css/style.min.css" type="text/css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/footer.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="description" content="View the typical USAG Xcel season meet schedule for our gymnastics team, including prep meets, regular season meets, states, regionals, and nationals." />
 <style>
@@ -121,50 +123,131 @@
 		padding: 12px 30px;
 		font-size: 18px;
 	}
+
+	/* ========== NAVIGATION STYLES ========== */
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: rgba(255, 255, 255, 0.98);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+		padding: 15px 0;
+		transition: all 0.3s ease;
+	}
+
+	.navbar .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	.navbar-brand {
+		font-family: 'Abril Fatface', serif;
+		font-size: 1.8rem;
+		color: #1d3557;
+		text-decoration: none;
+	}
+
+	.nav-menu {
+		display: flex;
+		list-style: none;
+		gap: 30px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-menu a {
+		color: #333;
+		font-weight: 500;
+		padding: 8px 0;
+		position: relative;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.nav-menu a:hover,
+	.nav-menu a.active {
+		color: #2ea3f2;
+	}
+
+	.nav-menu a.active::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #2ea3f2;
+	}
+
+	/* Add padding to body to prevent content overlap with fixed navbar */
+	body {
+		padding-top: 70px;
+	}
+
+	/* Mobile menu toggle button styling */
+	.mobile-menu-toggle {
+		display: none;
+		font-size: 1.5rem;
+		cursor: pointer;
+		color: #1d3557;
+		background: none;
+		border: none;
+		padding: 0;
+	}
+
+	/* ========== RESPONSIVE ========== */
+	@media (max-width: 768px) {
+		.nav-menu {
+			position: fixed;
+			top: 70px;
+			left: -100%;
+			width: 100%;
+			height: calc(100vh - 70px);
+			background: #fff;
+			flex-direction: column;
+			padding: 30px;
+			gap: 20px;
+			transition: left 0.3s ease;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+		}
+
+		.nav-menu.active {
+			left: 0;
+		}
+
+		.mobile-menu-toggle {
+			display: block;
+		}
+	}
 </style>
 </head>
 
 <body class="page-template-default page et_pb_pagebuilder_layout et_pb_show_title et_pb_button_helper_class et_fullwidth_nav et_fullwidth_secondary_nav et_fixed_nav et_show_nav et_cover_background et_pb_gutter windows et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns4 et_header_style_left et_pb_pagebuilder_layout et_right_sidebar et_divi_theme">
 	<div id="page-container">
-		<header class="et-l et-l--header">
-			<div class="et_builder_inner_content et_pb_gutters3">
-				<div class="et_pb_section et_pb_section_0_tb_header et_section_regular">
-					<div class="et_pb_row et_pb_row_0_tb_header et_pb_gutters3">
-						<div class="et_pb_column et_pb_column_3_4 et_pb_column_0_tb_header et_pb_css_mix_blend_mode_passthrough">
-							<div class="et_pb_module et_pb_menu et_pb_menu_0_tb_header et_pb_bg_layout_ et_dropdown_animation_fade et_pb_text_align_left et_pb_menu--without-logo et_pb_menu--style-left_aligned">
-								<div class="et_pb_menu_inner_container clearfix">
-									<div class="et_pb_menu__wrap">
-										<div class="et_pb_menu__menu">
-											<nav class="et-menu-nav">
-												<ul id="menu-main-menu" class="et-menu nav">
-													<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home"><a href="index.html#home">Home</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="index.html#about">About</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="index.html#fundraising">Fundraising</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="index.html#membership">Membership</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item"><a href="meet-schedule.html">Meet Schedule</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-post"><a href="index.html#team">Team</a></li>
-													<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="index.html#contact">Contact</a></li>
-												</ul>
-											</nav>
-										</div>
-										<div class="et_mobile_nav_menu">
-											<div class="mobile_nav closed">
-												<span class="mobile_menu_bar"></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_header et_pb_css_mix_blend_mode_passthrough et-last-child">
-							<div class="et_pb_button_module_wrapper et_pb_button_0_tb_header_wrapper et_pb_button_alignment_right et_pb_module ">
-								<a class="et_pb_button et_pb_button_0_tb_header et_pb_bg_layout_light" href="/cdn-cgi/l/email-protection#a3c0cccdd7c2c0d7e3d3c2c4c1ccccd0d7c6d18dccd1c4" target="_blank">Join Us</a>
-							</div>
-						</div>
-					</div>
-				</div>
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="container">
+				<a href="index.html#home" class="navbar-brand">PAG Booster</a>
+				<button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+					<i class="fas fa-bars"></i>
+				</button>
+				<ul class="nav-menu" id="navMenu">
+					<li><a href="index.html#home" class="nav-link">Home</a></li>
+					<li><a href="index.html#about" class="nav-link">About</a></li>
+					<li><a href="index.html#team" class="nav-link">Team</a></li>
+					<li><a href="index.html#fundraising" class="nav-link">Fundraising</a></li>
+					<li><a href="index.html#membership" class="nav-link">Membership</a></li>
+					<li><a href="meet-schedule.html" class="nav-link active">Meet Schedule</a></li>
+					<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+				</ul>
 			</div>
-		</header>
+		</nav>
 
 		<div id="et-main-area">
 			<div id="main-content">
@@ -478,44 +561,66 @@
 			</div>
 
 			<!-- Footer -->
-			<footer class="et-l et-l--footer">
-				<div class="et_builder_inner_content et_pb_gutters3">
-					<div class="et_pb_section et_pb_section_0_tb_footer et_section_regular">
-						<div class="et_pb_row et_pb_row_0_tb_footer et_pb_gutters1">
-							<div class="et_pb_column et_pb_column_1_2 et_pb_column_0_tb_footer et_pb_css_mix_blend_mode_passthrough">
-								<div class="et_pb_module et_pb_text et_pb_text_0_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
-									<div class="et_pb_text_inner">
-										<p style="text-align: center;"><strong>Email: <a href="/cdn-cgi/l/email-protection#fc9f9392889d9f88bc8c9d9b9e93938f889984d2938e9b" target="_blank" rel="noopener"><span class="__cf_email__">[email&#160;protected]</span></a></strong></p>
-									</div>
-								</div>
-							</div>
-							<div class="et_pb_column et_pb_column_1_6 et_pb_column_1_tb_footer et_pb_css_mix_blend_mode_passthrough">
-								<div class="et_pb_module et_pb_text et_pb_text_1_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
-									<div class="et_pb_text_inner">
-										<p><a href="index.html#about">About Us</a></p>
-										<p><a href="index.html#membership">Membership</a></p>
-										<p><a href="meet-schedule.html">Meet Schedule</a></p>
-									</div>
-								</div>
-							</div>
-							<div class="et_pb_column et_pb_column_1_6 et_pb_column_2_tb_footer et_pb_css_mix_blend_mode_passthrough">
-								<div class="et_pb_module et_pb_text et_pb_text_2_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
-									<div class="et_pb_text_inner">
-										<p><a href="index.html#fundraising">Fundraising</a></p>
-										<p><a href="index.html#team">Our Team</a></p>
-										<p><a href="index.html#contact">Contact Us</a></p>
-									</div>
-								</div>
-							</div>
-							<div class="et_pb_column et_pb_column_1_6 et_pb_column_3_tb_footer et_pb_css_mix_blend_mode_passthrough et-last-child">
-								<div class="et_pb_module et_pb_text et_pb_text_3_tb_footer et_pb_text_align_left et_pb_bg_layout_light">
-									<div class="et_pb_text_inner">
-										<p><a href="https://pagymnastics.com" target="_blank" rel="noopener">PA Gymnastics</a></p>
-										<p><a href="https://usagym.org/pages/gymnastics/xcel/" target="_blank" rel="noopener">USAG Xcel</a></p>
-									</div>
-								</div>
+			<footer class="site-footer">
+				<div class="footer-main">
+					<div class="footer-grid">
+						<!-- About Column -->
+						<div class="footer-column">
+							<h3>PAG Booster</h3>
+							<p>Supporting the Phoenix Academy of Performing Arts competitive gymnastics team through community engagement, fundraising, and dedication to our athletes' success.</p>
+						</div>
+
+						<!-- Quick Links Column -->
+						<div class="footer-column">
+							<h3>Quick Links</h3>
+							<ul>
+								<li><a href="index.html#home">Home</a></li>
+								<li><a href="index.html#about">About Us</a></li>
+								<li><a href="index.html#team">Our Team</a></li>
+								<li><a href="index.html#fundraising">Fundraising</a></li>
+								<li><a href="index.html#membership">Membership</a></li>
+								<li><a href="meet-schedule.html">Meet Schedule</a></li>
+								<li><a href="index.html#contact">Contact</a></li>
+							</ul>
+						</div>
+
+						<!-- Resources Column -->
+						<div class="footer-column">
+							<h3>Resources</h3>
+							<ul>
+								<li><a href="index.html#fundraising">Donate</a></li>
+								<li><a href="index.html#fundraising">Volunteer</a></li>
+								<li><a href="https://github.com/FreeForCharity/FFC-EX-PAGboosters.org" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+								<li><a href="privacy.html">Privacy Policy</a></li>
+								<li><a href="terms.html">Terms of Use</a></li>
+							</ul>
+						</div>
+
+						<!-- Connect Column -->
+						<div class="footer-column">
+							<h3>Connect With Us</h3>
+							<div class="social-links">
+								<span class="placeholder" tabindex="-1" aria-disabled="true" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
+									<i class="fab fa-facebook-f"></i>
+								</span>
+								<span class="placeholder" tabindex="-1" aria-disabled="true" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
+									<i class="fab fa-instagram"></i>
+								</span>
+								<span class="placeholder" tabindex="-1" aria-disabled="true" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
+									<i class="fab fa-twitter"></i>
+								</span>
+								<a href="mailto:contact@pagbooster.org" aria-label="Email">
+									<i class="fas fa-envelope"></i>
+								</a>
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<div class="footer-bottom">
+					<div class="container">
+						<p>&copy; <span id="copyright-year">2024</span> PAG Booster. All rights reserved. | 
+						   Supported by <a href="https://freeforcharity.org" target="_blank" rel="noopener noreferrer">Free For Charity</a></p>
 					</div>
 				</div>
 			</footer>
@@ -525,5 +630,42 @@
 	<script data-cfasync="false" src="js/email-decode.min.js"></script>
 	<script type="text/javascript" src="js/jquery.min.js" id="jquery-core-js"></script>
 	<script type="text/javascript" src="js/scripts.min.js" id="divi-custom-script-js"></script>
+	
+	<!-- Mobile Menu Toggle Script -->
+	<script>
+		// Wait for DOM to be fully loaded
+		document.addEventListener('DOMContentLoaded', function() {
+			// Mobile menu toggle with event listener
+			const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+			const navMenu = document.getElementById('navMenu');
+			
+			if (mobileMenuToggle && navMenu) {
+				mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+			}
+
+			function toggleMobileMenu() {
+				if (navMenu && mobileMenuToggle) {
+					const isExpanded = navMenu.classList.toggle('active');
+					mobileMenuToggle.setAttribute('aria-expanded', String(isExpanded));
+				}
+			}
+
+			// Close mobile menu when clicking on a link
+			document.querySelectorAll('.nav-menu a').forEach(link => {
+				link.addEventListener('click', function() {
+					if (navMenu && mobileMenuToggle) {
+						navMenu.classList.remove('active');
+						mobileMenuToggle.setAttribute('aria-expanded', 'false');
+					}
+				});
+			});
+			
+			// Update copyright year
+			const copyrightYear = document.getElementById('copyright-year');
+			if (copyrightYear) {
+				copyrightYear.textContent = new Date().getFullYear();
+			}
+		});
+	</script>
 </body>
 </html>

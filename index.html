@@ -13,7 +13,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Centralized Footer CSS -->
+    <link rel="stylesheet" href="css/footer.css">
     
     <style>
         /* ========== GLOBAL STYLES ========== */
@@ -1452,7 +1455,7 @@
                 <div style="background: #f8f9fa; padding: 40px; border-radius: 10px; text-align: center;">
                     <p style="font-size: 1.1rem; color: #666; margin-bottom: 20px;">Our competitive gymnastics season runs from fall through spring, with athletes competing at various levels throughout the year.</p>
                     <p style="font-size: 1rem; color: #666; margin-bottom: 25px;">From training camps and competitions to state championships and beyond, our gymnasts work hard year-round to achieve their goals.</p>
-                    <a href="schedule.html" class="btn">View Full Season Schedule</a>
+                    <a href="meet-schedule.html" class="btn">View Full Season Schedule</a>
                 </div>
             </div>
         </div>
@@ -1626,6 +1629,7 @@
                         <ul>
                             <li><a href="#fundraising">Donate</a></li>
                             <li><a href="#fundraising">Volunteer</a></li>
+                            <li><a href="https://github.com/FreeForCharity/FFC-EX-PAGboosters.org" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
                             <li><a href="privacy.html">Privacy Policy</a></li>
                             <li><a href="terms.html">Terms of Use</a></li>
                         </ul>
@@ -1635,15 +1639,15 @@
                     <div class="footer-column">
                         <h3>Connect With Us</h3>
                         <div class="social-links">
-                            <a href="https://facebook.com/pagbooster" target="_blank" aria-label="Facebook">
+                            <span class="placeholder" tabindex="-1" aria-disabled="true" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
                                 <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://instagram.com/pagbooster" target="_blank" aria-label="Instagram">
+                            </span>
+                            <span class="placeholder" tabindex="-1" aria-disabled="true" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
                                 <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://twitter.com/pagbooster" target="_blank" aria-label="Twitter">
+                            </span>
+                            <span class="placeholder" tabindex="-1" aria-disabled="true" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
                                 <i class="fab fa-twitter"></i>
-                            </a>
+                            </span>
                             <a href="mailto:contact@pagbooster.org" aria-label="Email">
                                 <i class="fas fa-envelope"></i>
                             </a>
@@ -1655,15 +1659,22 @@
 
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2024 PAG Booster. All rights reserved.</p>
-                <p><a href="privacy.html">Privacy Policy</a> | 
-                   <a href="terms.html">Terms of Use</a></p>
+                <p>&copy; <span id="copyright-year">2024</span> PAG Booster. All rights reserved. | 
+                   Supported by <a href="https://freeforcharity.org" target="_blank" rel="noopener noreferrer">Free For Charity</a></p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script>
+        // Update copyright year
+        (function() {
+            var yearElement = document.getElementById('copyright-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        })();
+
         // Mobile Menu Toggle
         function toggleMobileMenu() {
             const navMenu = document.getElementById('navMenu');

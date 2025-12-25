@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use | PAG Booster</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
     <style>
         * {
             margin: 0;
@@ -198,5 +199,77 @@
             </a>
         </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <!-- About Column -->
+                <div class="footer-column">
+                    <h3>PAG Booster</h3>
+                    <p>Supporting the Phoenix Academy of Performing Arts competitive gymnastics team through community engagement, fundraising, and dedication to our athletes' success.</p>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#team">Our Team</a></li>
+                        <li><a href="index.html#fundraising">Fundraising</a></li>
+                        <li><a href="index.html#membership">Membership</a></li>
+                        <li><a href="meet-schedule.html">Meet Schedule</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="index.html#fundraising">Donate</a></li>
+                        <li><a href="index.html#fundraising">Volunteer</a></li>
+                        <li><a href="https://github.com/FreeForCharity/FFC-EX-PAGboosters.org" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect Column -->
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <span class="placeholder" tabindex="-1" aria-disabled="true" title="Facebook link placeholder – update with official account URL" aria-label="Facebook (placeholder)">
+                            <i class="fab fa-facebook-f"></i>
+                        </span>
+                        <span class="placeholder" tabindex="-1" aria-disabled="true" title="Instagram link placeholder – update with official account URL" aria-label="Instagram (placeholder)">
+                            <i class="fab fa-instagram"></i>
+                        </span>
+                        <span class="placeholder" tabindex="-1" aria-disabled="true" title="Twitter link placeholder – update with official account URL" aria-label="Twitter (placeholder)">
+                            <i class="fab fa-twitter"></i>
+                        </span>
+                        <a href="mailto:contact@pagbooster.org" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="copyright-year">2024</span> PAG Booster. All rights reserved. | 
+                   Supported by <a href="https://freeforcharity.org" target="_blank" rel="noopener noreferrer">Free For Charity</a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (function() {
+            var yearElement = document.getElementById('copyright-year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+        })();
+    </script>
 </body>
 </html>
