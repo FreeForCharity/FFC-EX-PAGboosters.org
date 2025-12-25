@@ -1807,26 +1807,33 @@
             const navbar = document.querySelector('.navbar');
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
-            let scrollTimeout;
-            let trailingTimeout;
             
             // Throttle scroll event for better performance with trailing edge
             function throttle(func, wait) {
+                let lastCallTime = 0;
+                let timeoutId = null;
+
                 return function() {
-                    if (!scrollTimeout) {
-                        scrollTimeout = setTimeout(function() {
-                            func();
-                            scrollTimeout = null;
-                        }, wait);
+                    const now = Date.now();
+                    const timeSinceLastCall = now - lastCallTime;
+                    const remaining = wait - timeSinceLastCall;
+                    const context = this;
+                    const args = arguments;
+
+                    if (remaining <= 0 || remaining > wait) {
+                        if (timeoutId) {
+                            clearTimeout(timeoutId);
+                            timeoutId = null;
+                        }
+                        lastCallTime = now;
+                        func.apply(context, args);
+                    } else if (!timeoutId) {
+                        timeoutId = setTimeout(function() {
+                            lastCallTime = Date.now();
+                            timeoutId = null;
+                            func.apply(context, args);
+                        }, remaining);
                     }
-                    
-                    // Clear any existing trailing timeout
-                    clearTimeout(trailingTimeout);
-                    
-                    // Set a trailing timeout to ensure final state is captured
-                    trailingTimeout = setTimeout(function() {
-                        func();
-                    }, wait + 50);
                 };
             }
             

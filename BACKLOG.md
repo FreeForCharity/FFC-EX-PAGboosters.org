@@ -71,6 +71,7 @@ This document tracks manual data inputs, configuration updates, and known incons
 ```
 **Files Updated:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html)
 **Benefit:** Enhances mobile browser UI by coloring the address bar/status bar to match the site's brand colors
+**Note:** Full brand color scheme update (burnt red/orange palette) was applied only to index.html. Other pages (meet-schedule.html, privacy.html, terms.html) received only the meta theme-color tag and retain their original color schemes.
 
 ### 6. Image Lazy Loading Optimization
 **Status:** ✅ Completed (December 25, 2024)  
