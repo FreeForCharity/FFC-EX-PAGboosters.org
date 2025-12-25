@@ -1052,7 +1052,7 @@
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
-            z-index: 999;
+            z-index: 900;
         }
 
         .back-to-top.visible {
@@ -1809,15 +1809,31 @@
         // Back to Top Button
         (function() {
             const backToTopBtn = document.getElementById('backToTop');
+            let scrollTimeout;
+            
+            // Throttle scroll event for better performance
+            function throttle(func, wait) {
+                return function() {
+                    if (!scrollTimeout) {
+                        scrollTimeout = setTimeout(function() {
+                            func();
+                            scrollTimeout = null;
+                        }, wait);
+                    }
+                };
+            }
             
             // Show/hide button based on scroll position
-            window.addEventListener('scroll', function() {
+            function toggleBackToTopButton() {
                 if (window.scrollY > 300) {
                     backToTopBtn.classList.add('visible');
                 } else {
                     backToTopBtn.classList.remove('visible');
                 }
-            });
+            }
+            
+            // Attach throttled scroll listener
+            window.addEventListener('scroll', throttle(toggleBackToTopButton, 100));
             
             // Scroll to top when button is clicked
             backToTopBtn.addEventListener('click', function() {
