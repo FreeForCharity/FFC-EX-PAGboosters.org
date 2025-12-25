@@ -4,6 +4,136 @@ This document tracks manual data inputs, configuration updates, and known incons
 
 **IMPORTANT:** When addressing any backlog item, ensure changes are applied across ALL pages of the site to maintain consistency.
 
+---
+
+## User Experience Improvements
+
+### 1. Back to Top Button
+**Status:** ✅ Completed (December 25, 2024)  
+**File:** index.html  
+**Implementation:** Added floating "Back to Top" button that appears after scrolling 300px down the page
+**Features:**
+- Smooth scroll animation to top of page
+- Visibility toggles based on scroll position
+- Accessible with proper ARIA label
+- Responsive design with hover effects
+- Fixed position in bottom-right corner
+
+### 2. Mobile Touch Target Optimization
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Ensure all interactive elements (buttons, links) meet the minimum 44x44px touch target size recommended for mobile devices  
+**Affected Areas:**
+- Navigation menu items on mobile
+- Social media icons in footer
+- FAQ accordion buttons
+- Fundraising submenu links
+**Implementation Notes:**
+- Add min-height and min-width CSS properties to interactive elements
+- Increase padding on smaller buttons
+- Test on actual mobile devices
+
+### 3. Loading States for Embedded Content
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Add loading indicators for Zeffy donation iframes to improve perceived performance  
+**Affected Areas:**
+- Program funding thermometers (4 iframes)
+- Donation form iframe
+- Thermometer widget iframe
+**Implementation Notes:**
+- Add CSS-based loading spinner
+- Use JavaScript to detect iframe load complete
+- Show placeholder or skeleton screen while loading
+
+### 4. Enhanced Keyboard Navigation
+**Status:** Pending  
+**Priority:** High (Accessibility)  
+**Description:** Improve keyboard-only navigation experience  
+**Required Changes:**
+- Add "Skip to main content" link at top of page
+- Improve focus indicators (make them more visible)
+- Ensure proper focus order
+- Add keyboard shortcuts for common actions
+**Implementation Notes:**
+- Follow WCAG 2.1 Level AA guidelines
+- Test with screen readers
+- Ensure all interactive elements are keyboard accessible
+
+### 5. Meta Theme Color for Mobile Browsers
+**Status:** Pending  
+**Priority:** Low  
+**Description:** Add meta theme-color tag to enhance mobile browser appearance  
+**Implementation:**
+```html
+<meta name="theme-color" content="#2ea3f2">
+```
+**Files to Update:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html)
+
+### 6. Image Lazy Loading Optimization
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Add lazy loading to images below the fold to improve initial page load  
+**Current State:** Some images already have loading="lazy"
+**Required Changes:**
+- Audit all images on the page
+- Add loading="lazy" to images not in viewport on load
+- Keep hero images as eager loading
+**Performance Impact:** Expected to improve First Contentful Paint (FCP)
+
+### 7. Form Accessibility Enhancements
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Ensure all form elements have proper labels and ARIA attributes  
+**Affected Areas:**
+- Contact form (if present)
+- Newsletter signup form
+- FAQ accordion (already has good accessibility)
+**Implementation Notes:**
+- Add aria-describedby for error messages
+- Ensure label/input associations
+- Add required field indicators
+
+### 8. Mobile Button Visual Feedback
+**Status:** Pending  
+**Priority:** Low  
+**Description:** Improve button hover/active states specifically for mobile devices  
+**Implementation:**
+- Add :active pseudo-class styles
+- Implement subtle scale or color change on tap
+- Consider adding ripple effect for material design feel
+**Files to Update:** All HTML files with inline styles, or create shared CSS file
+
+### 9. Progressive Enhancement for Animations
+**Status:** Pending  
+**Priority:** Low  
+**Description:** Respect user's motion preferences  
+**Implementation:**
+```css
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+**Benefit:** Improves accessibility for users with vestibular disorders
+
+### 10. Improve Error Messaging
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Add user-friendly error messages and success states  
+**Areas:**
+- Form validation
+- Network errors for embedded iframes
+- Fallback content for blocked external resources
+**Implementation Notes:**
+- Use toast notifications or inline messages
+- Provide clear next steps for users
+
+---
+
 ## Inconsistencies Identified
 
 ### 1. Duplicate CSS Definition for Mobile Menu Toggle
@@ -11,6 +141,8 @@ This document tracks manual data inputs, configuration updates, and known incons
 **File:** meet-schedule.html  
 **Issue:** The `.mobile-menu-toggle` selector was defined twice with overlapping properties  
 **Resolution:** Consolidated into a single CSS rule
+
+---
 
 ## Social Media Links - High Priority
 
