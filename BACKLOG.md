@@ -2,7 +2,10 @@
 
 This document tracks manual data inputs, configuration updates, and known inconsistencies needing resolution for the PAG Booster website.
 
-**IMPORTANT:** When addressing any backlog item, ensure changes are applied across ALL pages of the site to maintain consistency.
+**IMPORTANT GUIDELINES:**
+1. **Site-wide Consistency:** When addressing any backlog item (especially brand updates like colors, fonts, or styles), ensure changes are applied across ALL pages of the site to maintain consistency.
+2. **Complete Implementation:** UX improvements should be fully implemented across all relevant pages when initially completed, not just on index.html. This prevents inconsistencies and ensures a cohesive user experience.
+3. **Documentation Accuracy:** Update this backlog to accurately reflect which files were modified and the scope of changes made.
 
 ---
 
@@ -61,17 +64,33 @@ This document tracks manual data inputs, configuration updates, and known incons
 - Test with screen readers
 - Ensure all interactive elements are keyboard accessible
 
-### 5. Meta Theme Color for Mobile Browsers
+### 5. Meta Theme Color & Brand Color Update
 **Status:** ✅ Completed (December 25, 2024)  
-**Priority:** Low  
-**Description:** Add meta theme-color tag to enhance mobile browser appearance  
+**Priority:** Medium  
+**Description:** Add meta theme-color tag and update entire site to burnt red/orange brand colors matching Phoenix Academy gymnast uniforms  
+
+**New Color Palette:**
+- Primary Orange: `#E8652D` (buttons, links, accents)
+- Dark Orange: `#D84315` (hover states)
+- Burgundy: `#8B2E16` (headings, navbar, footer)
+- Medium Burnt Red: `#A0442C` (gradients, secondary elements)
+- Dark Burgundy: `#6B1F0F` (darkest accents)
+
 **Implementation:**
 ```html
 <meta name="theme-color" content="#E8652D">
 ```
+
 **Files Updated:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html)
-**Benefit:** Enhances mobile browser UI by coloring the address bar/status bar to match the site's brand colors
-**Note:** Full brand color scheme update (burnt red/orange palette) was applied only to index.html. Other pages (meet-schedule.html, privacy.html, terms.html) received only the meta theme-color tag and retain their original color schemes.
+- ✅ Replaced all instances of old blue palette (#2ea3f2, #1d3557, #457b9d, #3498db) with new burnt orange/red palette
+- ✅ Updated gradients, backgrounds, borders, and text colors
+- ✅ Added meta theme-color tag to all pages
+
+**Benefit:** 
+- Creates cohesive visual experience on mobile devices (theme-color in browser UI)
+- Ensures brand consistency across all pages
+- Matches Phoenix Academy's official gymnast uniform colors
+- Professional, unified appearance site-wide
 
 ### 6. Image Lazy Loading Optimization
 **Status:** ✅ Completed (December 25, 2024)  
