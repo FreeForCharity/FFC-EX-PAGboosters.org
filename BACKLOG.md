@@ -16,8 +16,9 @@ This document tracks manual data inputs, configuration updates, and known incons
 - Smooth scroll animation to top of page
 - Visibility toggles based on scroll position
 - Accessible with proper ARIA label
-- Responsive design with hover effects
+- Hover effects for visual feedback
 - Fixed position in bottom-right corner
+- Mobile-optimized sizing and positioning (40px button, 20px margins on mobile)
 
 ### 2. Mobile Touch Target Optimization
 **Status:** Pending  
@@ -66,7 +67,7 @@ This document tracks manual data inputs, configuration updates, and known incons
 **Description:** Add meta theme-color tag to enhance mobile browser appearance  
 **Implementation:**
 ```html
-<meta name="theme-color" content="#2ea3f2">
+<meta name="theme-color" content="#E8652D">
 ```
 **Files to Update:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html)
 
