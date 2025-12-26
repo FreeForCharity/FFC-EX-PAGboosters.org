@@ -149,7 +149,6 @@ This document tracks manual data inputs, configuration updates, and known incons
         animation-duration: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0s !important;
-        scroll-behavior: auto !important;
     }
 }
 ```
