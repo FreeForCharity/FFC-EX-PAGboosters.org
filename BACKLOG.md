@@ -141,10 +141,11 @@ This document tracks manual data inputs, configuration updates, and known incons
 **Description:** Respect user's motion preferences  
 **Implementation:**
 ```css
+/* Scoped to back-to-top button only */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    .back-to-top,
+    .back-to-top::before,
+    .back-to-top::after {
         animation-duration: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0s !important;
