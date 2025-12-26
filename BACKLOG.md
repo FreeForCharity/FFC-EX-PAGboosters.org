@@ -13,7 +13,7 @@ This document tracks manual data inputs, configuration updates, and known incons
 
 ### 1. Back to Top Button
 **Status:** ✅ Completed (December 25, 2024)  
-**Files:** index.html, meet-schedule.html, privacy.html, terms.html  
+**Files:** index.html, meet-schedule.html, privacy.html, terms.html, **css/back-to-top.css, js/back-to-top.js**  
 **Implementation:** Added floating "Back to Top" button that appears after scrolling 300px down the page
 **Features:**
 - Smooth scroll animation to top of page (respects prefers-reduced-motion preference)
@@ -23,7 +23,11 @@ This document tracks manual data inputs, configuration updates, and known incons
 - Fixed position in bottom-right corner
 - Mobile-optimized sizing and positioning (44x44px button positioned 20px from bottom and right edges on mobile)
 - Null checks for robust error handling
-- Throttled scroll events for optimal performance
+- Throttled scroll events with trailing edge support for optimal performance
+**Code Organization:**
+- Shared styles: `css/back-to-top.css` (used by all pages)
+- Shared functionality: `js/back-to-top.js` (used by privacy.html, terms.html, meet-schedule.html)
+- index.html: Uses integrated scroll handler for navbar + navigation + back-to-top (optimized for its unique needs)
 
 ### 2. Mobile Touch Target Optimization
 **Status:** Pending  

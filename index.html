@@ -18,6 +18,7 @@
     
     <!-- Centralized Footer CSS -->
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/back-to-top.css">
     
     <style>
         /* ========== GLOBAL STYLES ========== */
@@ -1033,62 +1034,7 @@
             color: #fff;
         }
 
-        /* ========== BACK TO TOP BUTTON ========== */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #E8652D;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 12px rgba(232, 101, 45, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 900;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: #D84315;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(232, 101, 45, 0.4);
-        }
-
-        .back-to-top:active {
-            transform: translateY(-2px);
-        }
-
-        .back-to-top:focus,
-        .back-to-top:focus-visible {
-            outline: 2px solid #ffffff;
-            outline-offset: 3px;
-        }
-
-        /* ========== ACCESSIBILITY ========== */
-        /* Respect user's motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0s !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0s !important;
-                scroll-behavior: auto !important;
-            }
-        }
+        /* Back-to-top button and reduced motion styles moved to css/back-to-top.css */
 
         /* ========== RESPONSIVE ========== */
         /* Large screens (4K and above) */
@@ -1802,6 +1748,8 @@
         });
 
         // Consolidated scroll handler with throttling for performance
+        // NOTE: index.html uses an integrated scroll handler for navbar, navigation, and back-to-top
+        // Other pages (privacy.html, terms.html, meet-schedule.html) use shared js/back-to-top.js
         (function() {
             const backToTopBtn = document.getElementById('backToTop');
             const navbar = document.querySelector('.navbar');
