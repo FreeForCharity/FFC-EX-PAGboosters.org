@@ -1093,8 +1093,6 @@
                 display: block;
             }
 
-
-
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -1744,10 +1742,10 @@
         // NOTE: index.html uses an integrated scroll handler for navbar, navigation, and back-to-top
         // Other pages (privacy.html, terms.html, meet-schedule.html) use shared js/back-to-top.js
         (function() {
-            const backToTopBtn = document.getElementById('backToTop');
-            const navbar = document.querySelector('.navbar');
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
+            var backToTopBtn = document.getElementById('backToTop');
+            var navbar = document.querySelector('.navbar');
+            var sections = document.querySelectorAll('section');
+            var navLinks = document.querySelectorAll('.nav-link');
             
             // Throttle scroll event for better performance with trailing edge
             function throttle(func, wait) {
@@ -1803,9 +1801,9 @@
                 }
                 
                 // Active navigation highlighting
-                let current = '';
+                var current = '';
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
+                    var sectionTop = section.offsetTop;
                     if (scrollY >= (sectionTop - 200)) {
                         current = section.getAttribute('id');
                     }
