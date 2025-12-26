@@ -13,7 +13,7 @@
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s, transform 0.3s;
     z-index: 900;
     box-shadow: 0 4px 12px rgba(232, 101, 45, 0.4);
     display: flex;
@@ -51,9 +51,9 @@
 
 /* Progressive enhancement for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    .back-to-top,
+    .back-to-top::before,
+    .back-to-top::after {
         animation-duration: 0s !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0s !important;

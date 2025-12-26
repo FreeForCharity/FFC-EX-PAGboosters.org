@@ -48,7 +48,7 @@
 
         // Handle scroll to show/hide button
         function handleScroll() {
-            var scrollY = window.scrollY || window.pageYOffset;
+            var scrollY = window.scrollY;
             
             if (scrollY > 300) {
                 backToTopBtn.classList.add('visible');
