@@ -48,7 +48,7 @@
         }
 
         h2 {
-            color: #1d3557;
+            color: #8B2E16;
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
@@ -82,6 +82,74 @@
             font-style: italic;
             color: #666;
             margin-bottom: 2rem;
+        }
+
+        /* ========== BACK TO TOP BUTTON ========== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #E8652D;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(232, 101, 45, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 900;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #D84315;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(232, 101, 45, 0.4);
+        }
+
+        .back-to-top:active {
+            transform: translateY(-2px);
+        }
+
+        .back-to-top:focus,
+        .back-to-top:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 3px;
+        }
+
+        /* Mobile responsive styling */
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ========== ACCESSIBILITY ========== */
+        /* Respect user's motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0s !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0s !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
@@ -264,11 +332,63 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script>
         (function() {
             var yearElement = document.getElementById('copyright-year');
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear();
+            }
+
+            // Back to top button functionality
+            var backToTopBtn = document.getElementById('backToTop');
+            
+            function handleScroll() {
+                var scrollY = window.scrollY;
+                
+                // Back to top button visibility (with null check)
+                if (backToTopBtn) {
+                    if (scrollY > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
+                }
+            }
+            
+            // Throttle scroll event for better performance
+            var scrollTimeout;
+            function throttle(func, wait) {
+                return function() {
+                    if (!scrollTimeout) {
+                        scrollTimeout = setTimeout(function() {
+                            func();
+                            scrollTimeout = null;
+                        }, wait);
+                    }
+                };
+            }
+            
+            // Attach throttled scroll listener
+            window.addEventListener('scroll', throttle(handleScroll, 100));
+            
+            // Initialize scroll-dependent UI state on page load
+            handleScroll();
+            
+            // Scroll to top when button is clicked (with null check)
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', function() {
+                    var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    window.scrollTo({
+                        top: 0,
+                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                    });
+                });
             }
         })();
     </script>

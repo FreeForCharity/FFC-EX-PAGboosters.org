@@ -13,15 +13,17 @@ This document tracks manual data inputs, configuration updates, and known incons
 
 ### 1. Back to Top Button
 **Status:** ✅ Completed (December 25, 2024)  
-**File:** index.html  
+**Files:** index.html, meet-schedule.html, privacy.html, terms.html  
 **Implementation:** Added floating "Back to Top" button that appears after scrolling 300px down the page
 **Features:**
-- Smooth scroll animation to top of page
+- Smooth scroll animation to top of page (respects prefers-reduced-motion preference)
 - Visibility toggles based on scroll position
-- Accessible with proper ARIA label
+- Accessible with proper ARIA label and visible focus outline
 - Hover effects for visual feedback
 - Fixed position in bottom-right corner
-- Mobile-optimized sizing and positioning (44x44px button with 20px margins on mobile)
+- Mobile-optimized sizing and positioning (44x44px button positioned 20px from bottom and right edges on mobile)
+- Null checks for robust error handling
+- Throttled scroll events for optimal performance
 
 ### 2. Mobile Touch Target Optimization
 **Status:** Pending  
@@ -82,7 +84,8 @@ This document tracks manual data inputs, configuration updates, and known incons
 ```
 
 **Files Updated:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html) and CSS file (css/footer.css)
-- ✅ Replaced all instances of old blue palette (#2ea3f2, #1d3557, #457b9d, #3498db, #14213d) with new burnt orange/red palette
+- ✅ Replaced most instances of old blue palette (#2ea3f2, #457b9d, #3498db, #14213d) with new burnt orange/red palette
+- ✅ Note: Some heading styles (h2 in privacy.html and terms.html) were updated from #1d3557 to #8B2E16 in this iteration
 - ✅ Updated gradients, backgrounds, borders, and text colors in all HTML pages
 - ✅ Updated centralized footer.css with new color scheme for consistent footer appearance across all pages
 - ✅ Added meta theme-color tag to all pages
@@ -138,15 +141,15 @@ This document tracks manual data inputs, configuration updates, and known incons
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration: 0s !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: 0s !important;
         scroll-behavior: auto !important;
     }
 }
 ```
-**Files Updated:** index.html  
-**Benefit:** Improves accessibility for users with vestibular disorders or motion sensitivity. Respects system-level preferences for reduced motion (WCAG 2.1 Success Criterion 2.3.3)
+**Files Updated:** index.html, meet-schedule.html, privacy.html, terms.html  
+**Benefit:** Improves accessibility for users with vestibular disorders or motion sensitivity. Respects system-level preferences for reduced motion (WCAG 2.1 Success Criterion 2.3.3). Implemented site-wide for consistent accessibility experience.
 
 ### 10. Improve Error Messaging
 **Status:** Pending  
