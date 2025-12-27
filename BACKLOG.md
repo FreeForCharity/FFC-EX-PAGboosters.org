@@ -2,7 +2,172 @@
 
 This document tracks manual data inputs, configuration updates, and known inconsistencies needing resolution for the PAG Booster website.
 
-**IMPORTANT:** When addressing any backlog item, ensure changes are applied across ALL pages of the site to maintain consistency.
+**IMPORTANT GUIDELINES:**
+1. **Site-wide Consistency:** When addressing any backlog item (especially brand updates like colors, fonts, or styles), ensure changes are applied across ALL pages of the site to maintain consistency.
+2. **Complete Implementation:** UX improvements should be fully implemented across all relevant pages when initially completed, not just on index.html. This prevents inconsistencies and ensures a cohesive user experience.
+3. **Documentation Accuracy:** Update this backlog to accurately reflect which files were modified and the scope of changes made.
+
+---
+
+## User Experience Improvements
+
+### 1. Back to Top Button
+**Status:** ✅ Completed (December 25, 2024)  
+**Files:** index.html, meet-schedule.html, privacy.html, terms.html, **css/back-to-top.css, js/back-to-top.js**  
+**Implementation:** Added floating "Back to Top" button that appears after scrolling 300px down the page
+**Features:**
+- Smooth scroll animation to top of page (respects prefers-reduced-motion preference)
+- Visibility toggles based on scroll position
+- Accessible with proper ARIA label and visible focus outline
+- Hover effects for visual feedback
+- Fixed position in bottom-right corner
+- Mobile-optimized sizing and positioning (44x44px button positioned 20px from bottom and right edges on mobile)
+- Null checks for robust error handling
+- Throttled scroll events with trailing edge support for optimal performance
+**Code Organization:**
+- Shared styles: `css/back-to-top.css` (used by all pages)
+- Shared functionality: `js/back-to-top.js` (used by privacy.html, terms.html, meet-schedule.html)
+- index.html: Uses integrated scroll handler for navbar + navigation + back-to-top (optimized for its unique needs)
+
+### 2. Mobile Touch Target Optimization
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Ensure all interactive elements (buttons, links) meet the minimum 44x44px touch target size recommended for mobile devices  
+**Affected Areas:**
+- Navigation menu items on mobile
+- Social media icons in footer
+- FAQ accordion buttons
+- Fundraising submenu links
+**Implementation Notes:**
+- Add min-height and min-width CSS properties to interactive elements
+- Increase padding on smaller buttons
+- Test on actual mobile devices
+
+### 3. Loading States for Embedded Content
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Add loading indicators for Zeffy donation iframes to improve perceived performance  
+**Affected Areas:**
+- Program funding thermometers (4 iframes)
+- Donation form iframe
+- Thermometer widget iframe
+**Implementation Notes:**
+- Add CSS-based loading spinner
+- Use JavaScript to detect iframe load complete
+- Show placeholder or skeleton screen while loading
+
+### 4. Enhanced Keyboard Navigation
+**Status:** Pending  
+**Priority:** High (Accessibility)  
+**Description:** Improve keyboard-only navigation experience  
+**Required Changes:**
+- Add "Skip to main content" link at top of page
+- Improve focus indicators (make them more visible)
+- Ensure proper focus order
+- Add keyboard shortcuts for common actions
+**Implementation Notes:**
+- Follow WCAG 2.1 Level AA guidelines
+- Test with screen readers
+- Ensure all interactive elements are keyboard accessible
+
+### 5. Meta Theme Color & Brand Color Update
+**Status:** ✅ Completed (December 25, 2024)  
+**Priority:** Medium  
+**Description:** Add meta theme-color tag and update entire site to burnt red/orange brand colors matching Phoenix Academy gymnast uniforms  
+
+**New Color Palette:**
+- Primary Orange: `#E8652D` (buttons, links, accents)
+- Dark Orange: `#D84315` (hover states)
+- Burgundy: `#8B2E16` (headings, navbar, footer)
+- Medium Burnt Red: `#A0442C` (gradients, secondary elements)
+- Dark Burgundy: `#6B1F0F` (darkest accents)
+
+**Implementation:**
+```html
+<meta name="theme-color" content="#E8652D">
+```
+
+**Files Updated:** All HTML files (index.html, meet-schedule.html, privacy.html, terms.html) and CSS file (css/footer.css)
+- ✅ Replaced most instances of old blue palette (#2ea3f2, #457b9d, #3498db, #14213d) with new burnt orange/red palette
+- ✅ Note: Some heading styles (h2 in privacy.html and terms.html) were updated from #1d3557 to #8B2E16 in this iteration
+- ✅ Updated gradients, backgrounds, borders, and text colors in all HTML pages
+- ✅ Updated centralized footer.css with new color scheme for consistent footer appearance across all pages
+- ✅ Added meta theme-color tag to all pages
+
+**Benefit:** 
+- Creates cohesive visual experience on mobile devices (theme-color in browser UI)
+- Ensures brand consistency across all pages
+- Matches Phoenix Academy's official gymnast uniform colors
+- Professional, unified appearance site-wide
+
+### 6. Image Lazy Loading Optimization
+**Status:** ✅ Completed (December 25, 2024)  
+**Priority:** Medium  
+**Description:** Add lazy loading to images below the fold to improve initial page load  
+**Current State:** All images have loading="lazy" attribute
+**Implementation:**
+- ✅ Audited all images on the page (2 images found)
+- ✅ Main team photo (DSC_1795-1-1280x641.jpg) has loading="lazy"
+- ✅ TeamLocker QR code (teamlocker-qr.png) has loading="lazy"
+- ✅ Both images are below the fold and benefit from lazy loading
+**Performance Impact:** Improves First Contentful Paint (FCP) and reduces initial page weight
+
+### 7. Form Accessibility Enhancements
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Ensure all form elements have proper labels and ARIA attributes  
+**Affected Areas:**
+- Contact form (if present)
+- Newsletter signup form
+- FAQ accordion (already has good accessibility)
+**Implementation Notes:**
+- Add aria-describedby for error messages
+- Ensure label/input associations
+- Add required field indicators
+
+### 8. Mobile Button Visual Feedback
+**Status:** Pending  
+**Priority:** Low  
+**Description:** Improve button hover/active states specifically for mobile devices  
+**Implementation:**
+- Add :active pseudo-class styles
+- Implement subtle scale or color change on tap
+- Consider adding ripple effect for material design feel
+**Files to Update:** All HTML files with inline styles, or create shared CSS file
+
+### 9. Progressive Enhancement for Animations
+**Status:** ✅ Completed (December 25, 2024)  
+**Priority:** Low  
+**Description:** Respect user's motion preferences  
+**Implementation:**
+```css
+/* Scoped to back-to-top button only */
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top,
+    .back-to-top::before,
+    .back-to-top::after {
+        animation-duration: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+    }
+}
+```
+**Files Updated:** index.html, meet-schedule.html, privacy.html, terms.html  
+**Benefit:** Improves accessibility for users with vestibular disorders or motion sensitivity. Respects system-level preferences for reduced motion (WCAG 2.1 Success Criterion 2.3.3). Implemented site-wide for consistent accessibility experience.
+
+### 10. Improve Error Messaging
+**Status:** Pending  
+**Priority:** Medium  
+**Description:** Add user-friendly error messages and success states  
+**Areas:**
+- Form validation
+- Network errors for embedded iframes
+- Fallback content for blocked external resources
+**Implementation Notes:**
+- Use toast notifications or inline messages
+- Provide clear next steps for users
+
+---
 
 ## Inconsistencies Identified
 
@@ -11,6 +176,8 @@ This document tracks manual data inputs, configuration updates, and known incons
 **File:** meet-schedule.html  
 **Issue:** The `.mobile-menu-toggle` selector was defined twice with overlapping properties  
 **Resolution:** Consolidated into a single CSS rule
+
+---
 
 ## Social Media Links - High Priority
 
