@@ -91,12 +91,22 @@
             color: #fff;
         }
 
+        /* Mobile button active state for better feedback */
+        .btn:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 2px 5px rgba(232, 101, 45, 0.2);
+        }
+
         .btn-secondary {
             background-color: #8B2E16;
         }
 
         .btn-secondary:hover {
             background-color: #6B1F0F;
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0) scale(0.98);
         }
 
         /* ========== ACCESSIBILITY - SKIP LINK ========== */
@@ -218,6 +228,25 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #8B2E16;
+            /* Ensure minimum touch target size */
+            min-width: 44px;
+            min-height: 44px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover,
+        .mobile-menu-toggle:active {
+            background-color: rgba(232, 101, 45, 0.1);
+        }
+
+        /* Mobile button active state for better feedback */
+        .mobile-menu-toggle:active {
+            transform: scale(0.95);
         }
 
         /* ========== HERO SECTION ========== */
@@ -433,6 +462,11 @@
             font-weight: 500;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            /* Ensure minimum touch target size */
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .fundraising-submenu a:hover,
@@ -440,6 +474,10 @@
             background: #E8652D;
             color: #fff;
             border-color: #E8652D;
+        }
+
+        .fundraising-submenu a:active {
+            transform: scale(0.95);
         }
 
         .fundraising-grid {
@@ -720,6 +758,10 @@
             background: #f8f9fa;
         }
 
+        .faq-question:active {
+            transform: scale(0.99);
+        }
+
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
@@ -878,6 +920,48 @@
             overflow: hidden;
             width: 100%;
             height: 120px;
+        }
+
+        /* ========== IFRAME LOADING INDICATORS ========== */
+        .iframe-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .iframe-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #E8652D;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide spinner animation for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .spinner {
+                animation: none;
+                border-top-color: #E8652D;
+            }
         }
 
         .btn-center {
@@ -1132,6 +1216,14 @@
             h2 { font-size: 2rem; }
             h3 { font-size: 1.5rem; }
 
+            /* Ensure mobile navigation items have proper touch targets */
+            .nav-menu a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                padding: 12px 20px;
+            }
+
             .nav-menu {
                 position: fixed;
                 top: 70px;
@@ -1283,10 +1375,14 @@
                 <!-- NOTE: Program 1 uses the Membership section's Zeffy campaign for annual/monthly team fees -->
                 <div class="thermometer-container">
                     <div class="thermometer-wrapper">
+                        <div class="iframe-loader">
+                            <div class="spinner"></div>
+                        </div>
                         <iframe title="Program 1 funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
-                                allowTransparency="true"></iframe>
+                                allowTransparency="true"
+                                onload="this.previousElementSibling.classList.add('hidden')"></iframe>
                     </div>
                 </div>
                 
@@ -1307,10 +1403,14 @@
                 <!-- TODO: Update with Program 2 specific Zeffy campaign ID for fly-away meet -->
                 <div class="thermometer-container">
                     <div class="thermometer-wrapper">
+                        <div class="iframe-loader">
+                            <div class="spinner"></div>
+                        </div>
                         <iframe title="Fly-away Meet funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
-                                allowTransparency="true"></iframe>
+                                allowTransparency="true"
+                                onload="this.previousElementSibling.classList.add('hidden')"></iframe>
                     </div>
                 </div>
                 
@@ -1331,10 +1431,14 @@
                 <!-- NOTE: This uses the existing "Send PAG to States" Zeffy campaign as specified in the issue -->
                 <div class="thermometer-container">
                     <div class="thermometer-wrapper">
+                        <div class="iframe-loader">
+                            <div class="spinner"></div>
+                        </div>
                         <iframe title="PA State Competition funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
-                                allowTransparency="true"></iframe>
+                                allowTransparency="true"
+                                onload="this.previousElementSibling.classList.add('hidden')"></iframe>
                     </div>
                 </div>
                 
@@ -1355,10 +1459,14 @@
                 <!-- TODO: Update with Program 4 specific Zeffy campaign ID for regionals -->
                 <div class="thermometer-container">
                     <div class="thermometer-wrapper">
+                        <div class="iframe-loader">
+                            <div class="spinner"></div>
+                        </div>
                         <iframe title="Region 7 Regional Competition funding thermometer powered by Zeffy" 
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
-                                allowTransparency="true"></iframe>
+                                allowTransparency="true"
+                                onload="this.previousElementSibling.classList.add('hidden')"></iframe>
                     </div>
                 </div>
                 
@@ -1492,21 +1600,29 @@
             <!-- Zeffy Thermometer -->
             <div style="margin-top: 50px;">
                 <div style="position:relative;overflow:hidden;width:100%;padding-top:120px;">
+                    <div class="iframe-loader">
+                        <div class="spinner"></div>
+                    </div>
                     <iframe title="Donation thermometer powered by Zeffy" 
                             style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
                             src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
-                            allowTransparency="true"></iframe>
+                            allowTransparency="true"
+                            onload="this.previousElementSibling.classList.add('hidden')"></iframe>
                 </div>
             </div>
             
             <!-- Zeffy Donation Form -->
             <div style="margin-top: 50px;">
                 <div style="position:relative;overflow:hidden;height:1200px;width:100%;">
+                    <div class="iframe-loader">
+                        <div class="spinner"></div>
+                    </div>
                     <iframe title="Donation form powered by Zeffy" 
                             style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
                             src="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
                             allowpaymentrequest 
-                            allowTransparency="true"></iframe>
+                            allowTransparency="true"
+                            onload="this.previousElementSibling.classList.add('hidden')"></iframe>
                 </div>
             </div>
             
@@ -1627,38 +1743,38 @@
                 </div>
                 <div class="faq-container">
                     <div class="faq-item">
-                        <button class="faq-question">How can I become a member of PAG Booster?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">How can I become a member of PAG Booster?</button>
+                        <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-question-1">
                             <p>You are a member when your gymnast is accepted to the team. Reach out to the booster club to get involved and stay connected with our community.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">What are the benefits of sponsoring PAG Booster?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">What are the benefits of sponsoring PAG Booster?</button>
+                        <div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-question-2">
                             <p>Sponsoring PAG Booster offers numerous benefits, including brand exposure at our events, recognition on our website, and the satisfaction of supporting young athletes in their gymnastics journey.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">How can I make a donation?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">How can I make a donation?</button>
+                        <div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-question-3">
                             <p>You can make a donation through our website by contacting us directly using the form above or calling 814-470-5911. All contributions are greatly appreciated and go towards supporting our gymnasts and their activities.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">What events does PAG Booster organize?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">What events does PAG Booster organize?</button>
+                        <div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-question-4">
                             <p>We organize a variety of events throughout the year, including fundraisers, competitions, and community outreach programs. Check our Fundraising & Events section above for upcoming activities.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">How are the funds managed?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">How are the funds managed?</button>
+                        <div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-question-5">
                             <p>All funds are managed transparently and in accordance with the highest standards of amateur gymnastics. We ensure that funds are used to benefit the gymnasts and support the mission of PAG Booster.</p>
                         </div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-question">Who can I contact for more information?</button>
-                        <div class="faq-answer">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-6">Who can I contact for more information?</button>
+                        <div class="faq-answer" id="faq-6" role="region" aria-labelledby="faq-question-6">
                             <p>For more information, please contact our support team at contact@pagbooster.org or call us at 814-470-5911. We are here to help!</p>
                         </div>
                     </div>
@@ -1789,6 +1905,7 @@
                 // Close all FAQ items
                 document.querySelectorAll('.faq-question').forEach(btn => {
                     btn.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
                 });
                 document.querySelectorAll('.faq-answer').forEach(answer => {
                     answer.classList.remove('active');
@@ -1797,6 +1914,7 @@
                 // Open clicked item if it wasn't active
                 if (!isActive) {
                     this.classList.add('active');
+                    this.setAttribute('aria-expanded', 'true');
                     this.nextElementSibling.classList.add('active');
                 }
             });
