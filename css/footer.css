@@ -75,6 +75,12 @@
     transform: translateY(-3px);
 }
 
+/* Active state for better mobile feedback */
+.social-links a:active {
+    transform: translateY(-1px) scale(0.95);
+    background: #D84315;
+}
+
 .footer-bottom {
     background: #6B1F0F;
     padding: 25px 0;
