@@ -229,10 +229,46 @@
 	}
 
 	/* Back-to-top button and reduced motion styles moved to css/back-to-top.css */
+
+	/* ========== ACCESSIBILITY - SKIP LINK ========== */
+	.skip-to-content {
+		position: absolute;
+		top: -100px;
+		left: 0;
+		background-color: #8B2E16;
+		color: #fff;
+		padding: 12px 20px;
+		text-decoration: none;
+		font-weight: 600;
+		z-index: 10000;
+		border-radius: 0 0 5px 0;
+		transition: top 0.3s ease;
+	}
+
+	.skip-to-content:focus {
+		top: 0;
+		outline: 3px solid #E8652D;
+		outline-offset: 2px;
+		color: #fff;
+	}
+
+	/* ========== ENHANCED FOCUS INDICATORS ========== */
+	a:focus,
+	button:focus,
+	input:focus,
+	textarea:focus,
+	select:focus,
+	[tabindex]:focus {
+		outline: 3px solid #E8652D;
+		outline-offset: 2px;
+	}
 </style>
 </head>
 
 <body class="page-template-default page et_pb_pagebuilder_layout et_pb_show_title et_pb_button_helper_class et_fullwidth_nav et_fullwidth_secondary_nav et_fixed_nav et_show_nav et_cover_background et_pb_gutter windows et_pb_gutters3 et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_pb_footer_columns4 et_header_style_left et_pb_pagebuilder_layout et_right_sidebar et_divi_theme">
+	<!-- Skip to Main Content Link for Accessibility -->
+	<a href="#main-content" class="skip-to-content">Skip to main content</a>
+	
 	<div id="page-container">
 		<!-- Navigation -->
 		<nav class="navbar">
@@ -256,7 +292,7 @@
 		<div id="et-main-area">
 			<div id="main-content">
 				<article class="page type-page status-publish hentry">
-					<div class="entry-content">
+					<div class="entry-content" id="main-content" role="main">
 						<div class="et-l et-l--post">
 							<div class="et_builder_inner_content et_pb_gutters3">
 								<!-- Hero Section -->
