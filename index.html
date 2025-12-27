@@ -964,6 +964,88 @@
             }
         }
 
+        /* ========== NOTIFICATION SYSTEM ========== */
+        .notification {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            min-width: 300px;
+            max-width: 400px;
+            padding: 16px 20px;
+            background: #fff;
+            border-left: 4px solid #E8652D;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            opacity: 0;
+            transform: translateX(420px);
+            transition: all 0.3s ease;
+        }
+
+        .notification.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            border-left-color: #28a745;
+        }
+
+        .notification.error {
+            border-left-color: #dc3545;
+        }
+
+        .notification.info {
+            border-left-color: #17a2b8;
+        }
+
+        .notification .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .notification .notification-title {
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+
+        .notification .notification-close {
+            background: none;
+            border: none;
+            color: #999;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .notification .notification-close:hover {
+            color: #333;
+        }
+
+        .notification .notification-message {
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .notification {
+                top: 70px;
+                right: 10px;
+                left: 10px;
+                min-width: auto;
+                max-width: none;
+            }
+        }
+
         .btn-center {
             text-align: center;
         }
@@ -1856,6 +1938,50 @@
 
     <!-- JavaScript -->
     <script>
+        // ========== NOTIFICATION SYSTEM ==========
+        // Utility function to show user-friendly notifications
+        function showNotification(title, message, type = 'info', duration = 5000) {
+            // Remove any existing notification
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.setAttribute('role', 'alert');
+            notification.setAttribute('aria-live', 'polite');
+            notification.innerHTML = `
+                <div class="notification-header">
+                    <h4 class="notification-title">${title}</h4>
+                    <button class="notification-close" aria-label="Close notification">×</button>
+                </div>
+                <p class="notification-message">${message}</p>
+            `;
+
+            // Add to page
+            document.body.appendChild(notification);
+
+            // Show notification with animation
+            setTimeout(() => notification.classList.add('show'), 10);
+
+            // Close button handler
+            const closeBtn = notification.querySelector('.notification-close');
+            closeBtn.addEventListener('click', () => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            });
+
+            // Auto-remove after duration
+            if (duration > 0) {
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                    setTimeout(() => notification.remove(), 300);
+                }, duration);
+            }
+        }
+
         // Update copyright year
         (function() {
             var yearElement = document.getElementById('copyright-year');
