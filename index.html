@@ -1942,7 +1942,19 @@
     <!-- JavaScript -->
     <script>
         // ========== NOTIFICATION SYSTEM ==========
-        // Utility function to show user-friendly notifications
+        /**
+         * Show a user-friendly notification toast message
+         * @param {string} title - The notification title/heading
+         * @param {string} message - The notification message content
+         * @param {string} [type='info'] - The notification type: 'success', 'error', or 'info'
+         * @param {number} [duration=5000] - Auto-dismiss duration in milliseconds (0 to disable auto-dismiss)
+         * @example
+         * // Show a success notification
+         * showNotification('Success!', 'Your form was submitted successfully.', 'success');
+         * 
+         * // Show an error that doesn't auto-dismiss
+         * showNotification('Error', 'Please fix the errors and try again.', 'error', 0);
+         */
         function showNotification(title, message, type = 'info', duration = 5000) {
             // Remove any existing notification
             const existingNotification = document.querySelector('.notification');
