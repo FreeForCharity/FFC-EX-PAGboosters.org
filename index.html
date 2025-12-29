@@ -19,6 +19,7 @@
     <!-- Centralized Footer CSS -->
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/back-to-top.css">
+    <link rel="stylesheet" href="css/accessibility.css">
     
     <style>
         /* ========== GLOBAL STYLES ========== */
@@ -109,40 +110,19 @@
             transform: translateY(0) scale(0.98);
         }
 
-        /* ========== ACCESSIBILITY - SKIP LINK ========== */
-        .skip-to-content {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            background-color: #8B2E16;
-            color: #fff;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: 600;
-            z-index: 10000;
-            border-radius: 0 0 5px 0;
-            transition: top 0.3s ease;
+        /* Respect reduced motion preferences for button feedback */
+        @media (prefers-reduced-motion: reduce) {
+            .btn:hover,
+            .btn:active {
+                transform: none;
+            }
+
+            .btn-secondary:active {
+                transform: none;
+            }
         }
 
-        .skip-to-content:focus {
-            top: 0;
-            outline: 3px solid #E8652D;
-            outline-offset: 2px;
-            color: #fff;
-        }
-
-        /* ========== ENHANCED FOCUS INDICATORS ========== */
-        a:focus,
-        button:focus,
-        input:focus,
-        textarea:focus,
-        select:focus,
-        [tabindex]:focus {
-            outline: 3px solid #E8652D;
-            outline-offset: 2px;
-        }
-
-        /* Ensure focus is visible on interactive elements */
+        /* Additional focus indicators for specific interactive elements */
         .nav-link:focus,
         .btn:focus,
         .back-to-top:focus {
@@ -480,6 +460,13 @@
             transform: scale(0.95);
         }
 
+        /* Respect reduced motion preferences for button feedback */
+        @media (prefers-reduced-motion: reduce) {
+            .fundraising-submenu a:active {
+                transform: none;
+            }
+        }
+
         .fundraising-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -762,6 +749,13 @@
             transform: scale(0.99);
         }
 
+        /* Respect reduced motion preferences for FAQ button feedback */
+        @media (prefers-reduced-motion: reduce) {
+            .faq-question:active {
+                transform: none;
+            }
+        }
+
         .faq-question::after {
             content: '+';
             font-size: 1.5rem;
@@ -962,6 +956,10 @@
                 animation: none;
                 border-top-color: #E8652D;
             }
+
+            .iframe-loader {
+                transition: none;
+            }
         }
 
         /* ========== NOTIFICATION SYSTEM ========== */
@@ -1043,6 +1041,19 @@
                 left: 10px;
                 min-width: auto;
                 max-width: none;
+            }
+        }
+
+        /* Respect reduced motion preferences for notification animations */
+        @media (prefers-reduced-motion: reduce) {
+            .notification {
+                transition: none;
+                transform: none;
+                opacity: 1;
+            }
+
+            .notification.show {
+                transform: none;
             }
         }
 
@@ -1466,7 +1477,7 @@
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
                                 allowTransparency="true"
-                                onload="this.closest('.thermometer-wrapper').querySelector('.iframe-loader').classList.add('hidden')"></iframe>
+                                onload="hideIframeLoader(this)"></iframe>
                     </div>
                 </div>
                 
@@ -1494,7 +1505,7 @@
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
                                 allowTransparency="true"
-                                onload="this.closest('.thermometer-wrapper').querySelector('.iframe-loader').classList.add('hidden')"></iframe>
+                                onload="hideIframeLoader(this)"></iframe>
                     </div>
                 </div>
                 
@@ -1522,7 +1533,7 @@
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
                                 allowTransparency="true"
-                                onload="this.closest('.thermometer-wrapper').querySelector('.iframe-loader').classList.add('hidden')"></iframe>
+                                onload="hideIframeLoader(this)"></iframe>
                     </div>
                 </div>
                 
@@ -1550,7 +1561,7 @@
                                 style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
                                 src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
                                 allowTransparency="true"
-                                onload="this.closest('.thermometer-wrapper').querySelector('.iframe-loader').classList.add('hidden')"></iframe>
+                                onload="hideIframeLoader(this)"></iframe>
                     </div>
                 </div>
                 
@@ -1691,7 +1702,7 @@
                             style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
                             src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
                             allowTransparency="true"
-                            onload="this.parentElement.querySelector('.iframe-loader').classList.add('hidden')"></iframe>
+                            onload="hideIframeLoader(this)"></iframe>
                 </div>
             </div>
             
@@ -1706,7 +1717,7 @@
                             src="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
                             allowpaymentrequest 
                             allowTransparency="true"
-                            onload="this.parentElement.querySelector('.iframe-loader').classList.add('hidden')"></iframe>
+                            onload="hideIframeLoader(this)"></iframe>
                 </div>
             </div>
             
@@ -1943,6 +1954,29 @@
     <script>
         // ========== NOTIFICATION SYSTEM ==========
         /**
+         * Helper function to hide iframe loaders - compatible with older browsers
+         * @param {HTMLElement} iframe - The iframe element that finished loading
+         */
+        function hideIframeLoader(iframe) {
+            if (!iframe) return;
+            
+            // Try to find loader using closest (for thermometer-wrapper class)
+            var wrapper = iframe.closest('.thermometer-wrapper');
+            var loader = null;
+            
+            if (wrapper) {
+                loader = wrapper.querySelector('.iframe-loader');
+            } else {
+                // Fallback to parentElement (for inline-styled containers)
+                loader = iframe.parentElement ? iframe.parentElement.querySelector('.iframe-loader') : null;
+            }
+            
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+        }
+
+        /**
          * Show a user-friendly notification toast message
          * @param {string} title - The notification title/heading
          * @param {string} message - The notification message content
@@ -1965,15 +1999,25 @@
             // Create notification element
             const notification = document.createElement('div');
             notification.className = `notification ${type}`;
-            notification.setAttribute('role', 'alert');
+            notification.setAttribute('role', 'status');
             notification.setAttribute('aria-live', 'polite');
             notification.innerHTML = `
                 <div class="notification-header">
-                    <h4 class="notification-title">${title}</h4>
+                    <h4 class="notification-title"></h4>
                     <button class="notification-close" aria-label="Close notification">×</button>
                 </div>
-                <p class="notification-message">${message}</p>
+                <p class="notification-message"></p>
             `;
+
+            // Safely set user-provided text to prevent XSS
+            const titleEl = notification.querySelector('.notification-title');
+            const messageEl = notification.querySelector('.notification-message');
+            if (titleEl) {
+                titleEl.textContent = title;
+            }
+            if (messageEl) {
+                messageEl.textContent = message;
+            }
 
             // Add to page
             document.body.appendChild(notification);
