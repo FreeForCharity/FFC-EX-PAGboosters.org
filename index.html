@@ -1961,8 +1961,8 @@
             if (!iframe) return;
             
             // Try to find loader using closest (for thermometer-wrapper class)
-            var wrapper = iframe.closest('.thermometer-wrapper');
-            var loader = null;
+            const wrapper = iframe.closest('.thermometer-wrapper');
+            let loader = null;
             
             if (wrapper) {
                 loader = wrapper.querySelector('.iframe-loader');
