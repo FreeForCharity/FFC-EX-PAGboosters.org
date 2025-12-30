@@ -75,6 +75,24 @@
     transform: translateY(-3px);
 }
 
+/* Active state for better mobile feedback */
+.social-links a:active {
+    transform: translateY(-1px) scale(0.95);
+    background: #D84315;
+}
+
+/* Respect reduced motion preferences for social link animations */
+@media (prefers-reduced-motion: reduce) {
+    .social-links a {
+        transition: none;
+    }
+
+    .social-links a:hover,
+    .social-links a:active {
+        transform: none;
+    }
+}
+
 .footer-bottom {
     background: #6B1F0F;
     padding: 25px 0;

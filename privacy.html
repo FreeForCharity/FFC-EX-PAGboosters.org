@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/back-to-top.css">
+    <link rel="stylesheet" href="css/accessibility.css">
     <style>
         * {
             margin: 0;
@@ -86,9 +87,13 @@
         }
 
         /* Back-to-top button and reduced motion styles moved to css/back-to-top.css */
+        /* Skip-to-content and focus indicators moved to css/accessibility.css */
     </style>
 </head>
 <body>
+    <!-- Skip to Main Content Link for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
     <div class="header">
         <div class="container">
             <h1>Privacy Policy</h1>
@@ -97,7 +102,7 @@
     </div>
 
     <div class="container">
-        <div class="content">
+        <main class="content" id="main-content">
             <p class="last-updated">Last Updated: December 23, 2024</p>
 
             <h2>1. Introduction</h2>
@@ -187,7 +192,7 @@
             <a href="index.html" class="back-link">
                 <i class="fas fa-arrow-left"></i> Back to Home
             </a>
-        </div>
+        </main>
     </div>
 
     <footer class="site-footer">
