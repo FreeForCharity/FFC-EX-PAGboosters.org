@@ -204,7 +204,6 @@
         }
 
         .mobile-menu-toggle {
-            display: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: #8B2E16;
@@ -212,11 +211,11 @@
             min-width: 44px;
             min-height: 44px;
             padding: 10px;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.1s ease;
         }
 
         .mobile-menu-toggle:hover,
@@ -227,6 +226,13 @@
         /* Mobile button active state for better feedback */
         .mobile-menu-toggle:active {
             transform: scale(0.95);
+        }
+
+        /* Respect reduced motion preferences for mobile menu toggle */
+        @media (prefers-reduced-motion: reduce) {
+            .mobile-menu-toggle:active {
+                transform: none;
+            }
         }
 
         /* ========== HERO SECTION ========== */
@@ -1952,7 +1958,7 @@
 
     <!-- JavaScript -->
     <script>
-        // ========== NOTIFICATION SYSTEM ==========
+        // ========== HELPER FUNCTIONS ==========
         /**
          * Helper function to hide iframe loaders - compatible with older browsers
          * @param {HTMLElement} iframe - The iframe element that finished loading
@@ -1960,10 +1966,23 @@
         function hideIframeLoader(iframe) {
             if (!iframe) return;
             
-            // Try to find loader using closest (for thermometer-wrapper class)
-            const wrapper = iframe.closest('.thermometer-wrapper');
-            let loader = null;
+            // Try to find loader using closest (for thermometer-wrapper class), with fallback for older browsers
+            let wrapper = null;
+            if (iframe.closest && typeof iframe.closest === 'function') {
+                wrapper = iframe.closest('.thermometer-wrapper');
+            } else {
+                // Manual traversal to emulate closest() in older browsers
+                let current = iframe.parentElement;
+                while (current) {
+                    if (current.classList && current.classList.contains('thermometer-wrapper')) {
+                        wrapper = current;
+                        break;
+                    }
+                    current = current.parentElement;
+                }
+            }
             
+            let loader = null;
             if (wrapper) {
                 loader = wrapper.querySelector('.iframe-loader');
             } else {
@@ -1976,6 +1995,7 @@
             }
         }
 
+        // ========== NOTIFICATION SYSTEM ==========
         /**
          * Show a user-friendly notification toast message
          * @param {string} title - The notification title/heading
@@ -2043,7 +2063,7 @@
 
         // Update copyright year
         (function() {
-            var yearElement = document.getElementById('copyright-year');
+            const yearElement = document.getElementById('copyright-year');
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear();
             }
