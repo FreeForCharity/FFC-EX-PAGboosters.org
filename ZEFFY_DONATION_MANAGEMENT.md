@@ -345,22 +345,67 @@ Embeds the donation form directly into the page content using an iframe.
 
 ---
 
+### Campaign: Fly Away Meet Registration
+
+**Type:** Event  
+**Status:** Active (Currently on site)  
+**Campaign ID/Name:** `fly-away-meet-registration`  
+**Amount Raised:** $676  
+**Sales:** 4  
+**Location:** Tampa, Florida  
+**Description:** Registration and funding for team members attending an out-of-state fly-away meet. These larger meets in major cities outside of Region 7 help expand State College gymnastics beyond regional boundaries.
+
+**Zeffy Link:** `https://www.zeffy.com/ticketing/fly-away-meet-registration`
+
+#### Integration Code:
+
+**Type 1 - Direct Link:**
+```html
+<a href="https://www.zeffy.com/ticketing/fly-away-meet-registration" target="_blank" rel="noopener noreferrer" class="btn">
+    Register for Fly-away Meet
+</a>
+```
+
+**Type 2 - Modal Popup (Recommended - Currently Used):**
+
+*Header Script (already added to `<head>`):*
+```html
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+```
+
+*Button Code:*
+```html
+<button zeffy-form-link="https://www.zeffy.com/embed/ticketing/fly-away-meet-registration?modal=true" class="btn">
+    Support Fly-away Meet
+</button>
+```
+
+**Type 3 - Embedded Form:**
+```html
+<div style="position:relative;overflow:hidden;height:1200px;width:100%;">
+    <iframe title="Fly Away Meet registration powered by Zeffy" 
+            style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
+            src="https://www.zeffy.com/embed/ticketing/fly-away-meet-registration" 
+            allowpaymentrequest 
+            allowTransparency="true"></iframe>
+</div>
+```
+
+**Thermometer Widget:**
+```html
+<iframe title="Fly-away Meet thermometer powered by Zeffy" 
+        style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
+        src="https://www.zeffy.com/embed/thermometer/fly-away-meet-registration" 
+        allowTransparency="true"></iframe>
+```
+
+---
+
 ## Backlog Campaigns
 
 The following campaigns are visible in the Zeffy dashboard but are not currently integrated into the website:
 
-### Campaign: Fly Away Meet Registration
-
-**Type:** Event  
-**Status:** Backlog (Not on site)  
-**Amount Raised:** $676  
-**Sales:** 4  
-**Description:** Registration for fly-away meet outside Region 7.
-
-**Action Required:**
-- Currently listed in Programs section but may need dedicated campaign page
-- Verify if this should have its own Zeffy campaign integration
-- Update with correct campaign ID when available
+*No campaigns currently in backlog. All identified campaigns from the Zeffy dashboard have been integrated.*
 
 ---
 
@@ -376,6 +421,7 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Pag Parents Inc USAG Team Memberships 2025 (Annual) | Membership | ✅ Active on site |
 | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Donate to Send our Girls to USAG States!! | Donation | ✅ Active on site (same form as membership) |
 | `wise-crackers-comedy-charity-night` | Wise Crackers Comedy Charity Night! | Event | ✅ Active on site |
+| `fly-away-meet-registration` | Fly Away Meet Registration | Event | ✅ Active on site |
 
 ### Form IDs Needed (Currently Using Placeholder IDs)
 
@@ -383,7 +429,6 @@ The following campaigns are currently incorrectly sharing the membership form ID
 
 | Campaign Name | Current Form ID (Incorrect) | Action Required |
 |---------------|----------------------------|-----------------|
-| Fly-away Optional Team Meet | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
 | Region 7 Competition Fees | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
 | Direct Donations (General) | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
 
