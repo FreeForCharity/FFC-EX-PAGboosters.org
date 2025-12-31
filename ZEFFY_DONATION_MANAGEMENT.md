@@ -649,10 +649,10 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 
 ### Form IDs Status
 
-**6 campaigns have unique form IDs, with 1 intentionally shared form ID.** ✅
+**7 campaigns total: 6 with unique form IDs, and 1 shared form ID (used by 2 campaigns).** ✅
 
-- ✅ **Unique form IDs**: `fundraising-opt-out`, `wise-crackers-comedy-charity-night`, `fly-away-meet-registration`, `backpacks-new-gymnasts`, `region-7-competition-fees`, `1147c71d-852d-4639-a9ac-48dc0c89d039`
-- ⚠️ **Intentionally shared**: `1bbf7eac-7a56-419e-8aab-7d39111709a7` is used for both "Pag Parents Inc USAG Team Memberships 2025 (Annual)" and "Donate to Send our Girls to USAG States!!" This is intentional as these campaigns are closely linked.
+- ✅ **Unique form IDs** (6 campaigns): `fundraising-opt-out`, `wise-crackers-comedy-charity-night`, `fly-away-meet-registration`, `backpacks-new-gymnasts`, `region-7-competition-fees`, `1147c71d-852d-4639-a9ac-48dc0c89d039`
+- ⚠️ **Intentionally shared** (1 form ID for 2 campaigns): `1bbf7eac-7a56-419e-8aab-7d39111709a7` is used for both "Pag Parents Inc USAG Team Memberships 2025 (Annual)" and "Donate to Send our Girls to USAG States!!" This is intentional as these campaigns are closely linked.
   
 Previously, Direct Donations was incorrectly sharing the membership form ID, but it now has its own unique ID: `1147c71d-852d-4639-a9ac-48dc0c89d039`.
 
