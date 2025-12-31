@@ -273,14 +273,56 @@ Embeds the donation form directly into the page content using an iframe.
 
 ### Campaign: Region 7 Competition Fees
 
-**Type:** Membership  
-**Status:** Active  
-**Campaign ID:** Not yet identified  
+**Type:** Event  
+**Status:** Active (Currently on site)  
+**Campaign ID/Name:** `region-7-competition-fees`  
 **Amount Raised:** $1,850.13  
 **Sales:** 9  
-**Description:** Specific funding for Region 7 competition fees.
+**Description:** Help fund our most elite gymnasts who have qualified for the rigorous Regional meet. This is the culminating meet of the postseason and represents the highest level of achievement in our region.
 
-**Note:** Campaign ID needs to be obtained from Zeffy dashboard for full integration.
+**Zeffy Link:** `https://www.zeffy.com/ticketing/region-7-competition-fees`
+
+#### Integration Code:
+
+**Type 1 - Direct Link:**
+```html
+<a href="https://www.zeffy.com/ticketing/region-7-competition-fees" target="_blank" rel="noopener noreferrer" class="btn">
+    Support Regionals
+</a>
+```
+
+**Type 2 - Modal Popup (Recommended - Currently Used):**
+
+*Header Script (already added to `<head>`):*
+```html
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+```
+
+*Button Code:*
+```html
+<button zeffy-form-link="https://www.zeffy.com/embed/ticketing/region-7-competition-fees?modal=true" class="btn">
+    Support Regionals
+</button>
+```
+
+**Type 3 - Embedded Form:**
+```html
+<div style="position:relative;overflow:hidden;height:1200px;width:100%;">
+    <iframe title="Region 7 Competition Fees powered by Zeffy" 
+            style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
+            src="https://www.zeffy.com/embed/ticketing/region-7-competition-fees" 
+            allowpaymentrequest 
+            allowTransparency="true"></iframe>
+</div>
+```
+
+**Thermometer Widget:**
+```html
+<iframe title="Region 7 Competition thermometer powered by Zeffy" 
+        style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
+        src="https://www.zeffy.com/embed/thermometer/region-7-competition-fees" 
+        allowTransparency="true"></iframe>
+```
 
 ---
 
@@ -457,6 +499,7 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 | `wise-crackers-comedy-charity-night` | Wise Crackers Comedy Charity Night! | Event | ✅ Active on site |
 | `fly-away-meet-registration` | Fly Away Meet Registration | Event | ✅ Active on site |
 | `backpacks-new-gymnasts` | Backpacks for New Gymnasts | Donation | ✅ Active on site |
+| `region-7-competition-fees` | Region 7 Competition Fees | Event | ✅ Active on site |
 
 ### Form IDs Needed (Currently Using Placeholder IDs)
 
@@ -464,7 +507,6 @@ The following campaigns are currently incorrectly sharing the membership form ID
 
 | Campaign Name | Current Form ID (Incorrect) | Action Required |
 |---------------|----------------------------|-----------------|
-| Region 7 Competition Fees | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
 | Direct Donations (General) | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
 
 ### Campaigns Not Yet Integrated
@@ -482,17 +524,14 @@ The following campaigns are currently incorrectly sharing the membership form ID
 ### Current Site Usage
 
 The website currently uses:
-1. **Type 1 (Direct Links)** - Used for program funding buttons that open in new tabs
-2. **Type 2 (Modal Popups)** - Used for Fundraising Opt-Out, Comedy Night tickets, States campaign, Fly Away Meet, and Backpacks for New Gymnasts
+1. **Type 1 (Direct Links)** - Used for core program funding button (Program 1)
+2. **Type 2 (Modal Popups)** - Used for Fundraising Opt-Out, Comedy Night tickets, States campaign, Fly Away Meet, Backpacks for New Gymnasts, and Region 7 Competition Fees
 3. **Type 3 (Embedded iframes)** - Used for thermometer widgets and embedded donation forms in the fundraising section
 
 ### Recommended Additions
 
-1. **Standardize Campaign IDs** - Obtain specific campaign IDs for all active campaigns to ensure accurate tracking
-2. **Update Placeholder IDs** - Replace the shared membership form ID with unique IDs for:
-   - Fly-away Meet funding
-   - Regional Competition funding  
-   - General direct donations
+1. **Standardize Remaining Campaign IDs** - Obtain specific campaign ID for:
+   - General direct donations (currently sharing membership ID)
 
 ### Best Practices
 
