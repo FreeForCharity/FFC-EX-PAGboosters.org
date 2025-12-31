@@ -284,16 +284,50 @@ Embeds the donation form directly into the page content using an iframe.
 
 ---
 
-### Campaign: Backpacks - New Gymnasts
+### Campaign: Backpacks for New Gymnasts
 
 **Type:** Donation  
-**Status:** Active  
-**Campaign ID:** Not yet identified  
+**Status:** Active (Currently on site)  
+**Campaign ID/Name:** `backpacks-new-gymnasts`  
 **Amount Raised:** $1,305.66  
 **Donations:** 15  
-**Description:** Funding to provide backpacks for new gymnasts joining the team.
+**Description:** Help reduce the cost of entry for our youngest team members. When a gymnast starts on the team, they need brand new backpacks and other gear. This fundraiser helps support new gymnasts joining the team.
 
-**Note:** Campaign ID needs to be obtained from Zeffy dashboard for full integration.
+**Zeffy Link:** `https://www.zeffy.com/donation-form/backpacks-new-gymnasts`
+
+#### Integration Code:
+
+**Type 1 - Direct Link:**
+```html
+<a href="https://www.zeffy.com/donation-form/backpacks-new-gymnasts" target="_blank" rel="noopener noreferrer" class="btn">
+    Support New Gymnasts
+</a>
+```
+
+**Type 2 - Modal Popup (Recommended - Currently Used):**
+
+*Header Script (already added to `<head>`):*
+```html
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+```
+
+*Button Code:*
+```html
+<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/backpacks-new-gymnasts?modal=true" class="btn">
+    Support New Gymnasts
+</button>
+```
+
+**Type 3 - Embedded Form:**
+```html
+<div style="position:relative;overflow:hidden;height:1200px;width:100%;">
+    <iframe title="Backpacks for New Gymnasts donation form powered by Zeffy" 
+            style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
+            src="https://www.zeffy.com/embed/donation-form/backpacks-new-gymnasts" 
+            allowpaymentrequest 
+            allowTransparency="true"></iframe>
+</div>
+```
 
 ---
 
@@ -422,6 +456,7 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Donate to Send our Girls to USAG States!! | Donation | ✅ Active on site (same form as membership) |
 | `wise-crackers-comedy-charity-night` | Wise Crackers Comedy Charity Night! | Event | ✅ Active on site |
 | `fly-away-meet-registration` | Fly Away Meet Registration | Event | ✅ Active on site |
+| `backpacks-new-gymnasts` | Backpacks for New Gymnasts | Donation | ✅ Active on site |
 
 ### Form IDs Needed (Currently Using Placeholder IDs)
 
@@ -439,8 +474,6 @@ The following campaigns are currently incorrectly sharing the membership form ID
 | Pag Parents Inc USAG Team Memberships 2024 (Monthly) | Unknown | $9,321.56 | Need form ID |
 | Pag Parents Inc USAG Team Memberships 2024 (Annual) | Unknown | $11,420 | Need form ID |
 | Donate to Make a Difference for Our Gymnasts | Unknown | $681 | Need form ID |
-| Backpacks - New Gymnasts | Unknown | $1,305.66 | Need form ID |
-| Fly Away Meet Registration | Unknown | $676 | Backlog |
 
 ---
 
@@ -450,7 +483,7 @@ The following campaigns are currently incorrectly sharing the membership form ID
 
 The website currently uses:
 1. **Type 1 (Direct Links)** - Used for program funding buttons that open in new tabs
-2. **Type 2 (Modal Popups)** - Used for Fundraising Opt-Out, Comedy Night tickets, and States campaign
+2. **Type 2 (Modal Popups)** - Used for Fundraising Opt-Out, Comedy Night tickets, States campaign, Fly Away Meet, and Backpacks for New Gymnasts
 3. **Type 3 (Embedded iframes)** - Used for thermometer widgets and embedded donation forms in the fundraising section
 
 ### Recommended Additions
