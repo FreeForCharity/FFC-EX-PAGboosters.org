@@ -2,6 +2,16 @@
 
 This document provides a comprehensive guide to all Zeffy donation campaigns used by PAG Booster, including the different types of integration code for each campaign.
 
+## ⚠️ Important: Unique Form IDs
+
+**Each campaign must have its own unique Zeffy form ID.** No two different campaigns or buttons should share a form ID unless they are the exact same campaign. Each form ID is a unique identifier that tracks donations, ticket sales, or memberships for a specific campaign. Reusing form IDs across different campaigns will result in inaccurate tracking and reporting.
+
+When implementing a new campaign button:
+1. Obtain the specific form ID from the Zeffy dashboard for that campaign
+2. Use the complete form ID without shortening or making assumptions
+3. Document the full form ID in this file for future reference
+4. Never reuse a form ID from a different campaign
+
 ## Table of Contents
 
 1. [Campaign Types Overview](#campaign-types-overview)
@@ -203,14 +213,48 @@ Embeds the donation form directly into the page content using an iframe.
 
 **Type:** Donation  
 **Status:** Active (Currently on site)  
-**Campaign ID:** Not yet identified (uses same ID as general donations)  
+**Campaign ID:** `1bbf7eac-7a56-419e-8aab-7d39111709a7`  
 **Amount Raised:** $873.50  
 **Donations:** 5  
 **Description:** Specific campaign to fund state competition attendance.
 
-**Current Implementation:** Uses the general donation campaign ID (1bbf7eac-7a56-419e-8aab-7d39111709a7)
+**Zeffy Link:** `https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7`
 
-**Note:** May need a dedicated campaign ID for accurate tracking.
+**IMPORTANT:** This campaign uses the same form ID as the "Pag Parents Inc USAG Team Memberships 2025 (Annual)" campaign, indicating they may be part of the same fundraising effort or the ID was reused. Each unique campaign should ideally have its own unique form ID for accurate tracking.
+
+#### Integration Code:
+
+**Type 1 - Direct Link:**
+```html
+<a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">
+    Send PAG to States
+</a>
+```
+
+**Type 2 - Modal Popup (Currently Used):**
+
+*Header Script (already added to `<head>`):*
+```html
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+```
+
+*Button Code:*
+```html
+<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn">
+    Support This Campaign
+</button>
+```
+
+**Type 3 - Embedded Form:**
+```html
+<div style="position:relative;overflow:hidden;height:1200px;width:100%;">
+    <iframe title="Send PAG to States donation form powered by Zeffy" 
+            style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
+            src="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
+            allowpaymentrequest 
+            allowTransparency="true"></iframe>
+</div>
+```
 
 ---
 
@@ -320,30 +364,64 @@ The following campaigns are visible in the Zeffy dashboard but are not currently
 
 ---
 
+## Campaign ID Reference
+
+This section provides a quick reference of all Zeffy form IDs currently in use. **Remember: Each unique campaign must have its own unique form ID.**
+
+### Currently Active Form IDs
+
+| Form ID | Campaign Name | Type | Status |
+|---------|---------------|------|--------|
+| `fundraising-opt-out` | Fundraising Opt-Out | Donation | ✅ Active on site |
+| `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Pag Parents Inc USAG Team Memberships 2025 (Annual) | Membership | ✅ Active on site |
+| `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Donate to Send our Girls to USAG States!! | Donation | ✅ Active on site (same form as membership) |
+| `wise-crackers-comedy-charity-night` | Wise Crackers Comedy Charity Night! | Event | ✅ Active on site |
+
+### Form IDs Needed (Currently Using Placeholder IDs)
+
+The following campaigns are currently incorrectly sharing the membership form ID `1bbf7eac-7a56-419e-8aab-7d39111709a7` and need their own unique form IDs:
+
+| Campaign Name | Current Form ID (Incorrect) | Action Required |
+|---------------|----------------------------|-----------------|
+| Fly-away Optional Team Meet | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
+| Region 7 Competition Fees | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
+| Direct Donations (General) | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
+
+### Campaigns Not Yet Integrated
+
+| Campaign Name | Form ID | Amount Raised | Status |
+|---------------|---------|---------------|--------|
+| Pag Parents Inc USAG Team Memberships 2024 (Monthly) | Unknown | $9,321.56 | Need form ID |
+| Pag Parents Inc USAG Team Memberships 2024 (Annual) | Unknown | $11,420 | Need form ID |
+| Donate to Make a Difference for Our Gymnasts | Unknown | $681 | Need form ID |
+| Backpacks - New Gymnasts | Unknown | $1,305.66 | Need form ID |
+| Fly Away Meet Registration | Unknown | $676 | Backlog |
+
+---
+
 ## Implementation Notes
 
 ### Current Site Usage
 
 The website currently uses:
-1. **Type 1 (Direct Links)** - Used for all donation buttons that open in new tabs
-2. **Type 3 (Embedded iframes)** - Used for thermometer widgets and embedded donation forms in the fundraising section
+1. **Type 1 (Direct Links)** - Used for program funding buttons that open in new tabs
+2. **Type 2 (Modal Popups)** - Used for Fundraising Opt-Out, Comedy Night tickets, and States campaign
+3. **Type 3 (Embedded iframes)** - Used for thermometer widgets and embedded donation forms in the fundraising section
 
 ### Recommended Additions
 
-1. **Add Zeffy Header Script** - Add the modal popup script to enable Type 2 integrations:
-   ```html
-   <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
-   ```
-
-2. **Implement Fundraising Opt-Out** - Add modal button for better user experience
-
-3. **Standardize Campaign IDs** - Obtain specific campaign IDs for all active campaigns to ensure accurate tracking
+1. **Standardize Campaign IDs** - Obtain specific campaign IDs for all active campaigns to ensure accurate tracking
+2. **Update Placeholder IDs** - Replace the shared membership form ID with unique IDs for:
+   - Fly-away Meet funding
+   - Regional Competition funding  
+   - General direct donations
 
 ### Best Practices
 
 1. **Use Type 2 (Modal Popup)** for:
    - Primary donation calls-to-action
    - Membership signup buttons
+   - Event ticketing
    - Quick donation options
 
 2. **Use Type 1 (Direct Link)** for:
@@ -363,11 +441,12 @@ The website currently uses:
 **When adding new campaigns:**
 
 1. Create campaign in Zeffy dashboard
-2. Obtain campaign ID or custom URL slug
-3. Add campaign details to this document
-4. Choose appropriate integration type
-5. Test all three code types before deployment
-6. Update website with chosen integration method
+2. Obtain the unique campaign ID or custom URL slug
+3. **Verify the ID is unique** - do not reuse IDs from other campaigns
+4. Add campaign details to this document with full form ID
+5. Choose appropriate integration type
+6. Test all three code types before deployment
+7. Update website with chosen integration method
 
 **When updating campaigns:**
 
