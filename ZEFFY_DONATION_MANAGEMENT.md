@@ -2,6 +2,23 @@
 
 This document provides a comprehensive guide to all Zeffy donation campaigns used by PAG Booster, including the different types of integration code for each campaign.
 
+## ⚠️ Important: Code Integrity
+
+**All Zeffy code provided in comments must be used exactly as provided without modification.** When Zeffy integration code is provided:
+
+1. **Use the exact code** - Do not modify, shorten, or make assumptions about form IDs or script URLs
+2. **Preserve formatting** - Maintain all attributes including quotes, spacing, and parameters
+3. **Verify completeness** - Ensure the entire code snippet is captured, especially when provided as screenshots
+4. **Document as-is** - Store the complete, unmodified code in this documentation file
+
+### How to Ensure Code Integrity
+
+When code is provided in comments (especially as screenshots):
+- Copy the exact text without alterations
+- If unsure about any character or attribute, ask for clarification
+- Double-check form IDs match what's in the Zeffy dashboard
+- Test the implementation before finalizing
+
 ## ⚠️ Important: Unique Form IDs
 
 **Each campaign must have its own unique Zeffy form ID.** No two different campaigns or buttons should share a form ID unless they are the exact same campaign. Each form ID is a unique identifier that tracks donations, ticket sales, or memberships for a specific campaign. Reusing form IDs across different campaigns will result in inaccurate tracking and reporting.
