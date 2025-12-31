@@ -60,7 +60,7 @@ When Zeffy shows you code (as seen in the "Paste the link on the button" modal):
 2. **Second box ("Add second code to the header of your website"):**
    - Copy the ENTIRE `<script>` tag
    - Include the opening `<script src="` and closing `"></script>`
-   - Example: `<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>`
+   - Example: `<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>`
 
 3. **For iframe embeds:**
    - Copy the ENTIRE block including the outer `<div>` tag
@@ -74,7 +74,7 @@ Here is the button code:
 `zeffy-form-link="https://www.zeffy.com/embed/donation-form/campaign-name?modal=true"`
 
 And the header script:
-`<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>`
+`<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>`
 ```
 
 #### Common Mistakes to Avoid
@@ -134,7 +134,7 @@ A button that uses Zeffy's JavaScript to open the donation form in a modal overl
 
 **Required Header Script:**
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 **Usage:**
@@ -199,7 +199,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Header Script (add to `<head>` once):*
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 *Button Code:*
@@ -322,7 +322,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Header Script (already added to `<head>`):*
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 *Button Code:*
@@ -382,7 +382,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Header Script (already added to `<head>`):*
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 *Button Code:*
@@ -437,7 +437,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Header Script (already added to `<head>`):*
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 *Button Code:*
@@ -485,7 +485,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Header Script (already added to `<head>`):*
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 *Button Code:*
@@ -533,7 +533,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Header Script (already added to `<head>`):*
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 *Button Code:*
@@ -600,7 +600,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Header Script (already added to `<head>`):*
 ```html
-<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 ```
 
 *Button Code:*
@@ -640,8 +640,7 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 | Form ID | Campaign Name | Type | Status |
 |---------|---------------|------|--------|
 | `fundraising-opt-out` | Fundraising Opt-Out | Donation | ✅ Active on site |
-| `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Pag Parents Inc USAG Team Memberships 2025 (Annual) | Membership | ✅ Active on site |
-| `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Donate to Send our Girls to USAG States!! | Donation | ✅ Active on site (same form as membership) |
+| `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Pag Parents Inc USAG Team Memberships 2025 (Annual) / Donate to Send our Girls to USAG States!! | Membership & Donation (intentionally shared) | ✅ Active on site |
 | `wise-crackers-comedy-charity-night` | Wise Crackers Comedy Charity Night! | Event | ✅ Active on site |
 | `fly-away-meet-registration` | Fly Away Meet Registration | Event | ✅ Active on site |
 | `backpacks-new-gymnasts` | Backpacks for New Gymnasts | Donation | ✅ Active on site |
@@ -650,8 +649,11 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 
 ### Form IDs Status
 
-**All campaigns now have unique form IDs!** ✅
+**6 campaigns have unique form IDs, with 1 intentionally shared form ID.** ✅
 
+- ✅ **Unique form IDs**: `fundraising-opt-out`, `wise-crackers-comedy-charity-night`, `fly-away-meet-registration`, `backpacks-new-gymnasts`, `region-7-competition-fees`, `1147c71d-852d-4639-a9ac-48dc0c89d039`
+- ⚠️ **Intentionally shared**: `1bbf7eac-7a56-419e-8aab-7d39111709a7` is used for both "Pag Parents Inc USAG Team Memberships 2025 (Annual)" and "Donate to Send our Girls to USAG States!!" This is intentional as these campaigns are closely linked.
+  
 Previously, Direct Donations was incorrectly sharing the membership form ID, but it now has its own unique ID: `1147c71d-852d-4639-a9ac-48dc0c89d039`.
 
 ### Campaigns Not Yet Integrated
