@@ -253,25 +253,57 @@ Embeds the donation form directly into the page content using an iframe.
 
 ---
 
-## Backlog Campaigns
-
-The following campaigns are visible in the Zeffy dashboard but are not currently integrated into the website:
-
 ### Campaign: Wise Crackers Comedy Charity Night!
 
 **Type:** Event  
-**Status:** Backlog (Not on site)  
-**Event Date:** Jan 24, 2025  
+**Status:** Active (Currently on site)  
+**Campaign ID/Name:** `wise-crackers-comedy-charity-night`  
+**Event Date:** January 24, 2025  
 **Amount Raised:** $100  
 **Sales:** 4  
-**Description:** Comedy night fundraiser event.
+**Description:** Comedy night fundraiser event. Enjoy an evening of laughter while supporting our gymnasts.
 
-**Action Required:**
-- Decide if this event should be added to the site
-- If yes, create event page or add to fundraising section
-- Integrate ticket sales form
+**Zeffy Link:** `https://www.zeffy.com/ticketing/wise-crackers-comedy-charity-night`
+
+#### Integration Code:
+
+**Type 1 - Direct Link:**
+```html
+<a href="https://www.zeffy.com/ticketing/wise-crackers-comedy-charity-night" target="_blank" rel="noopener noreferrer" class="btn">
+    Get Tickets
+</a>
+```
+
+**Type 2 - Modal Popup (Recommended - Currently Used):**
+
+*Header Script (already added to `<head>`):*
+```html
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+```
+
+*Button Code:*
+```html
+<button zeffy-form-link="https://www.zeffy.com/embed/ticketing/wise-crackers-comedy-charity-night?modal=true" class="btn">
+    Get Tickets
+</button>
+```
+
+**Type 3 - Embedded Form:**
+```html
+<div style="position:relative;overflow:hidden;height:1200px;width:100%;">
+    <iframe title="Wise Crackers Comedy Night tickets powered by Zeffy" 
+            style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
+            src="https://www.zeffy.com/embed/ticketing/wise-crackers-comedy-charity-night" 
+            allowpaymentrequest 
+            allowTransparency="true"></iframe>
+</div>
+```
 
 ---
+
+## Backlog Campaigns
+
+The following campaigns are visible in the Zeffy dashboard but are not currently integrated into the website:
 
 ### Campaign: Fly Away Meet Registration
 
