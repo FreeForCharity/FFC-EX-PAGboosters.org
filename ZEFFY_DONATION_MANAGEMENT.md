@@ -477,6 +477,58 @@ Embeds the donation form directly into the page content using an iframe.
 
 ---
 
+### Campaign: Donate to Make a Difference for Our Gymnasts (General Campaign)
+
+**Type:** Donation  
+**Status:** Active (Currently on site)  
+**Campaign ID:** `1147c71d-852d-4639-a9ac-48dc0c89d039`  
+**Official Campaign Name:** Donate to make a difference for our gymnasts  
+**Amount Raised:** $681  
+**Donations:** 5  
+**Description:** Evergreen general donation campaign that can be funded at any time by any individual. This campaign supports all PAG Booster programs and helps our gymnasts achieve their dreams.
+
+**Zeffy Link:** `https://www.zeffy.com/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039`
+
+**Location on Site:**
+- Navigation bar "Donate" button (top right)
+- Direct Donations card in Fundraising section
+
+#### Integration Code:
+
+**Type 1 - Direct Link:**
+```html
+<a href="https://www.zeffy.com/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039" target="_blank" rel="noopener noreferrer" class="btn">
+    Donate Now
+</a>
+```
+
+**Type 2 - Modal Popup (Recommended - Currently Used):**
+
+*Header Script (already added to `<head>`):*
+```html
+<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>
+```
+
+*Button Code:*
+```html
+<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039?modal=true" class="btn">
+    Donate Now
+</button>
+```
+
+**Type 3 - Embedded Form:**
+```html
+<div style="position:relative;overflow:hidden;height:1200px;width:100%;">
+    <iframe title="Donate to make a difference for our gymnasts - donation form powered by Zeffy" 
+            style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
+            src="https://www.zeffy.com/embed/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039" 
+            allowpaymentrequest 
+            allowTransparency="true"></iframe>
+</div>
+```
+
+---
+
 ## Backlog Campaigns
 
 The following campaigns are visible in the Zeffy dashboard but are not currently integrated into the website:
@@ -500,22 +552,22 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 | `fly-away-meet-registration` | Fly Away Meet Registration | Event | ✅ Active on site |
 | `backpacks-new-gymnasts` | Backpacks for New Gymnasts | Donation | ✅ Active on site |
 | `region-7-competition-fees` | Region 7 Competition Fees | Event | ✅ Active on site |
+| `1147c71d-852d-4639-a9ac-48dc0c89d039` | Donate to make a difference for our gymnasts | Donation | ✅ Active on site |
 
-### Form IDs Needed (Currently Using Placeholder IDs)
+### Form IDs Status
 
-The following campaigns are currently incorrectly sharing the membership form ID `1bbf7eac-7a56-419e-8aab-7d39111709a7` and need their own unique form IDs:
+**All campaigns now have unique form IDs!** ✅
 
-| Campaign Name | Current Form ID (Incorrect) | Action Required |
-|---------------|----------------------------|-----------------|
-| Direct Donations (General) | `1bbf7eac-7a56-419e-8aab-7d39111709a7` | ⚠️ Needs unique form ID from Zeffy dashboard |
+Previously, Direct Donations was incorrectly sharing the membership form ID, but it now has its own unique ID: `1147c71d-852d-4639-a9ac-48dc0c89d039`.
 
 ### Campaigns Not Yet Integrated
 
 | Campaign Name | Form ID | Amount Raised | Status |
 |---------------|---------|---------------|--------|
-| Pag Parents Inc USAG Team Memberships 2024 (Monthly) | Unknown | $9,321.56 | Need form ID |
-| Pag Parents Inc USAG Team Memberships 2024 (Annual) | Unknown | $11,420 | Need form ID |
-| Donate to Make a Difference for Our Gymnasts | Unknown | $681 | Need form ID |
+| Pag Parents Inc USAG Team Memberships 2024 (Monthly) | Unknown | $9,321.56 | Historical campaign |
+| Pag Parents Inc USAG Team Memberships 2024 (Annual) | Unknown | $11,420 | Historical campaign |
+
+**Note:** The 2024 membership campaigns are historical and may not need integration.
 
 ---
 
@@ -525,13 +577,20 @@ The following campaigns are currently incorrectly sharing the membership form ID
 
 The website currently uses:
 1. **Type 1 (Direct Links)** - Used for core program funding button (Program 1)
-2. **Type 2 (Modal Popups)** - Used for Fundraising Opt-Out, Comedy Night tickets, States campaign, Fly Away Meet, Backpacks for New Gymnasts, and Region 7 Competition Fees
+2. **Type 2 (Modal Popups)** - Used for:
+   - Navigation "Donate" button
+   - Fundraising Opt-Out
+   - Comedy Night tickets
+   - States campaign
+   - Fly Away Meet
+   - Backpacks for New Gymnasts
+   - Region 7 Competition Fees
+   - Direct Donations (General Campaign)
 3. **Type 3 (Embedded iframes)** - Used for thermometer widgets and embedded donation forms in the fundraising section
 
-### Recommended Additions
+### All Campaigns Integrated ✅
 
-1. **Standardize Remaining Campaign IDs** - Obtain specific campaign ID for:
-   - General direct donations (currently sharing membership ID)
+All identified donation and event campaigns from the Zeffy dashboard are now fully integrated with unique form IDs!
 
 ### Best Practices
 
