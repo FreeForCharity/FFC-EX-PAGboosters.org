@@ -19,6 +19,76 @@ When code is provided in comments (especially as screenshots):
 - Double-check form IDs match what's in the Zeffy dashboard
 - Test the implementation before finalizing
 
+### 📋 For Non-Technical Users: How to Share Zeffy Code in Comments
+
+When copying code from Zeffy to share in GitHub comments, follow these steps to ensure the code is properly communicated:
+
+#### When to Use Markdown Code Blocks (Backticks)
+
+**DO use backticks** when sharing code that contains special characters or formatting. This preserves the code exactly as-is:
+
+**For single lines of code**, wrap with single backticks:
+```
+`zeffy-form-link="https://www.zeffy.com/embed/donation-form/fundraising-opt-out?modal=true"`
+```
+
+**For multiple lines or blocks of code**, wrap with triple backticks:
+```
+```html
+<div style="position:relative;overflow:hidden;height:450px;width:100%;">
+    <iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' src='https://www.zeffy.com/embed/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039' allowpaymentrequest allowTransparency="true"></iframe>
+</div>
+```
+```
+
+#### When Plain Text is Acceptable
+
+**DO NOT need backticks** for:
+- Simple URLs without query parameters: `https://www.zeffy.com/donation-form/campaign-name`
+- Descriptions or explanations
+- Campaign names or IDs by themselves
+
+#### What to Copy from Zeffy Interface
+
+When Zeffy shows you code (as seen in the "Paste the link on the button" modal):
+
+1. **First box ("Add first code to your button"):**
+   - Copy the ENTIRE line starting with `zeffy-form-link=` 
+   - Include everything between the quotation marks
+   - Example: `zeffy-form-link="https://www.zeffy.com/embed/donation-form/fundraising-opt-out?modal=true"`
+
+2. **Second box ("Add second code to the header of your website"):**
+   - Copy the ENTIRE `<script>` tag
+   - Include the opening `<script src="` and closing `"></script>`
+   - Example: `<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>`
+
+3. **For iframe embeds:**
+   - Copy the ENTIRE block including the outer `<div>` tag
+   - All attributes and styles must be preserved exactly
+
+#### Example of Properly Shared Code
+
+Good examples:
+```
+Here is the button code:
+`zeffy-form-link="https://www.zeffy.com/embed/donation-form/campaign-name?modal=true"`
+
+And the header script:
+`<script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-helper.min.js"></script>`
+```
+
+#### Common Mistakes to Avoid
+
+❌ **DON'T** share only part of the code (missing quotes, parameters, or tags)  
+❌ **DON'T** try to summarize or paraphrase the code  
+❌ **DON'T** modify URLs or remove query parameters like `?modal=true`  
+❌ **DON'T** forget to include both the button code AND the header script when sharing modal integrations  
+
+✅ **DO** copy everything exactly as shown in Zeffy  
+✅ **DO** use backticks to preserve special characters  
+✅ **DO** include complete tags from opening `<` to closing `>`  
+✅ **DO** test the code before sharing if possible
+
 ## ⚠️ Important: Unique Form IDs
 
 **Each campaign must have its own unique Zeffy form ID.** No two different campaigns or buttons should share a form ID unless they are the exact same campaign. Each form ID is a unique identifier that tracks donations, ticket sales, or memberships for a specific campaign. Reusing form IDs across different campaigns will result in inaccurate tracking and reporting.
