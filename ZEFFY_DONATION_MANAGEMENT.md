@@ -482,7 +482,13 @@ Embeds the donation form directly into the page content using an iframe.
 **Type:** Donation  
 **Status:** Active (Currently on site)  
 **Campaign ID:** `1147c71d-852d-4639-a9ac-48dc0c89d039`  
-**Official Campaign Name:** Donate to make a difference for our gymnasts  
+**Official Campaign Name (in Zeffy):** Donate to make a difference for our gymnasts  
+**Public-Facing Marketing Names:** 
+- "Donate" (navigation button)
+- "Direct Donations" (fundraising card title)
+- "Donate Now" (button text)
+- "Support Our Team" (footer section title)
+
 **Amount Raised:** $681  
 **Donations:** 5  
 **Description:** Evergreen general donation campaign that can be funded at any time by any individual. This campaign supports all PAG Booster programs and helps our gymnasts achieve their dreams.
@@ -492,6 +498,7 @@ Embeds the donation form directly into the page content using an iframe.
 **Location on Site:**
 - Navigation bar "Donate" button (top right)
 - Direct Donations card in Fundraising section
+- Footer embedded donation form
 
 #### Integration Code:
 
