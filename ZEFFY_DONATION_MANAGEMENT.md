@@ -516,7 +516,7 @@ Embeds the donation form directly into the page content using an iframe.
 **Amount Raised:** $676  
 **Sales:** 4  
 **Location:** Tampa, Florida  
-**Description:** Registration and funding for team members attending an out-of-state fly-away meet. These larger meets in major cities outside of Region 7 help expand State College gymnastics beyond regional boundaries.
+**Description:** Registration and funding for team members attending an out-of-state Fly Away Meet. These larger meets in major cities outside of Region 7 help expand State College gymnastics beyond regional boundaries.
 
 **Zeffy Link:** `https://www.zeffy.com/ticketing/fly-away-meet-registration`
 
@@ -525,7 +525,7 @@ Embeds the donation form directly into the page content using an iframe.
 **Type 1 - Direct Link:**
 ```html
 <a href="https://www.zeffy.com/ticketing/fly-away-meet-registration" target="_blank" rel="noopener noreferrer" class="btn">
-    Register for Fly-away Meet
+    Register for Fly Away Meet
 </a>
 ```
 
@@ -539,7 +539,7 @@ Embeds the donation form directly into the page content using an iframe.
 *Button Code:*
 ```html
 <button zeffy-form-link="https://www.zeffy.com/embed/ticketing/fly-away-meet-registration?modal=true" class="btn">
-    Support Fly-away Meet
+    Support Fly Away Meet
 </button>
 ```
 
@@ -556,7 +556,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 **Thermometer Widget:**
 ```html
-<iframe title="Fly-away Meet thermometer powered by Zeffy" 
+<iframe title="Fly Away Meet thermometer powered by Zeffy" 
         style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
         src="https://www.zeffy.com/embed/thermometer/fly-away-meet-registration" 
         allowTransparency="true"></iframe>
