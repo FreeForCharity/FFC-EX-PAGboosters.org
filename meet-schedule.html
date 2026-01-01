@@ -239,12 +239,13 @@
 	#et-main-area {
 		padding: 0;
 		margin: 0;
+		/* Position relative and z-index to ensure content area stays above hidden mobile menu */
 		position: relative;
 		z-index: 1;
 	}
 
 	.et_pb_section {
-		padding: 0;
+		padding: 20px 0;
 		margin: 0;
 	}
 
@@ -266,12 +267,12 @@
 	}
 
 	/* Remove top padding from first section to eliminate white bar */
-	.et_pb_section_0 {
-		padding-top: 0 !important;
+	.et_pb_section:first-of-type {
+		padding-top: 0;
 	}
 
-	.et_pb_row_0 {
-		padding-top: 0 !important;
+	.et_pb_row:first-of-type {
+		padding-top: 0;
 	}
 </style>
 </head>
