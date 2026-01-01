@@ -1,0 +1,24 @@
+{
+  "name": "pagboosters-website",
+  "version": "1.0.0",
+  "description": "PAG Booster website with accessibility enforcement",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,html}": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "@html-eslint/eslint-plugin": "^0.24.1",
+    "@html-eslint/parser": "^0.24.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
+  }
+}
