@@ -204,7 +204,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Button Code:*
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/fundraising-opt-out?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/fundraising-opt-out?modal=true" class="btn">
     Fundraising Opt-Out
 </button>
 ```
@@ -244,7 +244,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 **Type 2 - Modal Popup:**
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn">
     Join Membership
 </button>
 ```
@@ -327,7 +327,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Button Code:*
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn">
     Support This Campaign
 </button>
 ```
@@ -387,7 +387,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Button Code:*
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/ticketing/region-7-competition-fees?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/ticketing/region-7-competition-fees?modal=true" class="btn">
     Support Regionals
 </button>
 ```
@@ -442,7 +442,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Button Code:*
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/backpacks-new-gymnasts?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/backpacks-new-gymnasts?modal=true" class="btn">
     Support New Gymnasts
 </button>
 ```
@@ -490,7 +490,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Button Code:*
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/ticketing/wise-crackers-comedy-charity-night?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/ticketing/wise-crackers-comedy-charity-night?modal=true" class="btn">
     Get Tickets
 </button>
 ```
@@ -538,7 +538,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Button Code:*
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/ticketing/fly-away-meet-registration?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/ticketing/fly-away-meet-registration?modal=true" class="btn">
     Support Fly Away Meet
 </button>
 ```
@@ -605,7 +605,7 @@ Embeds the donation form directly into the page content using an iframe.
 
 *Button Code:*
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039?modal=true" class="btn">
     Donate Now
 </button>
 ```
