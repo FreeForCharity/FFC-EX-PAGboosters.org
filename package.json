@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
     "@html-eslint/eslint-plugin": "^0.24.1",
     "@html-eslint/parser": "^0.24.1",
     "husky": "^9.0.11",
