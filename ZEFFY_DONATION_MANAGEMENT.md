@@ -180,7 +180,7 @@ Embeds the donation form directly into the page content using an iframe.
 ### Campaign: Fundraising Opt-Out
 
 **Type:** Donation  
-**Status:** Active (Not yet on site)  
+**Status:** Active (Currently on site)  
 **Campaign ID/Name:** `fundraising-opt-out`  
 **Description:** For parents and family members who do not wish to participate in fundraising and will instead fully fund the booster club for post-season events (States and Regionals).
 
