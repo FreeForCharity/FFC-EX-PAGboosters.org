@@ -191,6 +191,7 @@
 	/* Add padding to body to prevent content overlap with fixed navbar */
 	body {
 		padding-top: 70px;
+		overflow-x: hidden;
 	}
 
 	/* Mobile menu toggle button styling */
@@ -218,6 +219,7 @@
 			gap: 20px;
 			transition: left 0.3s ease;
 			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			z-index: 999;
 		}
 
 		.nav-menu.active {
@@ -226,6 +228,12 @@
 
 		.mobile-menu-toggle {
 			display: block;
+		}
+		
+		/* Ensure content area doesn't show mobile menu when hidden */
+		#et-main-area {
+			position: relative;
+			z-index: 1;
 		}
 	}
 
