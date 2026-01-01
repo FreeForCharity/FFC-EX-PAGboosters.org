@@ -229,12 +229,6 @@
 		.mobile-menu-toggle {
 			display: block;
 		}
-		
-		/* Ensure content area doesn't show mobile menu when hidden */
-		#et-main-area {
-			position: relative;
-			z-index: 1;
-		}
 	}
 
 	/* Back-to-top button and reduced motion styles moved to css/back-to-top.css */
@@ -245,6 +239,8 @@
 	#et-main-area {
 		padding: 0;
 		margin: 0;
+		position: relative;
+		z-index: 1;
 	}
 
 	.et_pb_section {
