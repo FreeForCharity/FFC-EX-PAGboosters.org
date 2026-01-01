@@ -38,6 +38,89 @@ This repository contains comprehensive planning documents for converting the PAG
 
 ---
 
+## 🧪 Testing & Code Quality
+
+This repository includes comprehensive automated testing and code quality checks to ensure the website meets high standards for accessibility, performance, and security.
+
+### Automated Testing
+
+#### Test Suite
+- **Playwright E2E Tests** - End-to-end testing of all pages and functionality
+- **Accessibility Tests** - WCAG 2.1 Level AA compliance using axe-core
+- **Visual Regression Tests** - Screenshot comparison to detect unintended UI changes
+- **Performance Tests** - Lighthouse CI for performance, SEO, and best practices
+- **Link Checker** - Validates all internal and external links
+
+#### Running Tests Locally
+
+```bash
+# Install dependencies
+npm install
+npx playwright install chromium --with-deps
+
+# Run all tests
+npm test
+
+# Run accessibility tests only
+npm run test:a11y
+
+# Run Lighthouse performance tests
+npm run lighthouse
+
+# Check for broken links
+npm run links
+
+# Run tests with browser visible
+npm run test:headed
+
+# Interactive test UI
+npm run test:ui
+```
+
+See [tests/README.md](./tests/README.md) for detailed testing documentation.
+
+### CI/CD Pipeline
+
+#### Continuous Integration
+All pull requests and pushes to `main` trigger automated checks:
+
+1. **CodeQL Security Scanning** - Identifies security vulnerabilities in code
+2. **Automated Tests** - Runs full test suite including:
+   - Playwright E2E tests
+   - Accessibility validation
+   - Lighthouse performance checks
+   - Link validation
+3. **Dependency Updates** - Dependabot automatically creates PRs for dependency updates
+
+#### Continuous Deployment
+- Deploys to GitHub Pages automatically after all tests pass on `main` branch
+- Requires both CodeQL and Test workflows to succeed before deployment
+- Manual deployment option available via GitHub Actions UI
+
+#### GitHub Workflows
+- **`.github/workflows/codeql.yml`** - Weekly security scanning
+- **`.github/workflows/test.yml`** - Test suite on every PR and push
+- **`.github/workflows/deploy.yml`** - Automated deployment with quality gates
+
+#### Code Quality Protections
+- **Dependabot** - Automated dependency updates for npm packages and GitHub Actions
+- **CODEOWNERS** - Enforces code review requirements
+- **PR Template** - Standardized pull request checklist
+
+### Development Workflow
+
+1. Create a feature branch from `main`
+2. Make your changes
+3. Run tests locally: `npm test`
+4. Commit and push your changes
+5. Open a pull request
+6. Automated tests run on your PR
+7. Request review from code owners
+8. Once approved and tests pass, merge to `main`
+9. Automatic deployment to production
+
+---
+
 ## 🎯 Project Objectives
 
 ### Primary Goals
