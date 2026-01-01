@@ -28,10 +28,3 @@ jobs:
       
       - name: Run ARIA Linting
         run: npm run lint
-        
-      - name: Verify no accessibility violations
-        if: failure()
-        run: |
-          echo "❌ Accessibility violations detected!"
-          echo "Please fix the ARIA attribute errors before merging."
-          exit 1
