@@ -139,7 +139,7 @@ A button that uses Zeffy's JavaScript to open the donation form in a modal overl
 
 **Usage:**
 ```html
-<button zeffy-form-link="https://www.zeffy.com/embed/donation-form/[CAMPAIGN-NAME-OR-ID]?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/[CAMPAIGN-NAME-OR-ID]?modal=true" class="btn">
     Donate Now
 </button>
 ```
@@ -465,7 +465,7 @@ Embeds the donation form directly into the page content using an iframe.
 **Type:** Event  
 **Status:** Active (Currently on site)  
 **Campaign ID/Name:** `wise-crackers-comedy-charity-night`  
-**Event Date:** January 24, 2025  
+**Event Date:** January 24, 2026  
 **Amount Raised:** $100  
 **Sales:** 4  
 **Description:** Comedy night fundraiser event. Enjoy an evening of laughter while supporting our gymnasts.
@@ -651,7 +651,7 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 
 **7 campaigns total: 6 with unique form IDs, and 1 shared form ID (used by 2 campaigns).** ✅
 
-- ✅ **Unique form IDs** (6 campaigns): `fundraising-opt-out`, `wise-crackers-comedy-charity-night`, `fly-away-meet-registration`, `backpacks-new-gymnasts`, `region-7-competition-fees`, `1147c71d-852d-4639-a9ac-48dc0c89d039`
+- ✅ **Unique form IDs** (6 unique form IDs, one per campaign): `fundraising-opt-out`, `wise-crackers-comedy-charity-night`, `fly-away-meet-registration`, `backpacks-new-gymnasts`, `region-7-competition-fees`, `1147c71d-852d-4639-a9ac-48dc0c89d039`
 - ⚠️ **Intentionally shared** (1 form ID for 2 campaigns): `1bbf7eac-7a56-419e-8aab-7d39111709a7` is used for both "Pag Parents Inc USAG Team Memberships 2025 (Annual)" and "Donate to Send our Girls to USAG States!!" This is intentional as these campaigns are closely linked.
   
 Previously, Direct Donations was incorrectly sharing the membership form ID, but it now has its own unique ID: `1147c71d-852d-4639-a9ac-48dc0c89d039`.
