@@ -1,0 +1,20 @@
+{
+  "plugins": ["@html-eslint"],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "parser": "@html-eslint/parser",
+      "plugins": ["@html-eslint"],
+      "rules": {
+        "@html-eslint/require-lang": "error",
+        "@html-eslint/require-title": "error",
+        "@html-eslint/no-duplicate-id": "error",
+        "@html-eslint/require-button-type": "error",
+        "@html-eslint/require-img-alt": "error",
+        "@html-eslint/no-positive-tabindex": "error",
+        "@html-eslint/require-frame-title": "error",
+        "@html-eslint/require-meta-charset": "error"
+      }
+    }
+  ]
+}

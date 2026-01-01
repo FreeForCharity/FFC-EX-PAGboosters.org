@@ -36,6 +36,13 @@ This repository contains comprehensive planning documents for converting the PAG
    - Asset requirements
    - *Recommended for: Developers, QA testers*
 
+5. **[ACCESSIBILITY_ENFORCEMENT.md](./ACCESSIBILITY_ENFORCEMENT.md)** - ACCESSIBILITY STANDARDS
+   - WAI-ARIA standards enforcement setup
+   - Pre-commit hooks and CI gates
+   - Linting rules and usage guide
+   - Troubleshooting common issues
+   - *Recommended for: All developers*
+
 ---
 
 ## 🎯 Project Objectives
