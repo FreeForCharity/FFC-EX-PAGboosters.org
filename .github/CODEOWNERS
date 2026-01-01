@@ -1,0 +1,30 @@
+# CODEOWNERS file for PAG Booster Website
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything in the repository
+# These owners will be requested for review when someone opens a pull request
+* @FreeForCharity
+
+# Documentation
+*.md @FreeForCharity
+/docs/ @FreeForCharity
+
+# GitHub configuration files
+/.github/ @FreeForCharity
+
+# Configuration files
+*.config.* @FreeForCharity
+*.json @FreeForCharity
+*.yml @FreeForCharity
+*.yaml @FreeForCharity
+
+# Source code
+*.html @FreeForCharity
+*.css @FreeForCharity
+*.js @FreeForCharity
+
+# Tests
+/tests/ @FreeForCharity
+
+# Deployment and CI/CD
+/.github/workflows/ @FreeForCharity
