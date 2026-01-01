@@ -668,15 +668,16 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 ### Current Site Usage
 
 The website currently uses:
-1. **Type 1 (Direct Links)** - Used for core program funding button (Program 1)
+1. **Type 1 (Direct Links)** - Used for secondary and fallback donation links
 2. **Type 2 (Modal Popups)** - Used for:
+   - Core Program (Program 1)
+   - Fly Away Meet (Program 2)
+   - States Campaign (Program 3)
+   - Regionals (Region 7 Competition Fees) (Program 4)
    - Navigation "Donate" button
    - Fundraising Opt-Out
    - Comedy Night tickets
-   - States campaign
-   - Fly Away Meet
    - Backpacks for New Gymnasts
-   - Region 7 Competition Fees
    - Direct Donations (General Campaign)
 3. **Type 3 (Embedded iframes)** - Used for embedded donation forms in the fundraising section
 
@@ -725,4 +726,4 @@ All identified donation and event campaigns from the Zeffy dashboard are now ful
 
 ---
 
-*Last Updated: December 31, 2024*
+*Last Updated: January 1, 2026*
