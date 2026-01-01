@@ -226,25 +226,25 @@ Embeds the donation form directly into the page content using an iframe.
 
 **Type:** Membership  
 **Status:** Active (Currently on site)  
-**Campaign ID:** `1bbf7eac-7a56-419e-8aab-7d39111709a7`  
+**Campaign ID:** `pag-parents-inc-usag-team-memberships-2025-annual`  
 **Amount Raised:** $14,643  
 **Sales:** 40  
-**Description:** Annual membership for USAG team members - supports core program funding.
+**Description:** Annual membership for USAG team members - supports core program funding. Covers one lump sum payment, 4 equal payments, and monthly payments until fully paid.
 
-**Zeffy Link:** `https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7`
+**Zeffy Link:** `https://www.zeffy.com/ticketing/pag-parents-inc-usag-team-memberships-2025-annual`
 
 #### Integration Code:
 
 **Type 1 - Direct Link:**
 ```html
-<a href="https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" target="_blank" rel="noopener noreferrer" class="btn">
+<a href="https://www.zeffy.com/ticketing/pag-parents-inc-usag-team-memberships-2025-annual" target="_blank" rel="noopener noreferrer" class="btn">
     Join Membership
 </a>
 ```
 
 **Type 2 - Modal Popup:**
 ```html
-<button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn">
+<button type="button" zeffy-form-link="https://www.zeffy.com/embed/ticketing/pag-parents-inc-usag-team-memberships-2025-annual?modal=true" class="btn">
     Join Membership
 </button>
 ```
@@ -254,7 +254,7 @@ Embeds the donation form directly into the page content using an iframe.
 <div style="position:relative;overflow:hidden;height:1200px;width:100%;">
     <iframe title="Membership form powered by Zeffy" 
             style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%" 
-            src="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
+            src="https://www.zeffy.com/embed/ticketing/pag-parents-inc-usag-team-memberships-2025-annual" 
             allowpaymentrequest 
             allowTransparency="true"></iframe>
 </div>
@@ -264,7 +264,7 @@ Embeds the donation form directly into the page content using an iframe.
 ```html
 <iframe title="Donation thermometer powered by Zeffy" 
         style="position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:120px" 
-        src="https://www.zeffy.com/embed/thermometer/1bbf7eac-7a56-419e-8aab-7d39111709a7" 
+        src="https://www.zeffy.com/embed/thermometer/pag-parents-inc-usag-team-memberships-2025-annual" 
         allowTransparency="true"></iframe>
 ```
 
@@ -306,8 +306,6 @@ Embeds the donation form directly into the page content using an iframe.
 **Description:** Specific campaign to fund state competition attendance.
 
 **Zeffy Link:** `https://www.zeffy.com/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7`
-
-**IMPORTANT:** This campaign uses the same form ID as the "Pag Parents Inc USAG Team Memberships 2025 (Annual)" campaign, indicating they may be part of the same fundraising effort or the ID was reused. Each unique campaign should ideally have its own unique form ID for accurate tracking.
 
 #### Integration Code:
 
@@ -640,7 +638,8 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 | Form ID | Campaign Name | Type | Status |
 |---------|---------------|------|--------|
 | `fundraising-opt-out` | Fundraising Opt-Out | Donation | ✅ Active on site |
-| `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Pag Parents Inc USAG Team Memberships 2025 (Annual) / Donate to Send our Girls to USAG States!! | Membership & Donation (intentionally shared) | ✅ Active on site |
+| `pag-parents-inc-usag-team-memberships-2025-annual` | Pag Parents Inc USAG Team Memberships 2025 (Annual) | Membership | ✅ Active on site |
+| `1bbf7eac-7a56-419e-8aab-7d39111709a7` | Donate to Send our Girls to USAG States!! | Donation | ✅ Active on site |
 | `wise-crackers-comedy-charity-night` | Wise Crackers Comedy Charity Night! | Event | ✅ Active on site |
 | `fly-away-meet-registration` | Fly Away Meet Registration | Event | ✅ Active on site |
 | `backpacks-new-gymnasts` | Backpacks for New Gymnasts | Donation | ✅ Active on site |
@@ -649,12 +648,9 @@ This section provides a quick reference of all Zeffy form IDs currently in use. 
 
 ### Form IDs Status
 
-**7 campaigns total: 6 with unique form IDs, and 1 shared form ID (used by 2 campaigns).** ✅
+**8 campaigns total: ALL with unique form IDs!** ✅
 
-- ✅ **Unique form IDs** (6 unique form IDs, one per campaign): `fundraising-opt-out`, `wise-crackers-comedy-charity-night`, `fly-away-meet-registration`, `backpacks-new-gymnasts`, `region-7-competition-fees`, `1147c71d-852d-4639-a9ac-48dc0c89d039`
-- ⚠️ **Intentionally shared** (1 form ID for 2 campaigns): `1bbf7eac-7a56-419e-8aab-7d39111709a7` is used for both "Pag Parents Inc USAG Team Memberships 2025 (Annual)" and "Donate to Send our Girls to USAG States!!" This is intentional as these campaigns are closely linked.
-  
-Previously, Direct Donations was incorrectly sharing the membership form ID, but it now has its own unique ID: `1147c71d-852d-4639-a9ac-48dc0c89d039`.
+- ✅ **All unique form IDs** (8 unique form IDs, one per campaign): `fundraising-opt-out`, `pag-parents-inc-usag-team-memberships-2025-annual`, `1bbf7eac-7a56-419e-8aab-7d39111709a7`, `wise-crackers-comedy-charity-night`, `fly-away-meet-registration`, `backpacks-new-gymnasts`, `region-7-competition-fees`, `1147c71d-852d-4639-a9ac-48dc0c89d039`
 
 ### Campaigns Not Yet Integrated
 
