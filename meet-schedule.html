@@ -233,6 +233,28 @@
 		}
 	}
 
+	/* ========== BUTTON STYLES ========== */
+	.btn {
+		display: inline-block;
+		padding: 14px 32px;
+		background-color: #E8652D;
+		color: #fff;
+		border-radius: 5px;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	.btn:hover {
+		background-color: #D84315;
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(232, 101, 45, 0.3);
+		color: #fff;
+	}
+
 	/* Back-to-top button and reduced motion styles moved to css/back-to-top.css */
 	/* Skip-to-content and focus indicators moved to css/accessibility.css */
 </style>
@@ -258,6 +280,7 @@
 					<li><a href="index.html#membership" class="nav-link">Membership</a></li>
 					<li><a href="meet-schedule.html" class="nav-link active">Meet Schedule</a></li>
 					<li><a href="index.html#contact" class="nav-link">Contact</a></li>
+					<li><button type="button" zeffy-form-link="https://www.zeffy.com/embed/donation-form/1147c71d-852d-4639-a9ac-48dc0c89d039?modal=true" class="btn" style="margin-left: 10px;">Donate</button></li>
 				</ul>
 			</div>
 		</nav>
