@@ -678,7 +678,7 @@ The website currently uses:
    - Backpacks for New Gymnasts
    - Region 7 Competition Fees
    - Direct Donations (General Campaign)
-3. **Type 3 (Embedded iframes)** - Used for thermometer widgets and embedded donation forms in the fundraising section
+3. **Type 3 (Embedded iframes)** - Used for embedded donation forms in the fundraising section
 
 ### All Campaigns Integrated ✅
 
@@ -699,8 +699,8 @@ All identified donation and event campaigns from the Zeffy dashboard are now ful
 
 3. **Use Type 3 (Embedded)** for:
    - Dedicated donation/membership pages
-   - Thermometer progress widgets
    - When you want the form always visible
+   - Footer donation forms
 
 ---
 
