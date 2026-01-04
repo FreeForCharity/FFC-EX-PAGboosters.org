@@ -9,7 +9,7 @@
 		document.documentElement.className = 'js';
 	</script>
 	
-	<title>Meet Schedule | PAG Booster</title>
+	<title>2025/2026 Season Schedule | PAG Booster</title>
     
     <!-- Zeffy modal popup script -->
     <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="css/footer.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<meta name="description" content="View the typical USAG Xcel season meet schedule for our gymnastics team, including prep meets, regular season meets, states, regionals, and nationals." />
+<meta name="description" content="View the complete 2025/2026 USAG Xcel season meet schedule for our gymnastics team, including all competition dates and detailed meet information." />
 <style>
 	:root {
 		--badge-bronze: #cd7f32;
@@ -57,6 +57,31 @@
 	.meet-card.states { border-left-color: #e74c3c; background: linear-gradient(135deg, #fff 0%, #fff0f0 100%); }
 	.meet-card.regionals { border-left-color: #27ae60; background: linear-gradient(135deg, #fff 0%, #f0fff4 100%); }
 	.meet-card.nationals { border-left-color: #95a5a6; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); }
+	
+	.btn-flyaway {
+		background-color: #9b59b6;
+		color: white;
+	}
+	.btn-flyaway:hover {
+		background-color: #8e44ad;
+		color: white;
+	}
+	.btn-states {
+		background-color: #e74c3c;
+		color: white;
+	}
+	.btn-states:hover {
+		background-color: #c0392b;
+		color: white;
+	}
+	.btn-regionals {
+		background-color: #27ae60;
+		color: white;
+	}
+	.btn-regionals:hover {
+		background-color: #229954;
+		color: white;
+	}
 	.meet-card h2 {
 		margin-top: 0;
 	}
@@ -86,35 +111,33 @@
 		background: #d1ecf1;
 		border-color: #17a2b8;
 	}
-	.score-table {
-		background: #f8f9fa;
-		border-radius: 8px;
-		padding: 15px;
-		margin: 15px 0;
-	}
-	.score-row {
-		display: flex;
-		justify-content: space-between;
-		padding: 10px 15px;
-		margin: 5px 0;
+	.schedule-table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 20px 0;
 		background: white;
-		border-radius: 5px;
-		border-left: 4px solid #E8652D;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 	}
-	.score-row:nth-child(1) { border-left-color: var(--badge-bronze); }
-	.score-row:nth-child(2) { border-left-color: var(--badge-silver); }
-	.score-row:nth-child(3) { border-left-color: var(--badge-gold); }
-	.score-row:nth-child(4) { border-left-color: var(--badge-platinum); }
-	.score-row:nth-child(5) { border-left-color: var(--badge-diamond); }
-	.score-row:nth-child(6) { border-left-color: var(--badge-sapphire); }
-	.level-badge {
-		font-weight: bold;
-		padding: 5px 12px;
-		border-radius: 20px;
-		background: #e9ecef;
-		display: inline-block;
-		min-width: 100px;
-		text-align: center;
+	.schedule-table th,
+	.schedule-table td {
+		padding: 12px 15px;
+		text-align: left;
+		border-bottom: 1px solid #e0e0e0;
+	}
+	.schedule-table th {
+		background-color: #E8652D;
+		color: white;
+		font-weight: 600;
+		text-transform: uppercase;
+		font-size: 0.9rem;
+	}
+	.schedule-table tr:hover {
+		background-color: #f8f9fa;
+	}
+	.schedule-table tr:last-child td {
+		border-bottom: none;
 	}
 	.timeline-connector {
 		text-align: center;
@@ -122,13 +145,23 @@
 		color: #E8652D;
 		margin: 20px 0;
 	}
-	.cta-text {
-		font-size: 18px;
-		margin-bottom: 30px;
+	.session-info {
+		background: #f8f9fa;
+		border-radius: 8px;
+		padding: 15px;
+		margin: 10px 0;
 	}
-	.cta-button {
-		padding: 12px 30px;
-		font-size: 18px;
+	.session-info h4 {
+		color: #3498db;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	.level-group {
+		margin: 10px 0;
+		padding: 10px;
+		background: white;
+		border-radius: 5px;
+		border-left: 4px solid #E8652D;
 	}
 
 	/* ========== NAVIGATION STYLES ========== */
@@ -234,6 +267,14 @@
 		.mobile-menu-toggle {
 			display: block;
 		}
+
+		.schedule-table {
+			font-size: 0.85rem;
+		}
+		.schedule-table th,
+		.schedule-table td {
+			padding: 8px 10px;
+		}
 	}
 
 	/* ========== BUTTON STYLES ========== */
@@ -263,15 +304,10 @@
 		box-shadow: 0 2px 5px rgba(232, 101, 45, 0.2);
 	}
 
-	/* Back-to-top button and reduced motion styles moved to css/back-to-top.css */
-	/* Skip-to-content and focus indicators moved to css/accessibility.css */
-
 	/* ========== DIVI LAYOUT FIXES ========== */
-	/* Remove default padding/margin from Divi containers to prevent white space */
 	#et-main-area {
 		padding: 0;
 		margin: 0;
-		/* Position relative and z-index to ensure content area stays above hidden mobile menu */
 		position: relative;
 		z-index: 1;
 	}
@@ -287,13 +323,11 @@
 		max-width: 1200px;
 	}
 
-	/* Reduce horizontal padding on mobile to prevent white bar appearance */
 	@media (max-width: 768px) {
 		.et_pb_row {
 			padding: 20px 10px;
 		}
 		
-		/* Remove column padding on mobile to eliminate white space */
 		.et_pb_column {
 			padding: 0 !important;
 		}
@@ -310,7 +344,6 @@
 		margin: 0;
 	}
 
-	/* Remove top padding from first section to eliminate white bar */
 	.et_pb_section:first-of-type {
 		padding-top: 0;
 	}
@@ -336,8 +369,8 @@
 				<ul class="nav-menu" id="navMenu">
 					<li><a href="index.html#home" class="nav-link">Home</a></li>
 					<li><a href="index.html#about" class="nav-link">About</a></li>
-					<li><a href="meet-schedule.html" class="nav-link active">A Typical Season</a></li>
-					<li><a href="season-2025-2026.html" class="nav-link">2025/2026 Season</a></li>
+					<li><a href="meet-schedule.html" class="nav-link">A Typical Season</a></li>
+					<li><a href="season-2025-2026.html" class="nav-link active">2025/2026 Season</a></li>
 					<li><a href="index.html#team" class="nav-link">Team</a></li>
 					<li><a href="index.html#fundraising" class="nav-link">Fundraising</a></li>
 					<li><a href="index.html#membership" class="nav-link">Membership</a></li>
@@ -359,33 +392,113 @@
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_0 et_pb_text_align_center et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h1>Typical USAG Xcel Season Meet Schedule</h1>
-													<p>Below is an overview of the general meets throughout a typical USAG Xcel gymnastics season. Specific dates and locations vary by year.</p>
+													<h1>2025/2026 Season Schedule</h1>
+													<p>Complete schedule for the USAG Xcel competitive gymnastics season including all meet dates and detailed competition information.</p>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- Judges Critique / Prep Meet -->
+								<!-- Season Overview -->
 								<div class="et_pb_section et_pb_section_1 et_section_regular">
 									<div class="et_pb_row et_pb_row_1">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_1 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
+													<h2 style="color: #E8652D; text-align: center;">Full Season Schedule</h2>
+													<p style="text-align: center; margin-bottom: 30px;">Below are all the meets for the 2025/2026 season. Click on each meet for more details.</p>
+													
+													<table class="schedule-table">
+														<thead>
+															<tr>
+																<th>Date</th>
+																<th>Meet Name</th>
+																<th>Location</th>
+																<th>Type</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>December 7, 2025</td>
+																<td>Judges Critique</td>
+																<td>TBD</td>
+																<td>Prep Meet</td>
+															</tr>
+															<tr>
+																<td>December 14, 2025</td>
+																<td>Meet #1</td>
+																<td>TBD</td>
+																<td>Regular Season</td>
+															</tr>
+															<tr>
+																<td>January 11, 2026</td>
+																<td>Meet #2</td>
+																<td>TBD</td>
+																<td>Regular Season</td>
+															</tr>
+															<tr>
+																<td>January 25, 2026</td>
+																<td>Meet #3</td>
+																<td>TBD</td>
+																<td>Regular Season</td>
+															</tr>
+															<tr>
+																<td>February 8, 2026</td>
+																<td>Meet #4</td>
+																<td>TBD</td>
+																<td>Regular Season</td>
+															</tr>
+															<tr>
+																<td>February 21-22, 2026</td>
+																<td>Fly Away Meet (Optional)</td>
+																<td>Tampa, FL</td>
+																<td>Optional Travel</td>
+															</tr>
+															<tr>
+																<td>March 7-8, 2026</td>
+																<td>PA State Championship</td>
+																<td>Pennsylvania</td>
+																<td>States</td>
+															</tr>
+															<tr>
+																<td>April 2026 (TBD)</td>
+																<td>Region 7 Championship</td>
+																<td>Region 7 (TBD)</td>
+																<td>Regionals</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="timeline-connector" aria-hidden="true">⬇️</div>
+
+								<!-- Judges Critique / Prep Meet -->
+								<div class="et_pb_section et_pb_section_2 et_section_regular">
+									<div class="et_pb_row et_pb_row_2">
+										<div class="et_pb_column et_pb_column_4_4 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough et-last-child">
+											<div class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
+												<div class="et_pb_text_inner">
 													<div class="meet-card prep">
 														<div class="meet-icon" aria-hidden="true">🎯</div>
-														<h2>Judges Critique / Prep Meet</h2>
-														<h4>First Meet of the Season</h4>
-														<p>This is the season opener where gymnasts perform their routines in front of judges who provide constructive feedback. It's a low-pressure environment designed to help athletes refine their skills before official competition begins.</p>
+														<h2>Judges Critique - December 7, 2025</h2>
+														<h4>Season Opener</h4>
+														
 														<div class="highlight-box info">
+															<strong><span aria-hidden="true">📅</span> Date:</strong> Sunday, December 7, 2025<br>
+															<strong><span aria-hidden="true">📍</span> Location:</strong> TBD<br>
+															<strong><span aria-hidden="true">⏰</span> Time:</strong> TBD
+														</div>
+
+														<p>This is the season opener where gymnasts perform their routines in front of judges who provide constructive feedback. It's a low-pressure environment designed to help athletes refine their skills before official competition begins.</p>
+														
+														<div class="highlight-box">
 															<strong><span aria-hidden="true">💡</span> Key Purpose:</strong> Receive detailed feedback from judges to improve routines before competitive scoring begins
 														</div>
-														<ul style="list-style-type: none; padding-left: 0;">
-															<li><span aria-hidden="true">⏱️</span> <strong>Timing:</strong> Early in the season (typically late fall/early winter)</li>
-															<li><span aria-hidden="true">📋</span> <strong>Format:</strong> Informal scoring with detailed critiques</li>
-															<li><span aria-hidden="true">🎪</span> <strong>Atmosphere:</strong> Low-pressure, learning-focused environment</li>
-														</ul>
 													</div>
 												</div>
 											</div>
@@ -395,23 +508,58 @@
 
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
-								<!-- Regular Season Meets -->
-								<div class="et_pb_section et_pb_section_2 et_section_regular">
-									<div class="et_pb_row et_pb_row_2">
-										<div class="et_pb_column et_pb_column_4_4 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough et-last-child">
-											<div class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
+								<!-- First Regular Season Meet -->
+								<div class="et_pb_section et_pb_section_3 et_section_regular">
+									<div class="et_pb_row et_pb_row_3">
+										<div class="et_pb_column et_pb_column_4_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough et-last-child">
+											<div class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
 													<div class="meet-card regular">
 														<div class="meet-icon" aria-hidden="true">🏆</div>
-														<h2>Regular Season Meets</h2>
-														<h4>4 Competitive Meets</h4>
-														<p>Throughout the season, gymnasts compete in approximately four regular meets. These competitions allow athletes to showcase their skills, earn scores, and gain valuable competitive experience.</p>
+														<h2>Meet #1 - December 14, 2025</h2>
+														<h4>First Regular Season Competition</h4>
+														
+														<div class="highlight-box info">
+															<strong><span aria-hidden="true">📅</span> Date:</strong> Saturday, December 14, 2025<br>
+															<strong><span aria-hidden="true">📍</span> Location:</strong> TBD<br>
+															<strong><span aria-hidden="true">⏰</span> Time:</strong> TBD
+														</div>
+
+														<p>The first official competition of the regular season! Gymnasts will compete for scores that count toward state and regional qualification.</p>
+
+														<div class="highlight-box success">
+															<strong><span aria-hidden="true">✨</span> What to Expect:</strong> Official USAG Xcel scoring, team camaraderie, and the excitement of the first competition!
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="timeline-connector" aria-hidden="true">⬇️</div>
+
+								<!-- Additional Meets Summary -->
+								<div class="et_pb_section et_pb_section_4 et_section_regular">
+									<div class="et_pb_row et_pb_row_4">
+										<div class="et_pb_column et_pb_column_4_4 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
+											<div class="et_pb_module et_pb_text et_pb_text_4 et_pb_text_align_left et_pb_bg_layout_light">
+												<div class="et_pb_text_inner">
+													<div class="meet-card regular">
+														<h2>Regular Season Meets #2-4</h2>
+														<h4>January - February 2026</h4>
+														
+														<p>Our gymnasts will compete in three additional regular season meets throughout January and February:</p>
+														
 														<ul style="list-style-type: none; padding-left: 0;">
-															<li><span aria-hidden="true">📍</span> <strong>Location:</strong> Typically within a 2-3 hour drive of State College, PA</li>
-															<li><span aria-hidden="true">🎯</span> <strong>Format:</strong> Official USAG Xcel competition with scoring</li>
-															<li><span aria-hidden="true">💪</span> <strong>Purpose:</strong> Build skills, gain experience, and qualify for championship meets</li>
-															<li><span aria-hidden="true">📅</span> <strong>Timing:</strong> Spread throughout the winter season (December - February)</li>
+															<li><span aria-hidden="true">📅</span> <strong>Meet #2:</strong> January 11, 2026</li>
+															<li><span aria-hidden="true">📅</span> <strong>Meet #3:</strong> January 25, 2026</li>
+															<li><span aria-hidden="true">📅</span> <strong>Meet #4:</strong> February 8, 2026</li>
 														</ul>
+
+														<div class="highlight-box info">
+															<strong><span aria-hidden="true">ℹ️</span> Note:</strong> Detailed meet information including locations and session times will be updated as they become available.
+														</div>
 													</div>
 												</div>
 											</div>
@@ -422,29 +570,33 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Fly Away Meet -->
-								<div class="et_pb_section et_pb_section_3 et_section_regular">
-									<div class="et_pb_row et_pb_row_3">
-										<div class="et_pb_column et_pb_column_4_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough et-last-child">
-											<div class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
+								<div class="et_pb_section et_pb_section_5 et_section_regular">
+									<div class="et_pb_row et_pb_row_5">
+										<div class="et_pb_column et_pb_column_4_4 et_pb_column_5 et_pb_css_mix_blend_mode_passthrough et-last-child">
+											<div class="et_pb_module et_pb_text et_pb_text_5 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
 													<div class="meet-card flyaway">
 														<div class="meet-icon" aria-hidden="true">✈️</div>
-														<h2>Fly Away Meet</h2>
+														<h2>Fly Away Meet - February 21-22, 2026</h2>
 														<h4>Optional Destination Competition</h4>
+														
 														<div class="highlight-box">
 															<strong><span aria-hidden="true">⚠️</span> Optional:</strong> Participation is NOT required - this is an exciting opportunity for those who want to travel!
 														</div>
+
+														<div class="highlight-box info">
+															<strong><span aria-hidden="true">📅</span> Dates:</strong> February 21-22, 2026<br>
+															<strong><span aria-hidden="true">📍</span> Location:</strong> Tampa, Florida<br>
+															<strong><span aria-hidden="true">🌴</span> Event:</strong> Destination competition with team bonding
+														</div>
+
 														<p>The Fly Away Meet is an optional competition held at a more distant location, offering gymnasts the opportunity to compete in a different environment and make it a fun team trip.</p>
+														
 														<div style="margin: 20px 0;">
-															<button type="button" aria-label="Support Fly Away Meet registration" zeffy-form-link="https://www.zeffy.com/embed/ticketing/fly-away-meet-registration?modal=true" class="btn" style="background-color: #9b59b6; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: 600;">
+															<button type="button" aria-label="Support Fly Away Meet registration" zeffy-form-link="https://www.zeffy.com/embed/ticketing/fly-away-meet-registration?modal=true" class="btn btn-flyaway">
 																Support Fly Away Meet
 															</button>
 														</div>
-														<ul style="list-style-type: none; padding-left: 0;">
-															<li><span aria-hidden="true">🌴</span> <strong>Location Examples:</strong> Phoenix, Arizona • Tampa, Florida • Other destination cities</li>
-															<li><span aria-hidden="true">🤝</span> <strong>Benefits:</strong> Team bonding, new competition experience, and travel opportunity</li>
-															<li><span aria-hidden="true">📅</span> <strong>Timing:</strong> Typically mid-season</li>
-														</ul>
 													</div>
 												</div>
 											</div>
@@ -455,18 +607,26 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- State Championship -->
-								<div class="et_pb_section et_pb_section_4 et_section_regular">
-									<div class="et_pb_row et_pb_row_4">
-										<div class="et_pb_column et_pb_column_4_4 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
-											<div class="et_pb_module et_pb_text et_pb_text_4 et_pb_text_align_left et_pb_bg_layout_light">
+								<div class="et_pb_section et_pb_section_6 et_section_regular">
+									<div class="et_pb_row et_pb_row_6">
+										<div class="et_pb_column et_pb_column_4_4 et_pb_column_6 et_pb_css_mix_blend_mode_passthrough et-last-child">
+											<div class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
 													<div class="meet-card states">
 														<div class="meet-icon" aria-hidden="true">🥇</div>
-														<h2>State Championship</h2>
+														<h2>PA State Championship - March 7-8, 2026</h2>
 														<h4>Pennsylvania State Competition</h4>
+														
+														<div class="highlight-box info">
+															<strong><span aria-hidden="true">📅</span> Dates:</strong> March 7-8, 2026 (Saturday-Sunday)<br>
+															<strong><span aria-hidden="true">📍</span> Location:</strong> Pennsylvania (specific venue TBD)<br>
+															<strong><span aria-hidden="true">⏰</span> Schedule:</strong> To be announced
+														</div>
+
 														<p>The State Championship brings together Pennsylvania gymnasts from all Xcel levels. All levels compete at States, making it an inclusive championship event.</p>
+														
 														<div style="margin: 20px 0;">
-															<button type="button" aria-label="Support States Championship campaign" zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn" style="background-color: #e74c3c; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: 600;">
+															<button type="button" aria-label="Support States Championship campaign" zeffy-form-link="https://www.zeffy.com/embed/donation-form/1bbf7eac-7a56-419e-8aab-7d39111709a7?modal=true" class="btn btn-states">
 																Support States Campaign
 															</button>
 														</div>
@@ -475,48 +635,7 @@
 															<strong><span aria-hidden="true">✅</span> All Levels Compete:</strong> Bronze, Silver, Gold, Platinum, Diamond, and Sapphire all participate in States!
 														</div>
 
-														<ul style="list-style-type: none; padding-left: 0;">
-															<li><span aria-hidden="true">📍</span> <strong>Location:</strong> Always held in Pennsylvania</li>
-														</ul>
-
-														<h4 style="margin-top: 20px;">Qualification Scores</h4>
-														<p style="font-size: 14px; color: #666; margin-bottom: 10px;">(Current season - verify with PA USAG for updates)</p>
-														
-														<div class="score-table">
-															<div class="score-row">
-																<span class="level-badge" style="background: var(--badge-bronze); color: var(--badge-bronze-text);">Bronze</span>
-																<strong>32.00 All-Around*</strong>
-															</div>
-															<div class="score-row">
-																<span class="level-badge" style="background: var(--badge-silver); color: var(--badge-silver-text);">Silver</span>
-																<strong>35.00 All-Around</strong>
-															</div>
-															<div class="score-row">
-																<span class="level-badge" style="background: var(--badge-gold); color: var(--badge-gold-text);">Gold</span>
-																<strong>35.00 All-Around</strong>
-															</div>
-															<div class="score-row">
-																<span class="level-badge" style="background: var(--badge-platinum); color: var(--badge-platinum-text);">Platinum</span>
-																<strong>35.00 All-Around</strong>
-															</div>
-															<div class="score-row">
-																<span class="level-badge" style="background: var(--badge-diamond); color: var(--badge-diamond-text);">Diamond</span>
-																<strong>34.00 All-Around</strong>
-															</div>
-															<div class="score-row">
-																<span class="level-badge" style="background: var(--badge-sapphire); color: var(--badge-sapphire-text);">Sapphire</span>
-																<strong>32.00 All-Around</strong>
-															</div>
-														</div>
-
-														<div class="highlight-box info">
-															<strong>*Important Note about Bronze:</strong> Bronze gymnasts must achieve a 32.00 AA score to qualify for States. However, <strong>all Senior gymnasts (in any level including Bronze) automatically qualify regardless of score.</strong>
-														</div>
-
-														<ul style="list-style-type: none; padding-left: 0; margin-top: 20px;">
-															<li><span aria-hidden="true">⚠️</span> <strong>Important:</strong> Qualifying scores may change each season - always verify current requirements with <a href="https://pagymnastics.com/information/qualifying-scores/" target="_blank" rel="noopener" style="color: #e74c3c; text-decoration: underline;">PA Women's Gymnastics</a></li>
-															<li><span aria-hidden="true">📅</span> <strong>Timing:</strong> Late winter/early spring (typically March/April)</li>
-														</ul>
+														<p style="margin-top: 20px;"><em>For detailed qualifying scores and requirements, please visit <a href="meet-schedule.html" style="color: #e74c3c; text-decoration: underline;">our typical season page</a>.</em></p>
 													</div>
 												</div>
 											</div>
@@ -527,122 +646,34 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Regional Championship -->
-								<div class="et_pb_section et_pb_section_5 et_section_regular">
-									<div class="et_pb_row et_pb_row_5">
-										<div class="et_pb_column et_pb_column_4_4 et_pb_column_5 et_pb_css_mix_blend_mode_passthrough et-last-child">
-											<div class="et_pb_module et_pb_text et_pb_text_5 et_pb_text_align_left et_pb_bg_layout_light">
+								<div class="et_pb_section et_pb_section_7 et_section_regular">
+									<div class="et_pb_row et_pb_row_7">
+										<div class="et_pb_column et_pb_column_4_4 et_pb_column_7 et_pb_css_mix_blend_mode_passthrough et-last-child">
+											<div class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_left et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
 													<div class="meet-card regionals">
 														<div class="meet-icon" aria-hidden="true">🌟</div>
-														<h2>Regional Championship</h2>
+														<h2>Region 7 Championship - April 2026</h2>
 														<h4>Multi-State Competition</h4>
+														
+														<div class="highlight-box info">
+															<strong><span aria-hidden="true">📅</span> Date:</strong> April 2026 (specific dates TBD)<br>
+															<strong><span aria-hidden="true">📍</span> Location:</strong> Rotates among Region 7 states (TBD)<br>
+															<strong><span aria-hidden="true">🗺️</span> Our Region:</strong> Region 7 includes PA, DE, MD, NJ, VA, WV, and DC
+														</div>
+
 														<p>Gymnasts in Gold, Platinum, Diamond, and Sapphire levels who qualify at the State Championship advance to compete against athletes from other states in their region.</p>
+														
 														<div style="margin: 20px 0;">
-															<button type="button" aria-label="Support Regional Championship campaign" zeffy-form-link="https://www.zeffy.com/embed/ticketing/region-7-competition-fees?modal=true" class="btn" style="background-color: #27ae60; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: 600;">
+															<button type="button" aria-label="Support Regional Championship campaign" zeffy-form-link="https://www.zeffy.com/embed/ticketing/region-7-competition-fees?modal=true" class="btn btn-regionals">
 																Support Regionals
 															</button>
 														</div>
-														
-														<div class="highlight-box info">
-															<strong><span aria-hidden="true">📍</span> Our Region:</strong> Pennsylvania is in <strong>Region 7</strong><br>
-															<em style="font-size: 14px;">States included: Pennsylvania, Delaware, Maryland, New Jersey, Virginia, West Virginia, and District of Columbia</em>
+
+														<div class="highlight-box">
+															<strong><span aria-hidden="true">ℹ️</span> Eligible Levels:</strong> Gold, Platinum, Diamond, and Sapphire (must achieve qualifying scores at States)<br>
+															<strong><span aria-hidden="true">❌</span> Note:</strong> Bronze and Silver do NOT advance to Regionals
 														</div>
-
-														<ul style="list-style-type: none; padding-left: 0;">
-															<li><span aria-hidden="true">🗺️</span> <strong>Location:</strong> Rotates among Region 7 states</li>
-														</ul>
-
-														<h4 style="margin-top: 20px;">Eligible Levels</h4>
-														<div class="score-table">
-															<div class="score-row" style="border-left-color: var(--badge-gold);">
-																<span class="level-badge" style="background: var(--badge-gold); color: var(--badge-gold-text);">Gold</span>
-																<span><span aria-hidden="true">✅</span> Must achieve qualifying AA score at States</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-platinum);">
-																<span class="level-badge" style="background: var(--badge-platinum); color: var(--badge-platinum-text);">Platinum</span>
-																<span><span aria-hidden="true">✅</span> Must achieve qualifying AA score at States</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-diamond);">
-																<span class="level-badge" style="background: var(--badge-diamond); color: var(--badge-diamond-text);">Diamond</span>
-																<span><span aria-hidden="true">✅</span> Must achieve qualifying AA score at States</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-sapphire);">
-																<span class="level-badge" style="background: var(--badge-sapphire); color: var(--badge-sapphire-text);">Sapphire</span>
-																<span><span aria-hidden="true">✅</span> Must achieve qualifying AA score at States</span>
-															</div>
-														</div>
-
-														<div class="highlight-box" style="background: #fff3cd; border-color: #e74c3c;">
-															<strong><span aria-hidden="true">❌</span> Bronze and Silver:</strong> Do NOT advance to Regionals - their season culminates at the State Championship
-														</div>
-
-														<ul style="list-style-type: none; padding-left: 0; margin-top: 20px;">
-															<li><span aria-hidden="true">📊</span> <strong>Qualification:</strong> Specific qualifying scores from States are set by each region and may vary by year</li>
-															<li><span aria-hidden="true">📅</span> <strong>Timing:</strong> Spring (typically April/May)</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="timeline-connector" aria-hidden="true">⬇️</div>
-
-								<!-- About National Championships -->
-								<div class="et_pb_section et_pb_section_6 et_section_regular">
-									<div class="et_pb_row et_pb_row_6">
-										<div class="et_pb_column et_pb_column_4_4 et_pb_column_6 et_pb_css_mix_blend_mode_passthrough et-last-child">
-											<div class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_left et_pb_bg_layout_light">
-												<div class="et_pb_text_inner">
-													<div class="meet-card nationals">
-														<div class="meet-icon" aria-hidden="true">ℹ️</div>
-														<h2>About National Championships</h2>
-														<h4>Understanding Xcel Competition Structure</h4>
-														
-														<div class="highlight-box" style="background: #f8d7da; border-color: #721c24;">
-															<strong><span aria-hidden="true">⚠️</span> Important Note:</strong> There is currently <strong>NO USAG Xcel National Championship</strong>. For Xcel gymnasts, the Regional Championship is the culminating competition of the season.
-														</div>
-
-														<h4 style="margin-top: 20px;">Season Culmination by Level</h4>
-														<div class="score-table">
-															<div class="score-row" style="border-left-color: var(--badge-bronze);">
-																<span class="level-badge" style="background: var(--badge-bronze); color: var(--badge-bronze-text);">Bronze</span>
-																<span><strong>Ends at:</strong> State Championship</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-silver);">
-																<span class="level-badge" style="background: var(--badge-silver); color: var(--badge-silver-text);">Silver</span>
-																<span><strong>Ends at:</strong> State Championship</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-gold);">
-																<span class="level-badge" style="background: var(--badge-gold); color: var(--badge-gold-text);">Gold</span>
-																<span><strong>Ends at:</strong> Regional Championship</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-platinum);">
-																<span class="level-badge" style="background: var(--badge-platinum); color: var(--badge-platinum-text);">Platinum</span>
-																<span><strong>Ends at:</strong> Regional Championship</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-diamond);">
-																<span class="level-badge" style="background: var(--badge-diamond); color: var(--badge-diamond-text);">Diamond</span>
-																<span><strong>Ends at:</strong> Regional Championship</span>
-															</div>
-															<div class="score-row" style="border-left-color: var(--badge-sapphire);">
-																<span class="level-badge" style="background: var(--badge-sapphire); color: var(--badge-sapphire-text);">Sapphire</span>
-																<span><strong>Ends at:</strong> Regional Championship</span>
-															</div>
-														</div>
-
-														<div class="highlight-box info">
-															<strong><span aria-hidden="true">📚</span> About Xcel vs. Development Program:</strong><br>
-															<ul style="margin: 10px 0 0 20px;">
-																<li><strong>Xcel Program:</strong> Competitive season ends at Regionals (no Nationals)</li>
-																<li><strong>Development Program (DP):</strong> Levels 9 and 10 compete at National Championships</li>
-															</ul>
-														</div>
-
-														<p style="margin-top: 20px; font-style: italic; color: #666;">
-															The Xcel program is designed to provide gymnasts with a competitive experience while offering more flexibility than the Development Program. Regional Championships showcase the highest level of Xcel competition in each region.
-														</p>
 													</div>
 												</div>
 											</div>
@@ -651,15 +682,18 @@
 								</div>
 
 								<!-- Call to Action -->
-								<div class="et_pb_section et_pb_section_7 et_pb_with_background et_section_regular" style="background-color: #f8f9fa; padding: 60px 0;">
-									<div class="et_pb_row et_pb_row_7">
-										<div class="et_pb_column et_pb_column_4_4 et_pb_column_7 et_pb_css_mix_blend_mode_passthrough et-last-child">
-											<div class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_center et_pb_bg_layout_light">
+								<div class="et_pb_section et_pb_section_8 et_pb_with_background et_section_regular" style="background-color: #f8f9fa; padding: 60px 0;">
+									<div class="et_pb_row et_pb_row_8">
+										<div class="et_pb_column et_pb_column_4_4 et_pb_column_8 et_pb_css_mix_blend_mode_passthrough et-last-child">
+											<div class="et_pb_module et_pb_text et_pb_text_8 et_pb_text_align_center et_pb_bg_layout_light">
 												<div class="et_pb_text_inner">
-													<h2>Support Our Athletes</h2>
-													<p class="cta-text">Help our gymnasts reach their goals by supporting their journey through the competitive season!</p>
+													<h2>Support Our Athletes This Season</h2>
+													<p style="font-size: 18px; margin-bottom: 30px;">Help our gymnasts reach their goals by supporting their journey through the 2025/2026 competitive season!</p>
 													<div class="et_pb_button_module_wrapper et_pb_button_alignment_center et_pb_module">
-														<a class="et_pb_button cta-button" href="index.html#fundraising">Learn About Fundraising</a>
+														<a class="et_pb_button" href="index.html#fundraising" style="padding: 12px 30px; font-size: 18px;">Learn About Fundraising</a>
+													</div>
+													<div style="margin-top: 20px;">
+														<a class="et_pb_button" href="meet-schedule.html" style="padding: 12px 30px; font-size: 18px; background-color: #3498db;">View Typical Season Info</a>
 													</div>
 												</div>
 											</div>
