@@ -16,7 +16,6 @@ The accessibility enforcement system consists of three layers:
 - **[lint-staged](https://github.com/okonet/lint-staged)** - Run linters on staged git files
 - **[ESLint](https://eslint.org/)** - Pluggable linting utility for JavaScript and more
 - **[@html-eslint/eslint-plugin](https://html-eslint.org/)** - HTML linting rules for ESLint
-- **[eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)** - Accessibility rules for JSX elements
 
 ## Setup
 
@@ -26,12 +25,12 @@ The setup is complete and ready to use. Dependencies have been installed and con
 
 1. **ESLint Rules** (`.eslintrc.json`):
    - HTML accessibility rules via `@html-eslint/eslint-plugin`
-   - JSX accessibility rules via `eslint-plugin-jsx-a11y`
    - Enforces:
      - Required button type attributes
-     - Proper ARIA properties and values
-     - Required aria-props on elements with ARIA roles
-     - Valid ARIA role types
+     - Proper image alt text
+     - No duplicate IDs
+     - Required language attribute on html element
+     - Required meta charset
      - And more...
 
 2. **Pre-commit Hook** (`.husky/pre-commit`):
@@ -152,7 +151,6 @@ The following files/directories are excluded from linting (see `.eslintignore`):
 
 - [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
 - [ESLint HTML Plugin Documentation](https://html-eslint.org/)
-- [JSX Accessibility Plugin](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
 - [Husky Documentation](https://typicode.github.io/husky/)
 
 ## Support
