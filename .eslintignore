@@ -1,0 +1,15 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore scripts directory (has its own package.json)
+scripts/
+
+# Ignore vendor files
+js/jquery*.js
+js/email-decode.min.js
+js/scripts.min.js
+js/vcd*.js
+js/sticky-elements.js
+
+# Ignore archive
+archive/
