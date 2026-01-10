@@ -231,6 +231,105 @@
 		overflow-x: hidden;
 	}
 
+	/* Smooth scroll behavior */
+	html {
+		scroll-behavior: smooth;
+	}
+
+	/* ========== JUMP NAVIGATION STYLES ========== */
+	.jump-navigation {
+		background: linear-gradient(135deg, #E8652D 0%, #D84315 100%);
+		border-radius: 10px;
+		padding: 30px;
+		margin: 40px 0;
+		box-shadow: 0 4px 15px rgba(232, 101, 45, 0.2);
+	}
+
+	.jump-navigation h3 {
+		color: white;
+		margin-top: 0;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 1.8rem;
+	}
+
+	.jump-nav-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 15px;
+		margin-bottom: 20px;
+	}
+
+	.jump-nav-link {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		background: white;
+		padding: 15px 20px;
+		border-radius: 8px;
+		text-decoration: none;
+		color: #333;
+		font-weight: 600;
+		transition: all 0.3s ease;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.jump-nav-link:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+		color: #E8652D;
+	}
+
+	.jump-nav-link .icon {
+		font-size: 1.5rem;
+		flex-shrink: 0;
+	}
+
+	.jump-nav-link .text {
+		flex: 1;
+	}
+
+	.jump-nav-link .date {
+		display: block;
+		font-size: 0.85rem;
+		font-weight: 400;
+		color: #666;
+		margin-top: 3px;
+	}
+
+	.back-to-nav {
+		display: inline-block;
+		margin-top: 15px;
+		padding: 10px 20px;
+		background: #f8f9fa;
+		color: #E8652D;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.9rem;
+		transition: all 0.3s ease;
+		border: 2px solid #E8652D;
+	}
+
+	.back-to-nav:hover {
+		background: #E8652D;
+		color: white;
+	}
+
+	@media (max-width: 768px) {
+		.jump-nav-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.jump-navigation {
+			padding: 20px;
+		}
+
+		.jump-navigation h3 {
+			font-size: 1.4rem;
+		}
+	}
+
 	/* Mobile menu toggle button styling */
 	.mobile-menu-toggle {
 		display: none;
@@ -612,6 +711,105 @@
 															</tr>
 														</tbody>
 													</table>
+
+													<!-- Jump Navigation Menu -->
+													<div class="jump-navigation" id="jump-navigation">
+														<h3>🎯 Jump to a Specific Meet</h3>
+														<p style="text-align: center; color: white; margin-bottom: 25px;">Click on any meet below to jump directly to its detailed information.</p>
+														<div class="jump-nav-grid">
+															<a href="#mock-meet" class="jump-nav-link">
+																<span class="icon">🎯</span>
+																<span class="text">
+																	Mock Meet
+																	<span class="date">Nov 16, 2025</span>
+																</span>
+															</a>
+															<a href="#liberty-cup" class="jump-nav-link">
+																<span class="icon">🏆</span>
+																<span class="text">
+																	Liberty Cup
+																	<span class="date">Dec 5-7, 2025</span>
+																</span>
+															</a>
+															<a href="#kate-baldwin" class="jump-nav-link">
+																<span class="icon">🎪</span>
+																<span class="text">
+																	Kate Baldwin Invitational
+																	<span class="date">Jan 9-11, 2026</span>
+																</span>
+															</a>
+															<a href="#ceg-classic" class="jump-nav-link">
+																<span class="icon">⭐</span>
+																<span class="text">
+																	CEG Classic
+																	<span class="date">Jan 16-18, 2026</span>
+																</span>
+															</a>
+															<a href="#climb-high" class="jump-nav-link">
+																<span class="icon">🧗</span>
+																<span class="text">
+																	Climb High Invitational
+																	<span class="date">Feb 6-8, 2026</span>
+																</span>
+															</a>
+															<a href="#bronze-states" class="jump-nav-link">
+																<span class="icon">🥉</span>
+																<span class="text">
+																	Bronze State Championship
+																	<span class="date">Feb 21-22, 2026</span>
+																</span>
+															</a>
+															<a href="#no-place-like-home" class="jump-nav-link">
+																<span class="icon">🏡</span>
+																<span class="text">
+																	There's No Place Like Home
+																	<span class="date">Feb 27-Mar 1, 2026</span>
+																</span>
+															</a>
+															<a href="#all-handstands" class="jump-nav-link">
+																<span class="icon">🤸</span>
+																<span class="text">
+																	All Handstands on Deck
+																	<span class="date">Mar 13-15, 2026</span>
+																</span>
+															</a>
+															<a href="#fly-away" class="jump-nav-link">
+																<span class="icon">✈️</span>
+																<span class="text">
+																	Fly Away Meet (Florida)
+																	<span class="date">Apr 11-12, 2026</span>
+																</span>
+															</a>
+															<a href="#gold-states" class="jump-nav-link">
+																<span class="icon">🥇</span>
+																<span class="text">
+																	Gold State Championship
+																	<span class="date">Apr 24-26, 2026</span>
+																</span>
+															</a>
+															<a href="#platinum-diamond-states" class="jump-nav-link">
+																<span class="icon">💎</span>
+																<span class="text">
+																	Platinum & Diamond States
+																	<span class="date">May 1-3, 2026</span>
+																</span>
+															</a>
+															<a href="#silver-states" class="jump-nav-link">
+																<span class="icon">🥈</span>
+																<span class="text">
+																	Silver State Championship
+																	<span class="date">May 8, 2026</span>
+																</span>
+															</a>
+															<a href="#regionals" class="jump-nav-link">
+																<span class="icon">🌟</span>
+																<span class="text">
+																	Region 7 Championship
+																	<span class="date">May/Jun 2026</span>
+																</span>
+															</a>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -621,7 +819,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Mock Meet / Prep Meet -->
-								<div class="et_pb_section et_pb_section_2 et_section_regular">
+								<div class="et_pb_section et_pb_section_2 et_section_regular" id="mock-meet">
 									<div class="et_pb_row et_pb_row_2">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light">
@@ -642,6 +840,8 @@
 														<div class="highlight-box">
 															<strong><span aria-hidden="true">💡</span> Key Purpose:</strong> Practice competition routines and procedures in a familiar, supportive environment before the competitive season starts
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -652,7 +852,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Liberty Cup -->
-								<div class="et_pb_section et_pb_section_3 et_section_regular">
+								<div class="et_pb_section et_pb_section_3 et_section_regular" id="liberty-cup">
 									<div class="et_pb_row et_pb_row_3">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_3 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light">
@@ -674,6 +874,8 @@
 														<div class="highlight-box success">
 															<strong><span aria-hidden="true">✨</span> What to Expect:</strong> Large-scale competition, official USAG Xcel scoring, and the excitement of competing alongside talented gymnasts from across the region!
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -684,7 +886,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Kate Baldwin Invitational -->
-								<div class="et_pb_section et_pb_section_4 et_section_regular">
+								<div class="et_pb_section et_pb_section_4 et_section_regular" id="kate-baldwin">
 									<div class="et_pb_row et_pb_row_4">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_4 et_pb_text_align_left et_pb_bg_layout_light">
@@ -771,6 +973,8 @@
 														<div class="highlight-box">
 															<strong><span aria-hidden="true">ℹ️</span> Note:</strong> All ages are as of January 11, 2026. All stretch periods are 15 minutes.
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -781,7 +985,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- CEG Classic -->
-								<div class="et_pb_section et_pb_section_5 et_section_regular">
+								<div class="et_pb_section et_pb_section_5 et_section_regular" id="ceg-classic">
 									<div class="et_pb_row et_pb_row_5">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_5 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_5 et_pb_text_align_left et_pb_bg_layout_light">
@@ -821,6 +1025,8 @@
 														<div class="highlight-box success">
 															<strong><span aria-hidden="true">🎯</span> Competition Level:</strong> Mid-season invitational perfect for building confidence and refining routines before state championships
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -831,7 +1037,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Climb High Invitational -->
-								<div class="et_pb_section et_pb_section_6 et_section_regular">
+								<div class="et_pb_section et_pb_section_6 et_section_regular" id="climb-high">
 									<div class="et_pb_row et_pb_row_6">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_6 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_6 et_pb_text_align_left et_pb_bg_layout_light">
@@ -878,6 +1084,8 @@
 														<div class="highlight-box">
 															<strong><span aria-hidden="true">💪</span> Perfect Timing:</strong> Final major invitational before state championships - use this meet to fine-tune routines and earn/improve qualifying scores!
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -888,7 +1096,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Bronze State Championship -->
-								<div class="et_pb_section et_pb_section_7 et_section_regular">
+								<div class="et_pb_section et_pb_section_7 et_section_regular" id="bronze-states">
 									<div class="et_pb_row et_pb_row_7">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_7 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_7 et_pb_text_align_left et_pb_bg_layout_light">
@@ -915,6 +1123,8 @@
 																Support States Campaign
 															</button>
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -925,7 +1135,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- There's No Place Like Home / Sweets & Leaps -->
-								<div class="et_pb_section et_pb_section_8 et_section_regular">
+								<div class="et_pb_section et_pb_section_8 et_section_regular" id="no-place-like-home">
 									<div class="et_pb_row et_pb_row_8">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_8 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_8 et_pb_text_align_left et_pb_bg_layout_light">
@@ -946,6 +1156,8 @@
 														<div class="highlight-box">
 															<strong><span aria-hidden="true">🎯</span> Last Chance:</strong> Final opportunity to achieve or improve qualifying scores before most state championships!
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -956,7 +1168,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- All Handstands on Deck -->
-								<div class="et_pb_section et_pb_section_9 et_section_regular">
+								<div class="et_pb_section et_pb_section_9 et_section_regular" id="all-handstands">
 									<div class="et_pb_row et_pb_row_9">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_9 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_9 et_pb_text_align_left et_pb_bg_layout_light">
@@ -977,6 +1189,8 @@
 														<div class="highlight-box success">
 															<strong><span aria-hidden="true">🎪</span> Keep Competing:</strong> Perfect for gymnasts who want additional meet experience after their state championships!
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -987,7 +1201,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Handsprings for Hope (Fly Away Meet) -->
-								<div class="et_pb_section et_pb_section_10 et_section_regular">
+								<div class="et_pb_section et_pb_section_10 et_section_regular" id="fly-away">
 									<div class="et_pb_row et_pb_row_10">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_10 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_10 et_pb_text_align_left et_pb_bg_layout_light">
@@ -1019,6 +1233,8 @@
 														<div class="highlight-box success">
 															<strong><span aria-hidden="true">🌞</span> Fun & Competition:</strong> Combine gymnastics competition with a Florida getaway - perfect for team building and creating memories!
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -1029,7 +1245,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Gold State Championship -->
-								<div class="et_pb_section et_pb_section_11 et_section_regular">
+								<div class="et_pb_section et_pb_section_11 et_section_regular" id="gold-states">
 									<div class="et_pb_row et_pb_row_11">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_11 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_11 et_pb_text_align_left et_pb_bg_layout_light">
@@ -1056,6 +1272,8 @@
 																Support States Campaign
 															</button>
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -1066,7 +1284,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Platinum & Diamond State Championship -->
-								<div class="et_pb_section et_pb_section_12 et_section_regular">
+								<div class="et_pb_section et_pb_section_12 et_section_regular" id="platinum-diamond-states">
 									<div class="et_pb_row et_pb_row_12">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_12 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_12 et_pb_text_align_left et_pb_bg_layout_light">
@@ -1093,6 +1311,8 @@
 																Support States Campaign
 															</button>
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -1103,7 +1323,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Silver State Championship -->
-								<div class="et_pb_section et_pb_section_13 et_section_regular">
+								<div class="et_pb_section et_pb_section_13 et_section_regular" id="silver-states">
 									<div class="et_pb_row et_pb_row_13">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_13 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_13 et_pb_text_align_left et_pb_bg_layout_light">
@@ -1130,6 +1350,8 @@
 																Support States Campaign
 															</button>
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
@@ -1140,7 +1362,7 @@
 								<div class="timeline-connector" aria-hidden="true">⬇️</div>
 
 								<!-- Regional Championship -->
-								<div class="et_pb_section et_pb_section_14 et_section_regular">
+								<div class="et_pb_section et_pb_section_14 et_section_regular" id="regionals">
 									<div class="et_pb_row et_pb_row_14">
 										<div class="et_pb_column et_pb_column_4_4 et_pb_column_14 et_pb_css_mix_blend_mode_passthrough et-last-child">
 											<div class="et_pb_module et_pb_text et_pb_text_14 et_pb_text_align_left et_pb_bg_layout_light">
@@ -1168,6 +1390,8 @@
 															<strong><span aria-hidden="true">ℹ️</span> Eligible Levels:</strong> Gold, Platinum, Diamond, and Sapphire (must achieve qualifying scores at States)<br>
 															<strong><span aria-hidden="true">❌</span> Note:</strong> Bronze and Silver do NOT advance to Regionals
 														</div>
+
+														<a href="#jump-navigation" class="back-to-nav">↑ Back to Meet Navigation</a>
 													</div>
 												</div>
 											</div>
