@@ -27,11 +27,9 @@ test.describe('Visual Regression', () => {
     
     // Take screenshot of hero section
     const hero = page.locator('header, .hero, #hero').first()
-    if (await hero.count() > 0) {
-      await expect(hero).toHaveScreenshot('hero-section.png', {
-        animations: 'disabled',
-      })
-    }
+    await expect(hero).toHaveScreenshot('hero-section.png', {
+      animations: 'disabled',
+    })
   })
 
   test('Homepage footer section', async ({ page }) => {
@@ -40,10 +38,8 @@ test.describe('Visual Regression', () => {
     
     // Take screenshot of footer
     const footer = page.locator('footer').first()
-    if (await footer.count() > 0) {
-      await expect(footer).toHaveScreenshot('footer-section.png', {
-        animations: 'disabled',
-      })
-    }
+    await expect(footer).toHaveScreenshot('footer-section.png', {
+      animations: 'disabled',
+    })
   })
 })
