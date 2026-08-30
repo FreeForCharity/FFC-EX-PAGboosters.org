@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "PAG Booster website with accessibility enforcement",
   "private": true,
+  "packageManager": "pnpm@10.34.5",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -19,5 +20,11 @@
     "@html-eslint/parser": "^0.24.1",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "nanoid@<3.3.18": "^3.3.18",
+      "sharp": "^0.35.3"
+    }
   }
 }

@@ -62,10 +62,10 @@ You can run the linter manually at any time:
 
 ```bash
 # Check all files
-npm run lint
+pnpm run lint
 
 # Auto-fix issues where possible
-npm run lint:fix
+pnpm run lint:fix
 ```
 
 ### Bypassing Hooks (Not Recommended)
@@ -118,7 +118,7 @@ All images must have alt text:
 
 If the pre-commit hook isn't running:
 
-1. Ensure Husky is installed: `npm install`
+1. Ensure Husky is installed: `pnpm install`
 2. Check that `.husky/pre-commit` exists and is executable
 3. Verify Git hooks path: `git config core.hooksPath`
 
@@ -127,7 +127,7 @@ If the pre-commit hook isn't running:
 If you encounter linting errors:
 
 1. Read the error message carefully - it will indicate which file and line has the issue
-2. Try auto-fixing: `npm run lint:fix`
+2. Try auto-fixing: `pnpm run lint:fix`
 3. For issues that can't be auto-fixed, manually update the code following the error guidance
 
 ### CI Failures
@@ -135,7 +135,7 @@ If you encounter linting errors:
 If the GitHub Actions workflow fails:
 
 1. Check the workflow logs in the Actions tab
-2. Run `npm run lint` locally to see the same errors
+2. Run `pnpm run lint` locally to see the same errors
 3. Fix all violations before pushing again
 
 ## Excluded Files
