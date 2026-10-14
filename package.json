@@ -5,6 +5,7 @@
   "private": true,
   "packageManager": "pnpm@10.34.5",
   "scripts": {
+    "audit:high": "pnpm audit --prod --audit-level high",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky"
